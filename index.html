@@ -1,0 +1,302 @@
+<!doctype html>
+<html lang="vi">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Bản thiết kế học tập: khám phá nước hoa theo phong cách hương thơm. Lấy cảm hứng từ Guerlain.">
+  <title>Thế giới hương thơm — Guerlain | Interface study</title>
+  <link rel="preload" href="assets/fonts/noto-serif-400.ttf" as="font" type="font/ttf" crossorigin>
+  <link rel="preload" href="assets/fonts/manrope-400.ttf" as="font" type="font/ttf" crossorigin>
+  <link rel="stylesheet" href="style.css">
+  <script src="script.js" defer></script>
+</head>
+<body>
+  <a class="skip-link" href="#catalog">Đến danh sách sản phẩm</a>
+  <!-- Header: chữ thương hiệu, điều hướng đơn giản, không thêm nút giả. -->
+  <header class="site-header">
+    <div class="header-main">
+      <a href="#selection-guide" class="header-side">TÌM HƯƠNG THƠM CỦA BẠN</a>
+      <a class="brand" href="index.html" aria-label="Guerlain — bản thiết kế học tập">GUERLAIN<span>PARIS</span></a>
+      <a href="#about" class="header-side right">BẢN THIẾT KẾ HỌC TẬP</a>
+    </div>
+    <nav aria-label="Điều hướng chính">
+      <a class="current" href="#catalog" aria-current="page">NƯỚC HOA</a>
+      <a href="#selection-guide">CHỌN HƯƠNG THƠM</a>
+      <a href="#about">VỀ BẢN THIẾT KẾ</a>
+    </nav>
+  </header>
+  <main>
+    <!-- Banner chiến dịch toàn chiều rộng. Chữ là HTML, không nằm trong ảnh. -->
+    <section class="hero" aria-labelledby="page-title">
+      <img class="hero-photo" src="assets/hero.png" width="1600" height="900" alt="Ảnh chiến dịch mô phỏng: chai nước hoa hổ phách trong ánh sáng vàng trên nền tối" fetchpriority="high">
+      <div class="hero-shade"></div>
+      <div class="hero-copy">
+        <p class="eyebrow">L’ART DU PARFUM</p>
+        <h1 id="page-title">Dấu ấn<br>của riêng bạn.</h1>
+        <p class="hero-description">Một hương thơm. Một thế giới cảm xúc.</p>
+        <a class="hero-cta" href="#catalog">KHÁM PHÁ BỘ SƯU TẬP <span aria-hidden="true">→</span></a>
+      </div>
+      <span class="hero-edition" aria-hidden="true">THE FRAGRANCE EDIT — 01</span>
+    </section>
+    <div class="container">
+      <p class="breadcrumb"><a href="index.html">Trang chủ</a><span aria-hidden="true">/</span>Nước hoa</p>
+      <section id="selection-guide" class="selection-guide" aria-labelledby="guide-title">
+        <p class="eyebrow">HƯƠNG THƠM VÀ CÁ TÍNH</p>
+        <h2 id="guide-title">Tìm hương thơm đồng điệu.</h2>
+        <p>Bắt đầu từ phong cách bạn yêu thích.<br class="mobile-break"> Khám phá thêm với những lựa chọn chuyên sâu.</p>
+        <span class="gold-rule" aria-hidden="true"></span>
+      </section>
+      <div class="shop-layout">
+        <aside aria-label="Bộ lọc sản phẩm">
+          <details class="filter-panel" id="filter-panel" open>
+            <summary>Bộ lọc<span class="filter-summary-note">Tìm hương phù hợp</span></summary>
+            <form id="filter-form">
+              <div class="filter-heading"><span>TINH CHỈNH LỰA CHỌN</span><button class="reset-link" type="reset">Xóa tất cả</button></div>
+              <p class="filter-help">Chọn tiêu chí, sau đó nhấn Áp dụng.</p>
+                <fieldset>
+                  <legend>Phong cách hương thơm</legend>
+                  <label class="check"><input type="checkbox" name="style" value="elegant"><span>Thanh lịch &amp; tinh tế</span></label>
+                  <label class="check"><input type="checkbox" name="style" value="natural"><span>Nhẹ nhàng &amp; tự nhiên</span></label>
+                  <label class="check"><input type="checkbox" name="style" value="romantic"><span>Lãng mạn &amp; quyến rũ</span></label>
+                  <label class="check"><input type="checkbox" name="style" value="bold"><span>Sang trọng &amp; nổi bật</span></label>
+                </fieldset>
+                <fieldset>
+                  <legend>Dành cho</legend>
+                  <label class="check"><input type="checkbox" name="audience" value="women"><span>Nữ</span></label>
+                  <label class="check"><input type="checkbox" name="audience" value="men"><span>Nam</span></label>
+                  <label class="check"><input type="checkbox" name="audience" value="unisex"><span>Unisex</span></label>
+                </fieldset>
+              <details class="advanced"><summary>Bộ lọc nâng cao</summary><div class="advanced-content">
+                <fieldset>
+                  <legend>Nhóm mùi hương</legend>
+                  <label class="check"><input type="checkbox" name="scent" value="floral"><span>Hương hoa</span></label>
+                  <label class="check"><input type="checkbox" name="scent" value="fresh"><span>Tươi mát</span></label>
+                  <label class="check"><input type="checkbox" name="scent" value="woody"><span>Hương gỗ</span></label>
+                  <label class="check"><input type="checkbox" name="scent" value="amber"><span>Hổ phách</span></label>
+                </fieldset>
+                <fieldset>
+                  <legend>Độ đậm mùi</legend>
+                  <label class="check"><input type="checkbox" name="intensity" value="light"><span>Nhẹ nhàng</span></label>
+                  <label class="check"><input type="checkbox" name="intensity" value="medium"><span>Vừa phải</span></label>
+                  <label class="check"><input type="checkbox" name="intensity" value="strong"><span>Đậm nét</span></label>
+                </fieldset>
+                <fieldset>
+                  <legend>Bộ sưu tập</legend>
+                  <label class="check"><input type="checkbox" name="collection" value="signature"><span>Signature</span></label>
+                  <label class="check"><input type="checkbox" name="collection" value="garden"><span>Les Jardins</span></label>
+                </fieldset>
+                <fieldset>
+                  <legend>Loại sản phẩm</legend>
+                  <label class="check"><input type="checkbox" name="kind" value="edp"><span>Eau de parfum</span></label>
+                  <label class="check"><input type="checkbox" name="kind" value="edt"><span>Eau de toilette</span></label>
+                </fieldset>
+                <fieldset>
+                  <legend>Khoảng giá</legend>
+                  <label class="check"><input type="checkbox" name="pricegroup" value="low"><span>Dưới 2.500.000 ₫</span></label>
+                  <label class="check"><input type="checkbox" name="pricegroup" value="mid"><span>2.500.000 – 3.500.000 ₫</span></label>
+                  <label class="check"><input type="checkbox" name="pricegroup" value="high"><span>Trên 3.500.000 ₫</span></label>
+                </fieldset>
+              </div></details>
+              <button class="apply-button" type="submit">ÁP DỤNG BỘ LỌC <span aria-hidden="true">→</span></button>
+            </form>
+          </details>
+        </aside>
+        <section id="catalog" class="catalog" aria-labelledby="catalog-title" tabindex="-1">
+          <div class="catalog-top"><h2 id="catalog-title">Bộ sưu tập nước hoa</h2><p id="result-count" role="status" aria-live="polite">6 sản phẩm</p></div>
+          <div class="catalog-toolbar">
+            <label for="featured">Nổi bật<select id="featured"><option value="all">Tất cả sản phẩm</option><option value="best">Tuyển chọn</option><option value="new">Khám phá mới</option></select></label>
+            <label for="sort">Sắp xếp<select id="sort"><option value="default">Gợi ý cho bạn</option><option value="asc">Giá tăng dần</option><option value="desc">Giá giảm dần</option></select></label>
+          </div>
+          <div id="selected-filters" class="selected-filters" aria-label="Bộ lọc đang áp dụng"></div>
+          <noscript><p class="notice">Bật JavaScript để lọc, sắp xếp và xem chi tiết. Toàn bộ sản phẩm vẫn hiển thị bên dưới.</p></noscript>
+          <div class="product-grid">
+            <article class="product" data-style="elegant" data-audience="unisex" data-scent="floral" data-intensity="medium" data-collection="signature" data-kind="edp" data-pricegroup="mid" data-featured="best" data-price="2950000" data-index="0">
+              <!-- Ảnh là nút xem chi tiết, hỗ trợ cả chuột và bàn phím. -->
+              <button type="button" class="product-image" data-detail="iris" aria-label="Xem chi tiết Éclat d’Iris" aria-haspopup="dialog">
+                <img src="assets/iris.png" width="800" height="1000" alt="Ảnh mô phỏng chai nước hoa Éclat d’Iris" loading="lazy">
+                <span class="badge">Tuyển chọn</span><span class="image-arrow" aria-hidden="true">→</span>
+              </button>
+              <div class="product-info">
+                <p class="eyebrow">SIGNATURE</p>
+                <h3><button type="button" class="product-title" data-detail="iris" aria-haspopup="dialog">Éclat d’Iris</button></h3>
+                <p class="product-type">Eau de parfum · 50 ml</p>
+                <p class="notes">Hoa diên vĩ · Gỗ tuyết tùng</p>
+                <p class="style-tag">Thanh lịch & tinh tế</p>
+                <p class="price">2.950.000 ₫</p>
+              </div>
+              <template id="detail-iris">
+                <div class="detail-layout">
+                  <img class="dialog-image" src="assets/iris.png" width="800" height="1000" alt="Ảnh mô phỏng chai nước hoa Éclat d’Iris">
+                  <div class="detail-copy">
+                    <p class="eyebrow">SIGNATURE</p>
+                    <h2 id="detail-title">Éclat d’Iris</h2>
+                    <p class="product-type">Eau de parfum · 50 ml</p>
+                    <p class="detail-price">2.950.000 ₫</p>
+                    <p>Một nét hương phấn mềm mại, gợi cảm giác chỉn chu và thanh lịch.</p>
+                    <dl><div><dt>Nốt hương</dt><dd>Hoa diên vĩ · Gỗ tuyết tùng</dd></div><div><dt>Phong cách</dt><dd>Thanh lịch & tinh tế</dd></div><div><dt>Dành cho</dt><dd>Unisex</dd></div></dl>
+                    <p class="sample-note">Sản phẩm và giá minh họa cho bài tập. Hình ảnh được tạo bằng AI; không phải sản phẩm Guerlain thật.</p>
+                  </div>
+                </div>
+              </template>
+            </article>
+            <article class="product" data-style="natural" data-audience="unisex" data-scent="fresh" data-intensity="light" data-collection="garden" data-kind="edt" data-pricegroup="low" data-featured="new" data-price="2250000" data-index="1">
+              <!-- Ảnh là nút xem chi tiết, hỗ trợ cả chuột và bàn phím. -->
+              <button type="button" class="product-image" data-detail="tea" aria-label="Xem chi tiết Jardin de Thé" aria-haspopup="dialog">
+                <img src="assets/tea.png" width="800" height="1000" alt="Ảnh mô phỏng chai nước hoa Jardin de Thé" loading="lazy">
+                <span class="badge">Khám phá mới</span><span class="image-arrow" aria-hidden="true">→</span>
+              </button>
+              <div class="product-info">
+                <p class="eyebrow">LES JARDINS</p>
+                <h3><button type="button" class="product-title" data-detail="tea" aria-haspopup="dialog">Jardin de Thé</button></h3>
+                <p class="product-type">Eau de toilette · 50 ml</p>
+                <p class="notes">Trà xanh · Cam bergamot</p>
+                <p class="style-tag">Nhẹ nhàng & tự nhiên</p>
+                <p class="price">2.250.000 ₫</p>
+              </div>
+              <template id="detail-tea">
+                <div class="detail-layout">
+                  <img class="dialog-image" src="assets/tea.png" width="800" height="1000" alt="Ảnh mô phỏng chai nước hoa Jardin de Thé">
+                  <div class="detail-copy">
+                    <p class="eyebrow">LES JARDINS</p>
+                    <h2 id="detail-title">Jardin de Thé</h2>
+                    <p class="product-type">Eau de toilette · 50 ml</p>
+                    <p class="detail-price">2.250.000 ₫</p>
+                    <p>Sắc xanh trong trẻo của trà hòa cùng cam tươi, dành cho ngày nhẹ nhàng.</p>
+                    <dl><div><dt>Nốt hương</dt><dd>Trà xanh · Cam bergamot</dd></div><div><dt>Phong cách</dt><dd>Nhẹ nhàng & tự nhiên</dd></div><div><dt>Dành cho</dt><dd>Unisex</dd></div></dl>
+                    <p class="sample-note">Sản phẩm và giá minh họa cho bài tập. Hình ảnh được tạo bằng AI; không phải sản phẩm Guerlain thật.</p>
+                  </div>
+                </div>
+              </template>
+            </article>
+            <article class="product" data-style="romantic" data-audience="women" data-scent="floral" data-intensity="medium" data-collection="signature" data-kind="edp" data-pricegroup="mid" data-featured="best" data-price="3450000" data-index="2">
+              <!-- Ảnh là nút xem chi tiết, hỗ trợ cả chuột và bàn phím. -->
+              <button type="button" class="product-image" data-detail="rose" aria-label="Xem chi tiết Rose de Minuit" aria-haspopup="dialog">
+                <img src="assets/rose.png" width="800" height="1000" alt="Ảnh mô phỏng chai nước hoa Rose de Minuit" loading="lazy">
+                <span class="badge">Tuyển chọn</span><span class="image-arrow" aria-hidden="true">→</span>
+              </button>
+              <div class="product-info">
+                <p class="eyebrow">SIGNATURE</p>
+                <h3><button type="button" class="product-title" data-detail="rose" aria-haspopup="dialog">Rose de Minuit</button></h3>
+                <p class="product-type">Eau de parfum · 50 ml</p>
+                <p class="notes">Hoa hồng · Xạ hương</p>
+                <p class="style-tag">Lãng mạn & quyến rũ</p>
+                <p class="price">3.450.000 ₫</p>
+              </div>
+              <template id="detail-rose">
+                <div class="detail-layout">
+                  <img class="dialog-image" src="assets/rose.png" width="800" height="1000" alt="Ảnh mô phỏng chai nước hoa Rose de Minuit">
+                  <div class="detail-copy">
+                    <p class="eyebrow">SIGNATURE</p>
+                    <h2 id="detail-title">Rose de Minuit</h2>
+                    <p class="product-type">Eau de parfum · 50 ml</p>
+                    <p class="detail-price">3.450.000 ₫</p>
+                    <p>Hoa hồng mềm mại cùng nền xạ hương ấm, gợi không khí một buổi hẹn tối.</p>
+                    <dl><div><dt>Nốt hương</dt><dd>Hoa hồng · Xạ hương</dd></div><div><dt>Phong cách</dt><dd>Lãng mạn & quyến rũ</dd></div><div><dt>Dành cho</dt><dd>Nữ</dd></div></dl>
+                    <p class="sample-note">Sản phẩm và giá minh họa cho bài tập. Hình ảnh được tạo bằng AI; không phải sản phẩm Guerlain thật.</p>
+                  </div>
+                </div>
+              </template>
+            </article>
+            <article class="product" data-style="bold" data-audience="unisex" data-scent="amber" data-intensity="strong" data-collection="signature" data-kind="edp" data-pricegroup="high" data-featured="best" data-price="4250000" data-index="3">
+              <!-- Ảnh là nút xem chi tiết, hỗ trợ cả chuột và bàn phím. -->
+              <button type="button" class="product-image" data-detail="ambre" aria-label="Xem chi tiết Ambre Impérial" aria-haspopup="dialog">
+                <img src="assets/ambre.png" width="800" height="1000" alt="Ảnh mô phỏng chai nước hoa Ambre Impérial" loading="lazy">
+                <span class="badge">Tuyển chọn</span><span class="image-arrow" aria-hidden="true">→</span>
+              </button>
+              <div class="product-info">
+                <p class="eyebrow">SIGNATURE</p>
+                <h3><button type="button" class="product-title" data-detail="ambre" aria-haspopup="dialog">Ambre Impérial</button></h3>
+                <p class="product-type">Eau de parfum · 50 ml</p>
+                <p class="notes">Hổ phách · Vanilla</p>
+                <p class="style-tag">Sang trọng & nổi bật</p>
+                <p class="price">4.250.000 ₫</p>
+              </div>
+              <template id="detail-ambre">
+                <div class="detail-layout">
+                  <img class="dialog-image" src="assets/ambre.png" width="800" height="1000" alt="Ảnh mô phỏng chai nước hoa Ambre Impérial">
+                  <div class="detail-copy">
+                    <p class="eyebrow">SIGNATURE</p>
+                    <h2 id="detail-title">Ambre Impérial</h2>
+                    <p class="product-type">Eau de parfum · 50 ml</p>
+                    <p class="detail-price">4.250.000 ₫</p>
+                    <p>Hổ phách ấm áp và vanilla sâu lắng, dành cho những dịp muốn tạo dấu ấn.</p>
+                    <dl><div><dt>Nốt hương</dt><dd>Hổ phách · Vanilla</dd></div><div><dt>Phong cách</dt><dd>Sang trọng & nổi bật</dd></div><div><dt>Dành cho</dt><dd>Unisex</dd></div></dl>
+                    <p class="sample-note">Sản phẩm và giá minh họa cho bài tập. Hình ảnh được tạo bằng AI; không phải sản phẩm Guerlain thật.</p>
+                  </div>
+                </div>
+              </template>
+            </article>
+            <article class="product" data-style="elegant" data-audience="men" data-scent="woody" data-intensity="strong" data-collection="signature" data-kind="edp" data-pricegroup="mid" data-featured="all" data-price="3150000" data-index="4">
+              <!-- Ảnh là nút xem chi tiết, hỗ trợ cả chuột và bàn phím. -->
+              <button type="button" class="product-image" data-detail="bois" aria-label="Xem chi tiết Bois Serein" aria-haspopup="dialog">
+                <img src="assets/bois.png" width="800" height="1000" alt="Ảnh mô phỏng chai nước hoa Bois Serein" loading="lazy">
+                <span class="badge">Dấu ấn riêng</span><span class="image-arrow" aria-hidden="true">→</span>
+              </button>
+              <div class="product-info">
+                <p class="eyebrow">SIGNATURE</p>
+                <h3><button type="button" class="product-title" data-detail="bois" aria-haspopup="dialog">Bois Serein</button></h3>
+                <p class="product-type">Eau de parfum · 50 ml</p>
+                <p class="notes">Đàn hương · Cỏ hương bài</p>
+                <p class="style-tag">Thanh lịch & tinh tế</p>
+                <p class="price">3.150.000 ₫</p>
+              </div>
+              <template id="detail-bois">
+                <div class="detail-layout">
+                  <img class="dialog-image" src="assets/bois.png" width="800" height="1000" alt="Ảnh mô phỏng chai nước hoa Bois Serein">
+                  <div class="detail-copy">
+                    <p class="eyebrow">SIGNATURE</p>
+                    <h2 id="detail-title">Bois Serein</h2>
+                    <p class="product-type">Eau de parfum · 50 ml</p>
+                    <p class="detail-price">3.150.000 ₫</p>
+                    <p>Hương gỗ trầm tĩnh, kết hợp đàn hương và cỏ hương bài đầy cá tính.</p>
+                    <dl><div><dt>Nốt hương</dt><dd>Đàn hương · Cỏ hương bài</dd></div><div><dt>Phong cách</dt><dd>Thanh lịch & tinh tế</dd></div><div><dt>Dành cho</dt><dd>Nam</dd></div></dl>
+                    <p class="sample-note">Sản phẩm và giá minh họa cho bài tập. Hình ảnh được tạo bằng AI; không phải sản phẩm Guerlain thật.</p>
+                  </div>
+                </div>
+              </template>
+            </article>
+            <article class="product" data-style="natural" data-audience="women" data-scent="floral" data-intensity="light" data-collection="garden" data-kind="edt" data-pricegroup="low" data-featured="new" data-price="2450000" data-index="5">
+              <!-- Ảnh là nút xem chi tiết, hỗ trợ cả chuột và bàn phím. -->
+              <button type="button" class="product-image" data-detail="fleur" aria-label="Xem chi tiết Fleur de Soie" aria-haspopup="dialog">
+                <img src="assets/fleur.png" width="800" height="1000" alt="Ảnh mô phỏng chai nước hoa Fleur de Soie" loading="lazy">
+                <span class="badge">Khám phá mới</span><span class="image-arrow" aria-hidden="true">→</span>
+              </button>
+              <div class="product-info">
+                <p class="eyebrow">LES JARDINS</p>
+                <h3><button type="button" class="product-title" data-detail="fleur" aria-haspopup="dialog">Fleur de Soie</button></h3>
+                <p class="product-type">Eau de toilette · 50 ml</p>
+                <p class="notes">Hoa trắng · Quả lê</p>
+                <p class="style-tag">Nhẹ nhàng & tự nhiên</p>
+                <p class="price">2.450.000 ₫</p>
+              </div>
+              <template id="detail-fleur">
+                <div class="detail-layout">
+                  <img class="dialog-image" src="assets/fleur.png" width="800" height="1000" alt="Ảnh mô phỏng chai nước hoa Fleur de Soie">
+                  <div class="detail-copy">
+                    <p class="eyebrow">LES JARDINS</p>
+                    <h2 id="detail-title">Fleur de Soie</h2>
+                    <p class="product-type">Eau de toilette · 50 ml</p>
+                    <p class="detail-price">2.450.000 ₫</p>
+                    <p>Hoa trắng thoáng nhẹ cùng chút ngọt thanh của quả lê cho ngày thường.</p>
+                    <dl><div><dt>Nốt hương</dt><dd>Hoa trắng · Quả lê</dd></div><div><dt>Phong cách</dt><dd>Nhẹ nhàng & tự nhiên</dd></div><div><dt>Dành cho</dt><dd>Nữ</dd></div></dl>
+                    <p class="sample-note">Sản phẩm và giá minh họa cho bài tập. Hình ảnh được tạo bằng AI; không phải sản phẩm Guerlain thật.</p>
+                  </div>
+                </div>
+              </template>
+            </article>
+          </div>
+          <div id="empty-state" class="empty-state" hidden><h3>Chưa tìm thấy hương thơm phù hợp</h3><p>Thử bỏ bớt tiêu chí để khám phá thêm lựa chọn.</p><button id="empty-reset" class="apply-button" type="button">Xóa tất cả bộ lọc</button></div>
+          <p class="catalog-footnote">Sản phẩm, giá và hình ảnh mô phỏng phục vụ bài tập thiết kế.</p>
+        </section>
+      </div>
+    </div>
+  </main>
+  <footer id="about">
+    <div class="container footer-inner">
+      <div><p class="footer-brand">GUERLAIN<span>INTERFACE STUDY</span></p><p>Cải tiến trải nghiệm khám phá nước hoa<br>dành cho khách hàng Việt Nam.</p></div>
+      <div class="footer-note"><p>Bản thiết kế học tập, không phải website chính thức.<br>Sản phẩm giả định · Ảnh tạo bằng AI · Không bán hàng.</p><a href="https://www.guerlain.com/us/en-us/" target="_blank" rel="noopener noreferrer">Website Guerlain tham khảo →</a></div>
+    </div>
+  </footer>
+  <dialog id="product-dialog" aria-labelledby="detail-title"><button class="dialog-close" type="button" aria-label="Đóng chi tiết sản phẩm">×</button><div id="dialog-content"></div></dialog>
+</body>
+</html>
