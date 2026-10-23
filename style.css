@@ -38,11 +38,13 @@ html {
   scroll-padding-top:24px;
 }
 body {
-  margin:0;
-  background:var(--paper);
-  color:var(--ink);
-  font:13px/1.7 var(--sans);
-  font-synthesis:none;
+  margin: 0;
+  font-family: 'Manrope', Arial, sans-serif;
+  font-size: 13px;
+  line-height: 1.7;
+  color: #171714;
+  background-color: #ffffff;
+  font-synthesis: none;
 }
 h1,h2,h3,p {
   margin:0;
@@ -70,8 +72,9 @@ button,select {
   min-height:44px;
 }
 img {
-  display:block;
-  max-width:100%;
+  display: block;
+  max-width: 100%;
+  height: auto;
 }
 [hidden] {
   display:none!important;
@@ -295,12 +298,17 @@ img {
   min-width:0;
 }
 .catalog-top {
-  display:flex;
-  align-items:center;
-  justify-content:space-between;
-  gap:18px;
-  min-height:40px;
-  padding-bottom:21px;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  gap: 20px;
+  min-height: 64px;
+  padding: 12px 16px;
+  margin-bottom: 16px;
+  border: 1px solid #dedbd4;
+  border-radius: 8px;
+  background-color: #f7f6f2;
 }
 .catalog-top h2 {
   font:400 24px/1.5 var(--serif);
@@ -1016,7 +1024,7 @@ dialog::backdrop {
     width:100%;
   }
   .product-type {
-    font-size:8px;
+   font-size: 12px;
   }
   .notes {
     font-size:9px;
@@ -1137,5 +1145,128 @@ dialog::backdrop {
   }
   *,*::before,*::after {
     transition:none!important;
+  }
+}
+--DANH SÁCH HIỂN THỊ THEO HÀNG NGANG--
+.breadcrumb {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+  list-style: none;
+  margin: 0;
+  padding-left: 0;
+}
+
+.breadcrumb li {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+/* BƯỚC 4: SELECTOR VÀ BOX MODEL */
+
+/* Element selector: các nút sử dụng font của phần tử cha */
+button {
+  font-family: inherit;
+}
+
+/* Class selector: chỉ định dạng sản phẩm được thêm class */
+.product-card {
+  box-sizing: border-box;
+  margin: 8px 0;
+  padding: 16px;
+  border: 1px solid #d8c6a5;
+  border-radius: 12px;
+  background-color: #ffffff;
+}
+
+/* Descendant selector: khung ảnh bên trong thẻ đã chọn */
+.product-card .product-image {
+  border-radius: 8px;
+}
+
+/* Khoảng cách giữa ảnh và phần thông tin */
+.product-card .product-info {
+  padding: 16px 0 0;
+}
+
+/* Tiêu đề bên trong thẻ đã chọn */
+.product-card h3 {
+  margin: 0 0 10px;
+}
+
+/* Định dạng nút tên sản phẩm đang có */
+.product-card .product-title {
+  display: inline-block;
+  width: auto;
+  min-height: 44px;
+  padding: 8px 12px;
+  border: 1px solid #8b7149;
+  border-radius: 6px;
+  background-color: #f7f3ec;
+  color: #171714;
+  font-size: 18px;
+  line-height: 1.5;
+}
+
+.product-card .product-title:hover {
+  background-color: #eee5d6;
+}
+
+/* Làm nổi bật giá */
+.product-card .price {
+  margin-top: 16px;
+  color: #735a35;
+  font-size: 16px;
+  font-weight: 600;
+}
+
+/* BƯỚC 6: THỰC HÀNH CSS GRID */
+
+/* Thử bố cục hai cột trên màn hình rộng */
+@media (min-width: 951px) {
+  .product-grid {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 32px 24px;
+  }
+}
+
+/* Giữ khung ảnh theo tỷ lệ hiện tại */
+.product-grid .product-image {
+  aspect-ratio: 4 / 5;
+  overflow: hidden;
+}
+
+/* Ảnh lấp đầy khung, không bị kéo méo */
+.product-grid .product-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+/* BƯỚC 7: HIỆU ỨNG HOVER VÀ FOCUS */
+
+.product-card .product-title {
+  transition: background-color 0.2s ease,
+              color 0.2s ease;
+}
+
+/* Khi con trỏ chuột nằm trên nút */
+.product-card .product-title:hover {
+  background-color: #735a35;
+  color: #ffffff;
+}
+
+/* Khi nút được chọn bằng bàn phím */
+.product-card .product-title:focus-visible {
+  outline: 3px solid #735a35;
+  outline-offset: 4px;
+}
+
+/* Tôn trọng lựa chọn giảm chuyển động của người dùng */
+@media (prefers-reduced-motion: reduce) {
+  .product-card .product-title {
+    transition: none;
   }
 }

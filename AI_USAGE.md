@@ -104,3 +104,155 @@ Bảng dưới đây là nội dung giải thích đã được AI hướng dẫ
 | Xem chi tiết | HTML `<button>`, `<dialog>`; `script.js` | HTML tạo vùng bấm/cửa sổ; JavaScript nhận sự kiện và mở/đóng cửa sổ |
 
 **Phân biệt:** HTML tạo cấu trúc và nội dung; CSS định dạng; JavaScript xử lý các tương tác như lọc thực tế, sắp xếp và mở chi tiết.
+
+## Buổi 2 – Thực hành HTML5 và CSS3
+
+### Công cụ sử dụng
+ChatGPT.
+
+### Các prompt đã sử dụng
+Các prompt dưới đây được biên tập lại từ nội dung trao đổi thực tế với ChatGPT, giữ nguyên mục đích và yêu cầu chính.
+
+### Prompt 1 – Khảo sát mã nguồn và xác định hướng cải thiện
+
+Tôi đang thực hiện bài tập cá nhân môn Phát triển ứng dụng WEB/TMĐT. Trong Buổi 1, tôi đã xây dựng giao diện danh mục nước hoa dựa trên khảo sát website Guerlain.
+
+Dựa trên mã nguồn hiện có, hãy:
+1. Xác định các thành phần HTML đã được sử dụng.
+2. Chỉ ra các thành phần còn thiếu hoặc chưa hợp lý.
+3. Nêu ba vấn đề về cấu trúc HTML hoặc trình bày.
+4. Đề xuất cách cải thiện bằng kiến thức HTML5 và CSS3 cơ bản.
+5. Giải thích thứ tự nên thực hiện các cải tiến.
+
+Chưa viết lại toàn bộ mã nguồn hoặc tạo website mới. Hãy giúp tôi hiểu mã hiện tại trước khi chỉnh sửa.
+
+### Prompt 2 – Cải thiện cấu trúc HTML5
+
+Tôi muốn cải thiện cấu trúc HTML của website từ Buổi 1.
+
+Hãy kiểm tra:
+1. Các phần tử HTML đang được sử dụng.
+2. Cách sử dụng header, nav, main, section, article và footer.
+3. Thứ bậc tiêu đề h1, h2, h3.
+4. Cách sử dụng img, thuộc tính alt và liên kết a.
+5. Các thẻ chưa đóng hoặc lồng nhau chưa hợp lý.
+6. Những thay đổi phù hợp với nội dung hiện có.
+
+Phân biệt lỗi cần sửa với đề xuất cải thiện. Không thêm phần tử chỉ để kéo dài mã nguồn và không viết lại toàn bộ website. Giải thích lý do của từng thay đổi và vai trò của ít nhất ba phần tử HTML.
+
+### Prompt 3 – Kiểm tra liên kết CSS và định dạng cơ bản
+
+Website của tôi đã có tệp index.html và style.css. Tôi cung cấp cấu trúc thư mục và mã HTML hiện tại.
+
+Hãy hướng dẫn:
+1. Kiểm tra cách liên kết tệp CSS với HTML.
+2. Định dạng font chữ, màu chữ và màu nền.
+3. Thiết lập margin và các quy tắc cơ bản cho body.
+4. Đảm bảo hình ảnh không vượt quá chiều rộng phần tử chứa.
+5. Kiểm tra đường dẫn CSS bằng trình duyệt.
+
+Giữ nguyên các tệp đang có nếu phù hợp. Chỉ đề xuất CSS cần thiết, không sử dụng Bootstrap hoặc Tailwind CSS. Giải thích từng nhóm thuộc tính và cách xác nhận CSS đã được áp dụng.
+
+### Prompt 4 – Thực hành CSS selector và Box Model
+
+Tôi muốn thực hành CSS selector và Box Model trên một thẻ sản phẩm hiện có.
+
+Hãy hướng dẫn:
+1. Sử dụng element selector và class selector.
+2. Sử dụng descendant selector khi phù hợp.
+3. Điều chỉnh margin, padding và border.
+4. Sử dụng border-radius để bo góc.
+5. Định dạng tên và giá sản phẩm.
+6. Định dạng phần tử thao tác hiện có thành nút đơn giản.
+
+Giải thích sự khác nhau giữa margin và padding, cùng tác dụng của box-sizing: border-box. Chỉ đưa ra phần CSS cần thiết, giữ nguyên nội dung sản phẩm và không tạo lại toàn bộ HTML.
+
+### Prompt 5 – Thực hành Flexbox
+
+Tôi muốn thực hành Flexbox trên một khu vực nhỏ của website thương mại điện tử.
+
+Dựa trên HTML hiện có, hãy:
+1. Xác định phần tử cha cần sử dụng display: flex.
+2. Căn chỉnh các phần tử bằng justify-content.
+3. Căn chỉnh theo trục còn lại bằng align-items.
+4. Tạo khoảng cách bằng gap.
+5. Giải thích kết quả khi thay đổi các giá trị của justify-content.
+
+Đưa ra đoạn CSS ngắn phù hợp với khu vực được chọn. Giải thích từng thuộc tính và kết quả mong đợi. Không sử dụng framework hoặc thiết kế lại toàn bộ giao diện.
+
+### Prompt 6 – Thực hành CSS Grid
+
+Tôi đã có danh sách sản phẩm bằng HTML và muốn thực hành CSS Grid.
+
+Hãy hướng dẫn:
+1. Bố trí danh sách thành hai cột.
+2. Điều chỉnh khoảng cách giữa các sản phẩm.
+3. Giữ hình ảnh hiển thị đúng tỷ lệ.
+4. Thay đổi thành ba cột để quan sát sự khác biệt.
+5. Giải thích display: grid, grid-template-columns, repeat và gap.
+6. Giải thích tác dụng của object-fit: cover.
+
+Chỉ viết CSS cần thiết cho danh sách hiện có. Không sử dụng Bootstrap hoặc Tailwind CSS. Hướng dẫn cách kiểm tra kết quả trên trình duyệt.
+
+### Prompt 7 – Bổ sung hiệu ứng hover và focus
+
+Tôi muốn bổ sung phản hồi trực quan cho một nút hoặc liên kết trên website.
+
+Hãy hướng dẫn:
+1. Tạo hiệu ứng hover nhẹ.
+2. Sử dụng transition để chuyển đổi mượt.
+3. Bổ sung focus-visible để hỗ trợ điều hướng bằng bàn phím.
+4. Giữ màu chữ và màu nền dễ nhìn.
+5. Tránh làm thay đổi bố cục khi tương tác.
+
+Chỉ đưa ra phần CSS cần thêm hoặc sửa. Giải thích sự khác nhau giữa hover và focus, đồng thời hướng dẫn kiểm tra bằng chuột và phím Tab.
+
+### Prompt 8 – Kiểm tra và sửa vấn đề trên màn hình nhỏ
+
+Tôi đang kiểm tra giao diện ở chiều rộng 390px bằng DevTools. Phần thông tin loại sản phẩm và dung tích hiển thị khá nhỏ.
+
+Dựa trên ảnh chụp và quy tắc CSS đang áp dụng, hãy:
+1. Xác định nguyên nhân có thể khiến chữ nhỏ.
+2. Chỉ ra selector và thuộc tính cần kiểm tra.
+3. Hướng dẫn thử tăng cỡ chữ từ 8px lên 12px.
+4. Giải thích trường hợp thuộc tính bị gạch ngang hoặc có cảnh báo.
+5. Hướng dẫn lưu thay đổi vào tệp style.css trong VS Code.
+6. Hướng dẫn tải lại trang để kiểm tra kết quả.
+
+Phân biệt nguyên nhân đã xác định với giả thuyết cần kiểm tra. Chỉ sửa khu vực liên quan, không viết lại toàn bộ mã nguồn.
+
+### Prompt 9 – Cập nhật README và đưa bài lên GitHub
+
+Tôi đã có README.md và repository từ Buổi 1. Tôi muốn cập nhật tài liệu để bổ sung nội dung thực hành Buổi 2.
+
+Dựa trên README hiện tại và những thay đổi đã thực hiện, hãy viết lại README gồm:
+1. Giới thiệu bài tập và thông tin sinh viên.
+2. Website tham khảo và khu vực cải tiến.
+3. Chức năng, công nghệ và cấu trúc thư mục.
+4. Hướng dẫn chạy website.
+5. Những cải tiến của Buổi 1 và nội dung thực hành Buổi 2.
+6. Bảng kiểm thử theo kết quả tôi đã xác nhận.
+7. Công cụ AI đã sử dụng và cách kiểm tra kết quả.
+8. Đường dẫn repository và GitHub Pages.
+
+Giữ lại thông tin Buổi 1 còn phù hợp, không tự bịa chức năng hoặc kết quả kiểm thử. Hướng dẫn tôi lưu tệp, commit, push và kiểm tra bản cập nhật trên GitHub.
+
+### Các yêu cầu hỗ trợ bổ sung
+
+Trong quá trình thực hiện, tôi còn yêu cầu ChatGPT:
+- Giải thích yêu cầu của từng bước bằng cách diễn đạt dễ hiểu.
+- Hướng dẫn chọn khu vực cần chụp để làm minh chứng.
+- Hướng dẫn mở và sử dụng DevTools khi phím F12 không hoạt động.
+- Giải thích cách chọn đúng phần tử để xem CSS.
+- Phân biệt việc thử CSS trong DevTools với việc lưu mã nguồn trong VS Code.
+- Hỗ trợ phát hiện và sửa lỗi cú pháp font-size.
+- Hỗ trợ trình bày bảng kiểm thử và chú thích hình cho báo cáo.
+
+### Cách sử dụng kết quả
+Đọc giải thích, đối chiếu với mã nguồn hiện có và chỉnh sửa
+từng khu vực trong VS Code.
+
+### Kiểm tra và điều chỉnh
+Kiểm tra giao diện trên trình duyệt và DevTools.
+Điều chỉnh cỡ chữ thông tin loại sản phẩm và dung tích
+từ 8px lên 12px trên màn hình nhỏ, lưu tệp và tải lại để xác nhận.
