@@ -1,0 +1,190 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+  <meta charset="utf-8">
+    <link rel="icon" type="image/svg+xml" href="images/favicon.svg">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Nguyễn Trần Bảo Nhi | JavaScript Labs 08, 09, 10</title>
+  <meta name="description" content="Trang tổng hợp 3 bài thực hành JavaScript (Lab 08, 09, 10) của Nguyễn Trần Bảo Nhi, học phần Phát triển ứng dụng TMĐT, UEH.">
+
+  <link rel="stylesheet" href="css/fonts.css">
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+<a class="skip" href="#gioi-thieu">Bỏ qua phần đầu trang</a>
+
+<!-- ================= Thanh điều hướng ================= -->
+<header class="topbar">
+  <div class="wrap">
+    <a class="mark" href="#top" aria-label="Về đầu trang">BN<span>.</span>JS</a>
+    <button class="menu-toggle" type="button" aria-expanded="false" aria-controls="menu">Menu</button>
+    <ul class="menu" id="menu">
+      <li><a href="#gioi-thieu">Giới thiệu</a></li>
+      <li><a href="#labs">3 bài Lab</a></li>
+      <li><a href="#kien-thuc">Kiến thức đã học</a></li>
+      <li><a href="#tu-danh-gia">Tự đánh giá</a></li>
+    </ul>
+  </div>
+</header>
+
+<main id="top">
+
+  <!-- ================= 3.1 Thông tin cá nhân ================= -->
+  <section class="hero">
+    <div class="wrap">
+      <figure class="portrait">
+        <img src="images/avatar.jpg" alt="Ảnh đại diện của Nguyễn Trần Bảo Nhi" width="720" height="900">
+      </figure>
+
+      <div class="hero-text">
+        <p class="course">Phát triển ứng dụng TMĐT, Chương 4: JavaScript</p>
+        <h1 class="name"><span class="family">Nguyễn Trần</span> <span class="given">Bảo Nhi</span></h1>
+
+        <dl class="facts">
+          <div>
+            <dt>Mã số sinh viên</dt>
+            <dd>31241021234</dd>
+          </div>
+          <div>
+            <dt>Lớp học phần</dt>
+            <dd>26C1INF50902701</dd>
+          </div>
+          <div>
+            <dt>GitHub</dt>
+            <dd><a href="https://github.com/chloenguynnn" target="_blank" rel="noopener">chloenguynnn</a></dd>
+          </div>
+        </dl>
+
+        <div class="actions">
+          <a class="btn" href="#labs">Xem 3 bài Lab</a>
+          <a class="btn ghost" href="https://github.com/chloenguynnn/ecommerce-ui-improvement" target="_blank" rel="noopener">Mã nguồn trên GitHub</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <div class="strip" aria-hidden="true">
+    <div class="strip-track">Language Foundations<b>/</b>DOM and Events<b>/</b>jQuery<b>/</b>29 Exercises<b>/</b>Lab 08<b>/</b>Lab 09<b>/</b>Lab 10<b>/</b></div>
+  </div>
+
+  <!-- ================= 3.2 Giới thiệu về bài thực hành ================= -->
+  <section class="block about" id="gioi-thieu">
+    <div class="wrap">
+      <h2>Về bài thực hành này</h2>
+      <div>
+        <p class="lead">Đây là nơi em tập hợp toàn bộ 29 Exercise của ba bài Lab JavaScript trong học phần Phát triển ứng dụng TMĐT. Mục tiêu của em là đi từ cú pháp nền tảng của ngôn ngữ, sang cách điều khiển trang web qua DOM và sự kiện, rồi đến việc viết gọn hơn bằng thư viện jQuery.</p>
+        <p class="lead">HTML dựng khung và CSS lo phần hình thức, còn JavaScript là thứ làm cho trang web phản hồi lại người dùng. Một nút "Thêm vào giỏ", một form báo lỗi ngay khi nhập thiếu, một danh sách sản phẩm tải thêm mà không cần nạp lại trang đều do JavaScript đảm nhận. Với một website thương mại điện tử, đó là phần quyết định khách hàng mua sắm có thuận tiện hay không.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- ================= 3.3 Danh sách và liên kết đến các bài Lab ================= -->
+  <section class="block labs" id="labs">
+    <div class="wrap">
+      <h2>Ba bài Lab</h2>
+      <ul class="lab-list">
+        <li>
+          <a class="lab-row" href="Lab08/index.html">
+            <span class="lab-num">08</span>
+            <div>
+              <h3>JavaScript 1: Language Foundations</h3>
+              <p>11 Exercise về cách đưa JavaScript vào trang, Console, String, Date, Math, mảng, hàm và đối tượng.</p>
+            </div>
+            <span class="lab-go">Mở Lab 08</span>
+          </a>
+        </li>
+        <li>
+          <a class="lab-row" href="Lab09/index.html">
+            <span class="lab-num">09</span>
+            <div>
+              <h3>JavaScript 2: DOM and Events</h3>
+              <p>8 Exercise về chọn và thay đổi phần tử HTML, xử lý sự kiện, gỡ lỗi và kiểm tra dữ liệu form.</p>
+            </div>
+            <span class="lab-go">Mở Lab 09</span>
+          </a>
+        </li>
+        <li>
+          <a class="lab-row" href="Lab10/index.html">
+            <span class="lab-num">10</span>
+            <div>
+              <h3>JavaScript 3: jQuery</h3>
+              <p>10 Exercise về bộ chọn jQuery, sự kiện, chèn phần tử, hiệu ứng, GET request và jqXHR.</p>
+            </div>
+            <span class="lab-go">Mở Lab 10</span>
+          </a>
+        </li>
+      </ul>
+    </div>
+  </section>
+
+  <!-- ================= 3.4 Những kiến thức và kỹ năng đã học được ================= -->
+  <section class="block" id="kien-thuc">
+    <div class="wrap">
+      <h2>Kiến thức đã học</h2>
+
+      <div class="tabs" role="tablist" aria-label="Kiến thức theo từng Lab">
+        <button class="tab" role="tab" id="tab-08" aria-controls="panel-08" aria-selected="true" type="button">Lab 08</button>
+        <button class="tab" role="tab" id="tab-09" aria-controls="panel-09" aria-selected="false" tabindex="-1" type="button">Lab 09</button>
+        <button class="tab" role="tab" id="tab-10" aria-controls="panel-10" aria-selected="false" tabindex="-1" type="button">Lab 10</button>
+      </div>
+
+      <div class="panel" role="tabpanel" id="panel-08" aria-labelledby="tab-08">
+        <h3>Nền tảng ngôn ngữ <small>Lab 08, JavaScript 1: Language Foundations</small></h3>
+        <div>
+          <p>Em biết ba cách đưa JavaScript vào trang: viết thẳng trong thẻ <code>&lt;script&gt;</code>, tách ra file <code>.js</code> riêng, và dùng <code>&lt;noscript&gt;</code> để vẫn có nội dung cho người đã tắt JavaScript. Em cũng tập bật tắt JavaScript trên trình duyệt để thấy trang thay đổi thế nào.</p>
+          <p>Console trong DevTools là công cụ em dùng nhiều nhất. Khi cố tình gõ sai <code>document</code> thành <code>doccumment</code>, trang không báo gì nhưng Console chỉ đúng dòng lỗi. Em còn dùng Console để xem giá trị biến và ghi thông báo bằng <code>console.log</code>, <code>console.warn</code>, <code>console.error</code>.</p>
+          <p>Về ngôn ngữ, em hiểu sự khác nhau giữa <code>==</code> và <code>===</code> qua ví dụ so sánh chuỗi tạo bằng <code>new String()</code> với chuỗi viết trực tiếp. Em dùng mảng với <code>push</code>, <code>unshift</code> và vòng lặp để vẽ một bảng lịch 30 ngày, làm việc với <code>Date</code> và <code>Math</code>.</p>
+          <p>Phần em thấy mới nhất là hàm cũng là một đối tượng: có thể gán hàm vào biến, viết hàm ẩn danh, và truyền hàm làm tham số cho hàm khác, như bài tính thuế cho giỏ hàng. Em cũng tạo đối tượng theo bốn cách, từ <code>new Object()</code> đến hàm khởi tạo, rồi duyệt một mảng các quốc gia bằng <code>for..in</code>.</p>
+        </div>
+      </div>
+
+      <div class="panel" role="tabpanel" id="panel-09" aria-labelledby="tab-09" hidden>
+        <h3>DOM và sự kiện <small>Lab 09, JavaScript 2: DOM and Events</small></h3>
+        <div>
+          <p>Sang Lab 09 em không dùng <code>document.write</code> nữa mà làm việc trực tiếp với cây DOM. Em chọn phần tử theo id, theo tên thẻ, theo class, và bằng <code>querySelector</code> với cú pháp giống hệt bộ chọn CSS.</p>
+          <p>Khi đã chọn được phần tử, em đọc và đổi nội dung qua <code>innerHTML</code>, <code>innerText</code>, đổi thuộc tính bằng <code>setAttribute</code> và đổi màu qua <code>style</code>. Em tạo thẻ mới bằng <code>createElement</code> rồi gắn vào trang, và xóa phần tử bằng <code>removeChild</code>. Em cũng nhận ra khoảng trắng giữa các thẻ được tính là một nút text, nên <code>firstChild</code> không phải lúc nào cũng là thẻ đầu tiên.</p>
+          <p>Với sự kiện, em dùng <code>addEventListener</code> cho <code>click</code>, <code>mouseover</code>, <code>mouseout</code>, <code>focus</code>, <code>blur</code> và <code>submit</code>. Bài học em nhớ nhất là script đặt trong <code>&lt;head&gt;</code> chạy trước khi trang tải xong nên không tìm thấy phần tử; phải đợi sự kiện <code>load</code>.</p>
+          <p>Cuối Lab em viết phần kiểm tra form đăng ký: tô sáng ô đang nhập, và khi bấm gửi mà còn ô trống thì chặn lại bằng <code>preventDefault</code> rồi hiện danh sách ô bị thiếu. Em cũng tập đặt breakpoint trong tab Sources để xem biến sự kiện <code>e</code> chứa gì.</p>
+        </div>
+      </div>
+
+      <div class="panel" role="tabpanel" id="panel-10" aria-labelledby="tab-10" hidden>
+        <h3>jQuery <small>Lab 10, JavaScript 3: jQuery</small></h3>
+        <div>
+          <p>Em nạp jQuery từ CDN và chuẩn bị thêm một bản dự phòng trong repository, phòng khi CDN không tải được. Khi đưa lên GitHub Pages em phải đổi đường dẫn sang HTTPS, vì trang HTTPS không cho nạp script qua HTTP.</p>
+          <p>Hàm <code>$()</code> luôn trả về một tập phần tử, nên cùng một lệnh như <code>css()</code> hay <code>addClass()</code> chạy được cho một hay nhiều phần tử mà không cần vòng lặp. Em dùng thêm các bộ chọn nâng cao như <code>:password</code>, <code>:nth-child(4n)</code> và <code>:contains()</code>.</p>
+          <p>Em gắn sự kiện bằng <code>on()</code>, gỡ bằng <code>off()</code>, viết nối tiếp nhiều lệnh trên một phần tử, và đặt code trong <code>$(function(){...})</code> để chắc chắn DOM đã sẵn sàng. Em chèn phần tử bằng <code>before</code>, <code>after</code>, <code>append</code>, <code>prepend</code> và thấy mỗi lệnh đặt phần tử ở vị trí khác nhau thế nào.</p>
+          <p>Phần hiệu ứng có <code>fadeIn</code>, <code>slideToggle</code> và <code>animate()</code> để nối nhiều chuyển động liên tiếp; em làm được khung xem ảnh lớn đi theo con trỏ chuột. Cuối cùng em gửi GET request bằng <code>$.get()</code> để lấy danh sách thành phố dạng JSON, và dùng <code>done</code>, <code>fail</code>, <code>always</code> của jqXHR để xử lý cả khi thành công lẫn khi lỗi.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ================= 3.5 Tự đánh giá sau khi hoàn thành ================= -->
+  <section class="block review" id="tu-danh-gia">
+    <div class="wrap">
+      <h2>Tự đánh giá</h2>
+      <p>Sau ba bài Lab, em nắm được JavaScript từ nền tảng đến ứng dụng: biến, hàm, mảng và đối tượng ở Lab 08; truy xuất DOM, bắt sự kiện và kiểm tra form ở Lab 09; jQuery, hiệu ứng và GET request ở Lab 10. Lab 09 hữu ích nhất vì đó là lúc trang web bắt đầu phản hồi người dùng, nhưng cũng khó nhất: em mất khá lâu mới hiểu vì sao script chạy trước khi DOM tải xong thì báo lỗi. Với website thương mại điện tử, em có thể kiểm tra form đăng ký trước khi gửi, cập nhật số lượng và tổng tiền trong giỏ hàng, phóng to ảnh sản phẩm khi rê chuột, hoặc tải danh sách sản phẩm mà không nạp lại trang. Em cần luyện thêm kỹ năng gỡ lỗi bằng DevTools và xử lý dữ liệu bất đồng bộ.</p>
+    </div>
+  </section>
+
+</main>
+
+<!-- ================= Chân trang ================= -->
+<footer class="foot">
+  <div class="wrap">
+    <div>
+      <p class="foot-name">Nguyễn Trần Bảo Nhi</p>
+      <p>MSSV 31241021234, lớp 26C1INF50902701. Giảng viên: TS Nguyễn Mạnh Tuấn.</p>
+    </div>
+    <ul class="foot-links">
+      <li><a href="https://github.com/chloenguynnn" target="_blank" rel="noopener">GitHub</a></li>
+      <li><a href="https://github.com/chloenguynnn/ecommerce-ui-improvement" target="_blank" rel="noopener">Repository</a></li>
+      <li><a href="https://www.facebook.com/nguyen.tran.bao.nhi.226447" target="_blank" rel="noopener">Facebook</a></li>
+    </ul>
+  </div>
+</footer>
+
+<script src="js/main.js"></script>
+</body>
+</html>

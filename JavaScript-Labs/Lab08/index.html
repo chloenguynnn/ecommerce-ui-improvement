@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+  <meta charset="utf-8">
+  <link rel="icon" type="image/svg+xml" href="../images/favicon.svg">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Lab 08 - JavaScript 1: Language Foundations | Nguyễn Trần Bảo Nhi</title>
+  <link rel="stylesheet" href="../css/fonts.css">
+  <link rel="stylesheet" href="../css/style.css">
+</head>
+<body>
+<header class="topbar">
+  <div class="wrap">
+    <a class="mark" href="../index.html" aria-label="Về trang chủ JavaScript-Labs">BN<span>.</span>JS</a>
+    <button class="menu-toggle" type="button" aria-expanded="false" aria-controls="menu">Menu</button>
+    <ul class="menu" id="menu">
+      <li><a href="../index.html">Trang chủ</a></li>
+      <li><a href="../Lab08/index.html" class="is-current">Lab 08</a></li>
+      <li><a href="../Lab09/index.html">Lab 09</a></li>
+      <li><a href="../Lab10/index.html">Lab 10</a></li>
+    </ul>
+  </div>
+</header>
+
+<main>
+  <section class="lab-head">
+    <div class="wrap">
+      <p class="crumb"><a href="../index.html">JavaScript-Labs</a> / Lab 08</p>
+      <h1>Lab 08 <span>Language Foundations</span></h1>
+      <p class="lead">11 Exercise làm quen với JavaScript: cách đưa script vào trang, dùng Console, các đối tượng có sẵn, mảng, hàm và đối tượng. Bấm vào từng ô để mở bài chạy thực tế.</p>
+    </div>
+  </section>
+
+  <div class="wrap">
+    <ul class="ex-list">
+      <li>
+        <a href="exercise01.html">
+          <div class="ex-id">8.1</div>
+          <h2>Enabling/Disabling JavaScript</h2>
+          <p>Trang tự kiểm tra trình duyệt đang bật hay tắt JavaScript: khi bật thì script ghi ra dòng “You have JavaScript enabled”, khi tắt thì thẻ &lt;noscript&gt; hiện dòng “You have JavaScript disabled”.</p>
+          <p class="files">Mã nguồn: <code>exercise01.html</code></p>
+        </a>
+      </li>
+      <li>
+        <a href="exercise02.html">
+          <div class="ex-id">8.2</div>
+          <h2>Embedded JavaScript</h2>
+          <p>Nhúng một đoạn script trong thẻ &lt;head&gt; để hiện hộp thoại alert(&quot;Hello World!&quot;) trước khi trang hiển thị.</p>
+          <p class="files">Mã nguồn: <code>exercise02.html</code></p>
+        </a>
+      </li>
+      <li>
+        <a href="exercise03.html">
+          <div class="ex-id">8.3</div>
+          <h2>External JavaScript</h2>
+          <p>Tách code ra file hello.js và nạp bằng thuộc tính src. File này dùng document.write để in dòng chữ và giá trị biến count lên đầu trang.</p>
+          <p class="files">Mã nguồn: <code>exercise03.html</code>, <code>hello.js</code></p>
+        </a>
+      </li>
+      <li>
+        <a href="exercise04.html">
+          <div class="ex-id">8.4</div>
+          <h2>Using NoScript</h2>
+          <p>Thêm thẻ &lt;noscript&gt; để hiển thị thông báo thay thế cho người dùng đã tắt JavaScript.</p>
+          <p class="files">Mã nguồn: <code>exercise04.html</code>, <code>hello.js</code></p>
+        </a>
+      </li>
+      <li>
+        <a href="exercise05.html">
+          <div class="ex-id">8.5</div>
+          <h2>Using the Browser Console</h2>
+          <p>Chuyển hello.js vào thư mục js/, cố tình viết sai document thành doccumment để đọc lỗi trong Console, sửa lỗi, rồi dùng Console để xem biến count, output, temp và ghi thông báo bằng console.log, console.warn, console.error.</p>
+          <p class="files">Mã nguồn: <code>exercise05.html</code>, <code>js/hello.js</code></p>
+        </a>
+      </li>
+      <li>
+        <a href="exercise06.html">
+          <div class="ex-id">8.6</div>
+          <h2>Using Built-in JavaScript Objects</h2>
+          <p>So sánh chuỗi tạo bằng new String() với chuỗi viết trực tiếp qua typeof, == và ===; in ngày giờ hiện tại bằng Date và thử Math.PI, Math.sqrt, Math.random.</p>
+          <p class="files">Mã nguồn: <code>exercise06.html</code>, <code>js/exercise06.js</code></p>
+        </a>
+      </li>
+      <li>
+        <a href="exercise07.html">
+          <div class="ex-id">8.7</div>
+          <h2>Arrays</h2>
+          <p>Tạo mảng các ngày trong tuần, thêm Sat bằng push() và Sun bằng unshift(), rồi dùng vòng lặp và điều kiện để vẽ bảng lịch 30 ngày bắt đầu từ Chủ nhật; Tues và Thur được in nghiêng màu đỏ.</p>
+          <p class="files">Mã nguồn: <code>exercise07.html</code>, <code>js/exercise07.js</code></p>
+        </a>
+      </li>
+      <li>
+        <a href="exercise08.html">
+          <div class="ex-id">8.8</div>
+          <h2>JavaScript Functions</h2>
+          <p>Viết hàm outputBox() qua ba bước: tự in ra trang, trả về chuỗi, rồi nhận tham số num; gọi hàm trong vòng lặp để tạo 5 ô div. Thử phạm vi biến: biến khai báo bằng var trong hàm không dùng được bên ngoài, bỏ var thì thành biến toàn cục.</p>
+          <p class="files">Mã nguồn: <code>exercise08.html</code>, <code>js/exercise08.js</code></p>
+        </a>
+      </li>
+      <li>
+        <a href="exercise09.html">
+          <div class="ex-id">8.9</div>
+          <h2>Functions as Objects</h2>
+          <p>Tính tổng tiền giỏ hàng có thuế 5%. Hàm tính thuế suất lần lượt được viết thành hàm lồng nhau, hàm gán cho biến, hàm ẩn danh và cuối cùng là hàm truyền làm tham số cho calculateTax().</p>
+          <p class="files">Mã nguồn: <code>exercise09.html</code>, <code>js/exercise09.js</code></p>
+        </a>
+      </li>
+      <li>
+        <a href="exercise10.html">
+          <div class="ex-id">8.10</div>
+          <h2>Creating JavaScript Objects</h2>
+          <p>Tạo đối tượng đơn hàng theo bốn cách: new Object(), ngoặc vuông, object literal và hàm khởi tạo. Bản cuối dùng hàm khởi tạo order() có phương thức total() và output() để in hai đơn hàng.</p>
+          <p class="files">Mã nguồn: <code>exercise10.html</code>, <code>js/exercise10.js</code></p>
+        </a>
+      </li>
+      <li>
+        <a href="exercise11.html">
+          <div class="ex-id">8.11</div>
+          <h2>Arrays of Objects</h2>
+          <p>Duyệt mảng các đối tượng Country, truy cập thuộc tính bằng dấu chấm và ngoặc vuông, rồi dùng for..in để in mọi thuộc tính của từng quốc gia kèm hình lá cờ.</p>
+          <p class="files">Mã nguồn: <code>exercise11.html</code>, <code>js/exercise11.js</code></p>
+        </a>
+      </li>
+    </ul>
+
+    <div class="pager">
+      <a class="btn ghost" href="../index.html">Trang chủ</a>
+      <a class="btn" href="../Lab09/index.html">Sang Lab 09</a>
+    </div>
+  </div>
+</main>
+
+<footer class="foot">
+  <div class="wrap">
+    <div>
+      <p class="foot-name">Nguyễn Trần Bảo Nhi</p>
+      <p>MSSV 31241021234, lớp 26C1INF50902701.</p>
+    </div>
+    <ul class="foot-links">
+      <li><a href="https://github.com/chloenguynnn" target="_blank" rel="noopener">GitHub</a></li>
+      <li><a href="https://github.com/chloenguynnn/ecommerce-ui-improvement" target="_blank" rel="noopener">Repository</a></li>
+    </ul>
+  </div>
+</footer>
+
+<script src="../js/main.js"></script>
+</body>
+</html>

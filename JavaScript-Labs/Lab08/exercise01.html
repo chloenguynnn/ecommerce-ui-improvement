@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+   <meta charset="utf-8">
+    <link rel="icon" type="image/svg+xml" href="../images/favicon.svg">
+   <meta name="viewport" content="width=device-width, initial-scale=1">
+   <title>Exercise 8.1 - Enabling/Disabling JavaScript</title>
+   <link rel="stylesheet" type="text/css" href="css/lab08.css" />
+   <style>
+      body { font-family: Arial, Helvetica, sans-serif; margin: 40px; }
+      .status { padding: 20px; font-size: 1.4em; border: solid 1px black; max-width: 32em; }
+      .on  { background-color: #E4F8D3; }
+      .off { background-color: #FFD6D6; }
+   </style>
+</head>
+<body>
+<header>
+  <h1>JavaScript Test</h1>
+</header>
+
+<!-- Exercise 8.1: trang tự kiểm tra trình duyệt đang bật hay tắt JavaScript.
+     (Trang mẫu của giáo trình: http://examples.funwebdev.com/JavaScriptTest.php) -->
+
+<!-- Khối này do JavaScript ghi ra, nên chỉ xuất hiện khi JavaScript đang BẬT -->
+<script type="text/javascript">
+   document.write("<p class='status on'>You have JavaScript enabled</p>");
+   document.write("<p>Checked at: " + new Date().toLocaleString() + "</p>");
+</script>
+
+<!-- Khối này chỉ hiển thị khi JavaScript đang TẮT -->
+<noscript>
+   <p class="status off">You have JavaScript disabled</p>
+</noscript>
+
+<p>Cách tắt/bật trong Chrome: Settings &gt; Privacy and security &gt; Site settings &gt; JavaScript,
+   hoặc mở DevTools (F12) &gt; Ctrl+Shift+P &gt; gõ "Disable JavaScript".</p>
+<p><a href="index.html">&larr; Lab 08</a></p>
+<script src="../js/labnav.js" defer></script>
+</body>
+</html>
