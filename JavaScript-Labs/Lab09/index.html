@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+  <meta charset="utf-8">
+  <link rel="icon" type="image/svg+xml" href="../images/favicon.svg">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Lab 09 - JavaScript 2: DOM and Events | Nguyễn Trần Bảo Nhi</title>
+  <link rel="stylesheet" href="../css/fonts.css">
+  <link rel="stylesheet" href="../css/style.css">
+</head>
+<body>
+<header class="topbar">
+  <div class="wrap">
+    <a class="mark" href="../index.html" aria-label="Về trang chủ JavaScript-Labs">BN<span>.</span>JS</a>
+    <button class="menu-toggle" type="button" aria-expanded="false" aria-controls="menu">Menu</button>
+    <ul class="menu" id="menu">
+      <li><a href="../index.html">Trang chủ</a></li>
+      <li><a href="../Lab08/index.html">Lab 08</a></li>
+      <li><a href="../Lab09/index.html" class="is-current">Lab 09</a></li>
+      <li><a href="../Lab10/index.html">Lab 10</a></li>
+    </ul>
+  </div>
+</header>
+
+<main>
+  <section class="lab-head">
+    <div class="wrap">
+      <p class="crumb"><a href="../index.html">JavaScript-Labs</a> / Lab 09</p>
+      <h1>Lab 09 <span>DOM and Events</span></h1>
+      <p class="lead">8 Exercise về cây DOM và sự kiện: chọn phần tử, thay đổi nội dung, tạo và xóa phần tử, xử lý sự kiện, gỡ lỗi và kiểm tra dữ liệu form. Bấm vào từng ô để mở bài chạy thực tế.</p>
+    </div>
+  </section>
+
+  <div class="wrap">
+    <ul class="ex-list">
+      <li>
+        <a href="exercise01.html">
+          <div class="ex-id">9.1</div>
+          <h2>Basic DOM Selection</h2>
+          <p>Chọn phần tử bằng getElementById, getElementsByTagName, getElementsByClassName, querySelector, querySelectorAll; đọc và ghi innerHTML, innerText, thuộc tính class và style. 14 bước chạy nối tiếp, kết quả từng bước được ghi ra Console.</p>
+          <p class="files">Mã nguồn: <code>exercise01.html</code>, <code>js/exercise01.js</code></p>
+        </a>
+      </li>
+      <li>
+        <a href="exercise02.html">
+          <div class="ex-id">9.2</div>
+          <h2>DOM Family Relations</h2>
+          <p>Di chuyển trong cây DOM bằng firstChild, nextSibling, parentNode trên Console; duyệt childNodes của #stories, in nodeType và tô nền cho các nút là phần tử (nodeType = 1).</p>
+          <p class="files">Mã nguồn: <code>exercise02.html</code>, <code>js/exercise02.js</code></p>
+        </a>
+      </li>
+      <li>
+        <a href="exercise03.html">
+          <div class="ex-id">9.3</div>
+          <h2>Modifying the DOM</h2>
+          <p>Tạo thẻ &lt;p&gt; mới bằng createElement và createTextNode rồi gắn vào #first bằng appendChild; xóa mục “24 chapters” khỏi danh sách bằng removeChild.</p>
+          <p class="files">Mã nguồn: <code>exercise03.html</code>, <code>js/exercise03.js</code></p>
+        </a>
+      </li>
+      <li>
+        <a href="exercise04.html">
+          <div class="ex-id">9.4</div>
+          <h2>Simple Event Handling</h2>
+          <p>Gắn sự kiện bằng addEventListener: rê chuột lên ảnh thì ảnh chuyển xám, rời chuột thì trở lại màu; nút Hide/Show ẩn hiện đoạn văn có hiệu ứng mờ dần nhờ CSS transition và setTimeout.</p>
+          <p class="files">Mã nguồn: <code>exercise04.html</code>, <code>js/exercise04.js</code></p>
+        </a>
+      </li>
+      <li>
+        <a href="exercise05.html">
+          <div class="ex-id">9.5</div>
+          <h2>Responding to Load Events</h2>
+          <p>Script đặt trong &lt;head&gt; chạy trước khi DOM có div1 nên báo lỗi; chuyển code vào sự kiện load của window thì alert hiện đúng “This is div 1”.</p>
+          <p class="files">Mã nguồn: <code>exercise05.html</code>, <code>js/exercise05.js</code></p>
+        </a>
+      </li>
+      <li>
+        <a href="exercise06.html">
+          <div class="ex-id">9.6</div>
+          <h2>Debugging Events</h2>
+          <p>Gắn sự kiện mouseover cho mọi ô .movingDiv và dùng e.target.id để biết ô nào phát sự kiện; đặt breakpoint trong tab Sources để xem biến e và e.target.</p>
+          <p class="files">Mã nguồn: <code>exercise06.html</code>, <code>js/exercise06.js</code></p>
+        </a>
+      </li>
+      <li>
+        <a href="exercise07.html">
+          <div class="ex-id">9.7</div>
+          <h2>Working with Forms</h2>
+          <p>Dùng sự kiện focus và blur: ô đang nhập trong form Registration được tô nền vàng, rời ô thì trở lại nền trắng.</p>
+          <p class="files">Mã nguồn: <code>exercise07.html</code>, <code>js/exercise07.js</code></p>
+        </a>
+      </li>
+      <li>
+        <a href="exercise08.html">
+          <div class="ex-id">9.8</div>
+          <h2>Form Validation</h2>
+          <p>Bắt sự kiện submit của form, tìm các ô còn trống, chặn gửi form bằng preventDefault() và hiện thông báo liệt kê các ô thiếu trong khối #errors bên dưới form.</p>
+          <p class="files">Mã nguồn: <code>exercise08.html</code>, <code>js/exercise08.js</code></p>
+        </a>
+      </li>
+    </ul>
+
+    <div class="pager">
+      <a class="btn ghost" href="../Lab08/index.html">Lab 08</a>
+      <a class="btn" href="../Lab10/index.html">Sang Lab 10</a>
+    </div>
+  </div>
+</main>
+
+<footer class="foot">
+  <div class="wrap">
+    <div>
+      <p class="foot-name">Nguyễn Trần Bảo Nhi</p>
+      <p>MSSV 31241021234, lớp 26C1INF50902701.</p>
+    </div>
+    <ul class="foot-links">
+      <li><a href="https://github.com/chloenguynnn" target="_blank" rel="noopener">GitHub</a></li>
+      <li><a href="https://github.com/chloenguynnn/ecommerce-ui-improvement" target="_blank" rel="noopener">Repository</a></li>
+    </ul>
+  </div>
+</footer>
+
+<script src="../js/main.js"></script>
+</body>
+</html>
