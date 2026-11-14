@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+  <meta charset="utf-8">
+  <link rel="icon" type="image/svg+xml" href="../images/favicon.svg">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Lab 10 - JavaScript 3: jQuery | Nguyễn Trần Bảo Nhi</title>
+  <link rel="stylesheet" href="../css/fonts.css">
+  <link rel="stylesheet" href="../css/style.css">
+</head>
+<body>
+<header class="topbar">
+  <div class="wrap">
+    <a class="mark" href="../index.html" aria-label="Về trang chủ JavaScript-Labs">BN<span>.</span>JS</a>
+    <button class="menu-toggle" type="button" aria-expanded="false" aria-controls="menu">Menu</button>
+    <ul class="menu" id="menu">
+      <li><a href="../index.html">Trang chủ</a></li>
+      <li><a href="../Lab08/index.html">Lab 08</a></li>
+      <li><a href="../Lab09/index.html">Lab 09</a></li>
+      <li><a href="../Lab10/index.html" class="is-current">Lab 10</a></li>
+    </ul>
+  </div>
+</header>
+
+<main>
+  <section class="lab-head">
+    <div class="wrap">
+      <p class="crumb"><a href="../index.html">JavaScript-Labs</a> / Lab 10</p>
+      <h1>Lab 10 <span>jQuery</span></h1>
+      <p class="lead">10 Exercise với thư viện jQuery: nạp thư viện, bộ chọn, sự kiện, chèn phần tử, hiệu ứng, GET request và jqXHR. Bấm vào từng ô để mở bài chạy thực tế.</p>
+    </div>
+  </section>
+
+  <div class="wrap">
+    <ul class="ex-list">
+      <li>
+        <a href="exercise01.html">
+          <div class="ex-id">10.1</div>
+          <h2>Set Up jQuery</h2>
+          <p>Nạp jQuery 3.1.1 từ CDN qua HTTPS và thêm đoạn dự phòng tự nạp bản js/jquery-3.1.1.min.js trong repository nếu CDN không tải được. Trang in ra phiên bản jQuery để xác nhận.</p>
+          <p class="files">Mã nguồn: <code>exercise01.html</code>, <code>js/exercise01.js</code>, <code>js/jquery-3.1.1.min.js</code></p>
+        </a>
+      </li>
+      <li>
+        <a href="exercise02.html">
+          <div class="ex-id">10.2</div>
+          <h2>Basic Selectors</h2>
+          <p>Dùng hàm $() với bộ chọn id, thẻ và class; thử val(), html(), attr(), css() và addClass(). Một lệnh áp dụng cho cả tập phần tử mà không cần vòng lặp.</p>
+          <p class="files">Mã nguồn: <code>exercise02.html</code>, <code>js/exercise02.js</code></p>
+        </a>
+      </li>
+      <li>
+        <a href="exercise03.html">
+          <div class="ex-id">10.3</div>
+          <h2>Advanced Selectors</h2>
+          <p>Dùng bộ chọn nâng cao :password, :nth-child(4n) và :contains(&quot;word&quot;) để tô màu các phần tử trong form Registration.</p>
+          <p class="files">Mã nguồn: <code>exercise03.html</code>, <code>js/exercise03.js</code></p>
+        </a>
+      </li>
+      <li>
+        <a href="exercise04.html">
+          <div class="ex-id">10.4</div>
+          <h2>jQuery Listeners</h2>
+          <p>Gắn nối tiếp ba sự kiện cho ô .panel bằng on(): mousemove báo tọa độ chuột, mouseleave báo “goodbye!”, click gỡ sự kiện mousemove bằng off(). Code đặt trong $(function(){...}).</p>
+          <p class="files">Mã nguồn: <code>exercise04.html</code>, <code>js/exercise04.js</code></p>
+        </a>
+      </li>
+      <li>
+        <a href="exercise05.html">
+          <div class="ex-id">10.5</div>
+          <h2>Inserting DOM Elements</h2>
+          <p>Tạo thẻ &lt;img&gt; bằng jQuery và chèn vào trang theo các cách after, before, append, prepend, appendTo, prependTo, insertBefore để thấy vị trí khác nhau.</p>
+          <p class="files">Mã nguồn: <code>exercise05.html</code>, <code>js/exercise05.js</code></p>
+        </a>
+      </li>
+      <li>
+        <a href="exercise06.html">
+          <div class="ex-id">10.6</div>
+          <h2>Simple jQuery Animation</h2>
+          <p>Sáu nút điều khiển ảnh bằng fadeIn, fadeOut, fadeToggle, slideDown, slideUp, slideToggle.</p>
+          <p class="files">Mã nguồn: <code>exercise06.html</code>, <code>js/exercise06.js</code></p>
+        </a>
+      </li>
+      <li>
+        <a href="exercise07.html">
+          <div class="ex-id">10.7</div>
+          <h2>More jQuery Animation</h2>
+          <p>Rê chuột lên ảnh nhỏ thì ảnh chuyển xám và một khung xem trước chứa ảnh lớn kèm chú thích hiện dần ra, đi theo con trỏ; rời chuột thì khung bị xóa.</p>
+          <p class="files">Mã nguồn: <code>exercise07.html</code>, <code>js/exercise07.js</code></p>
+        </a>
+      </li>
+      <li>
+        <a href="exercise08.html">
+          <div class="ex-id">10.8</div>
+          <h2>Complex Animations</h2>
+          <p>Dùng animate() để đổi cùng lúc left, opacity, height của hộp, rồi nối tiếp thêm hai chuyển động chạy lần lượt.</p>
+          <p class="files">Mã nguồn: <code>exercise08.html</code>, <code>js/exercise08.js</code></p>
+        </a>
+      </li>
+      <li>
+        <a href="exercise09.html">
+          <div class="ex-id">10.9</div>
+          <h2>GET Requests</h2>
+          <p>Bấm Consume để gửi GET request bất đồng bộ bằng $.get(), nhận danh sách thành phố dạng JSON rồi dùng $.each() tạo từng thẻ &lt;li&gt;. Dịch vụ mẫu của giáo trình chỉ chạy HTTP nên bị chặn trên GitHub Pages (HTTPS); bài dùng file data/cities.json cùng cấu trúc.</p>
+          <p class="files">Mã nguồn: <code>exercise09.html</code>, <code>js/exercise09.js</code>, <code>data/cities.json</code></p>
+        </a>
+      </li>
+      <li>
+        <a href="exercise10.html">
+          <div class="ex-id">10.10</div>
+          <h2>jqXHR Handling</h2>
+          <p>Dùng đối tượng jqXHR mà $.get() trả về: done() đổ dữ liệu vào danh sách, fail() báo lỗi, always() ẩn ảnh đang tải. Nút “Consume (wrong URL)” gọi một địa chỉ không tồn tại để thử nhánh fail().</p>
+          <p class="files">Mã nguồn: <code>exercise10.html</code>, <code>js/exercise10.js</code>, <code>data/cities.json</code></p>
+        </a>
+      </li>
+    </ul>
+
+    <div class="pager">
+      <a class="btn ghost" href="../Lab09/index.html">Lab 09</a>
+      <a class="btn" href="../index.html">Về trang chủ</a>
+    </div>
+  </div>
+</main>
+
+<footer class="foot">
+  <div class="wrap">
+    <div>
+      <p class="foot-name">Nguyễn Trần Bảo Nhi</p>
+      <p>MSSV 31241021234, lớp 26C1INF50902701.</p>
+    </div>
+    <ul class="foot-links">
+      <li><a href="https://github.com/chloenguynnn" target="_blank" rel="noopener">GitHub</a></li>
+      <li><a href="https://github.com/chloenguynnn/ecommerce-ui-improvement" target="_blank" rel="noopener">Repository</a></li>
+    </ul>
+  </div>
+</footer>
+
+<script src="../js/main.js"></script>
+</body>
+</html>

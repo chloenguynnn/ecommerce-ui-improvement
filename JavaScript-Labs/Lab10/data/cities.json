@@ -1,0 +1,17 @@
+[
+  { "id": 1,  "name": "Calgary",          "country": "Canada" },
+  { "id": 2,  "name": "Vancouver",        "country": "Canada" },
+  { "id": 3,  "name": "London",           "country": "United Kingdom" },
+  { "id": 4,  "name": "Battle",           "country": "United Kingdom" },
+  { "id": 5,  "name": "Florence",         "country": "Italy" },
+  { "id": 6,  "name": "Rome",             "country": "Italy" },
+  { "id": 7,  "name": "Athens",           "country": "Greece" },
+  { "id": 8,  "name": "Lunenburg",        "country": "Canada" },
+  { "id": 9,  "name": "Berlin",           "country": "Germany" },
+  { "id": 10, "name": "Madrid",           "country": "Spain" },
+  { "id": 11, "name": "Budapest",         "country": "Hungary" },
+  { "id": 12, "name": "Accra",            "country": "Ghana" },
+  { "id": 13, "name": "Nassau",           "country": "Bahamas" },
+  { "id": 14, "name": "Ho Chi Minh City", "country": "Vietnam" },
+  { "id": 15, "name": "Ha Noi",           "country": "Vietnam" }
+]
