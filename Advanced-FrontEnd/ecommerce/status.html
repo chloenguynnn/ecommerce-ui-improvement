@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Trạng thái đơn hàng – L'Atelier Parfum</title>
+  <link rel="stylesheet" href="../vendor/bootstrap/css/bootstrap.min.css">
+  <link rel="stylesheet" href="css/shop.css">
+</head>
+<body>
+
+<nav class="navbar navbar-default navbar-static-top shop-nav">
+  <div class="container">
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#shop-nav" aria-expanded="false">
+        <span class="sr-only">Mở menu</span><span class="icon-bar"></span><span class="icon-bar"></span><span class="icon-bar"></span>
+      </button>
+      <a class="navbar-brand" href="index.html"><img src="images/logo.svg" alt="L'Atelier Parfum" height="30"></a>
+    </div>
+    <div class="collapse navbar-collapse" id="shop-nav">
+      <ul class="nav navbar-nav">
+        <li><a href="index.html">Cửa hàng</a></li>
+        <li class="active"><a href="status.html">Đơn hàng</a></li>
+      </ul>
+      <ul class="nav navbar-nav navbar-right">
+        <li><a href="status.html" title="Giỏ hàng"><span class="badge pull-right cart-count">0</span> <i class="glyphicon glyphicon-shopping-cart"></i></a></li>
+        <li><a href="#" title="Tài khoản"><i class="glyphicon glyphicon-user"></i></a></li>
+      </ul>
+    </div>
+  </div>
+</nav>
+
+<div class="container">
+  <div class="row">
+    <div class="col-sm-4 col-md-3">
+      <h3>Tài khoản</h3>
+      <div class="list-group">
+        <a href="#" class="list-group-item">Thông tin cá nhân</a>
+        <a href="#" class="list-group-item active">Đơn hàng <span class="badge">4</span></a>
+        <a href="#" class="list-group-item">Sổ địa chỉ</a>
+        <a href="#" class="list-group-item">Sản phẩm yêu thích</a>
+      </div>
+      <p class="small text-muted">Giỏ hàng hiện có <b class="cart-count">0</b> sản phẩm. <a href="#" id="clear-cart">Xóa giỏ</a></p>
+    </div>
+
+    <!-- 2.3 ecommerce-status: danh sách đơn hàng -->
+    <div class="col-sm-8 col-md-9">
+      <h3>Trạng thái đơn hàng</h3>
+      <div class="thumbnail order-head hidden-xs">
+        <div class="row">
+          <div class="col-sm-1"></div><div class="col-sm-4">Sản phẩm</div><div class="col-sm-1">SL</div>
+          <div class="col-sm-2">Thành tiền</div><div class="col-sm-2">Trạng thái</div><div class="col-sm-2">Tin nhắn</div>
+        </div>
+      </div>
+      <div id="orders"></div>
+    </div>
+  </div>
+</div>
+
+<footer class="shop-foot">
+  <div class="container">
+    <p>L'Atelier Parfum – cửa hàng mẫu cho bài thực hành Advance Front-end. Đơn hàng là dữ liệu giả lập.</p>
+    <p>Nguyễn Trần Bảo Nhi · MSSV 31241021234 · <a href="../index.html">Về trang Nhóm 2</a></p>
+  </div>
+</footer>
+
+<script src="../vendor/jquery/jquery.min.js"></script>
+<script src="../vendor/bootstrap/js/bootstrap.min.js"></script>
+<script src="js/products.js"></script>
+<script src="js/shop.js"></script>
+<script>
+$(function () {
+  var orders = [
+    { id: "fleur", qty: 2, status: ["Hoàn tất", "btn-success"], msg: 1, date: "12/11/2026" },
+    { id: "rose", qty: 1, status: ["Đang giao", "btn-info"], msg: 0, date: "18/11/2026" },
+    { id: "tea", qty: 1, status: ["Chờ xác nhận", "btn-warning"], msg: 2, date: "20/11/2026" },
+    { id: "bois", qty: 1, status: ["Đã hủy", "btn-danger"], msg: 0, date: "02/11/2026" }
+  ];
+  $("#orders").html(orders.map(function (o, i) {
+    var p = findProduct(o.id);
+    return '<div class="thumbnail order"><div class="row">' +
+      '<div class="col-xs-3 col-sm-1"><img class="img-responsive" src="images/products/' + p.id + '-thumb.jpg" alt=""></div>' +
+      '<div class="col-xs-9 col-sm-4"><a href="product.html?id=' + p.id + '">' + p.name + '</a><br><small class="text-muted">#AP' + (2611 + i) + ' · ' + o.date + '</small></div>' +
+      '<div class="col-xs-3 col-sm-1">x' + o.qty + '</div>' +
+      '<div class="col-xs-9 col-sm-2">' + formatVND(salePrice(p) * o.qty) + '</div>' +
+      '<div class="col-xs-6 col-sm-2"><button class="btn btn-sm ' + o.status[1] + '">' + o.status[0] + '</button></div>' +
+      '<div class="col-xs-6 col-sm-2"><a href="#">' + o.msg + ' tin nhắn</a></div>' +
+      '</div></div>';
+  }).join(""));
+
+  $("#clear-cart").on("click", function (e) {
+    e.preventDefault();
+    try { localStorage.removeItem("atelier-cart"); } catch (err) { /* bỏ qua */ }
+    $(".cart-count").text(0);
+  });
+});
+</script>
+</body>
+</html>

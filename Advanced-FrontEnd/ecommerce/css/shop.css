@@ -1,0 +1,114 @@
+/* shop.css – tùy biến giao diện Bootstrap 3 cho cửa hàng L'Atelier Parfum */
+body { background: #faf7f2; color: #2b2622; font-family: Georgia, "Times New Roman", serif; }
+h1, h2, h3, h4, h5, .navbar, .btn, .list-group, .badge, .label, .progress, .stock, .eyebrow, .breadcrumb, .order, .order-head {
+  font-family: "Helvetica Neue", Arial, sans-serif;
+}
+a { color: #8a1c2b; }
+a:hover, a:focus { color: #5e0f1b; }
+
+/* ---------- Navbar ---------- */
+.shop-nav { background: #fff; border-color: #e7ded2; margin-bottom: 20px; }
+.shop-nav .navbar-brand { padding: 10px 15px; }
+.shop-nav .navbar-nav > .active > a,
+.shop-nav .navbar-nav > .active > a:hover { background: #f3ece2; color: #8a1c2b; }
+.shop-nav .badge { background: #8a1c2b; margin-left: 4px; }
+.mobile-search { width: 55%; margin: 10px 0 0 6px; }
+
+/* ---------- Carousel ---------- */
+.carousel { margin-bottom: 24px; border-radius: 4px; overflow: hidden; }
+.carousel .item { height: 340px; background: #efe6da; }
+.carousel .item > img { width: 100%; height: 340px; object-fit: cover; }
+.carousel-caption { text-shadow: 0 1px 6px rgba(0,0,0,.6); }
+.slide-split { display: flex; align-items: center; height: 340px; gap: 40px; padding: 0 12%; }
+.slide-split img { height: 300px; }
+.slide-split h2 { font-size: 40px; margin: 6px 0 10px; }
+.slide-split.dark { background: #2b2622; color: #fff; }
+@media (max-width: 767px) {
+  .carousel .item, .carousel .item > img, .slide-split { height: 220px; }
+  .slide-split { padding: 0 10%; gap: 16px; }
+  .slide-split img { height: 180px; }
+  .slide-split h2 { font-size: 24px; }
+}
+
+/* ---------- Danh mục ---------- */
+.list-group-item.active, .list-group-item.active:hover, .list-group-item.active:focus { background: #8a1c2b; border-color: #8a1c2b; }
+.no-margin { margin: 0; }
+
+/* ---------- Thẻ sản phẩm ---------- */
+.btn-primary { background: #8a1c2b; border-color: #741522; }
+.btn-primary:hover, .btn-primary:focus { background: #6c111e; border-color: #5e0f1b; }
+.thumbnail.product { position: relative; padding: 0; border-color: #e7ded2; transition: box-shadow .25s, transform .25s; }
+.thumbnail.product:hover { box-shadow: 0 10px 24px rgba(60, 30, 20, .15); transform: translateY(-3px); }
+.product-img { position: relative; display: block; background: #f3ece2; overflow: hidden; }
+.product-img img { width: 100%; aspect-ratio: 4 / 5; object-fit: cover; transition: transform .4s; }
+.thumbnail.product:hover .product-img img { transform: scale(1.04); }
+.product .caption { padding: 12px 14px 14px; }
+.product h4 { margin: 2px 0 4px; font-size: 18px; }
+.product h4 a { color: #2b2622; }
+.eyebrow { margin: 0; font-size: 11px; letter-spacing: .12em; text-transform: uppercase; color: #9b8b7a; }
+.notes { color: #6d6258; font-style: italic; margin-bottom: 6px; }
+.price-now { color: #8a1c2b; font-weight: bold; font-family: Arial, sans-serif; }
+.price-old { color: #a59a90; font-size: 90%; margin-left: 4px; }
+.price.big .price-now { font-size: 26px; }
+.add-to-cart a { font-size: 30px; color: #8a1c2b; text-decoration: none; background: #fff; border-radius: 50%; line-height: 1; }
+.thumbnail.product .add-to-cart { position: absolute; right: 12px; margin-top: -18px; z-index: 3; }
+.ratings { min-height: 26px; }
+.ratings p.pull-right { margin: 2px 0 0; font-size: 12px; }
+
+/* ---------- Nhãn trên ảnh ---------- */
+/* % giảm giá: góc trên bên trái */
+.badge-sale {
+  position: absolute; top: 10px; left: 10px; z-index: 2;
+  background: #d0021b; color: #fff;
+  font: bold 14px/1 Arial, sans-serif;
+  padding: 7px 9px; border-radius: 3px;
+  box-shadow: 0 2px 6px rgba(0,0,0,.2);
+}
+/* New / Best seller: góc trên bên phải */
+.badge-tag {
+  position: absolute; top: 10px; right: 10px; z-index: 2;
+  color: #fff; font: bold 11px/1 Arial, sans-serif; letter-spacing: .08em; text-transform: uppercase;
+  padding: 7px 10px; border-radius: 12px;
+}
+.badge-new { background: #1d7a46; }
+.badge-best { background: #c28a00; }
+
+/* ---------- Trạng thái kho (Bootstrap progress) ---------- */
+.stock { margin-top: 8px; }
+.stock-text { display: flex; justify-content: space-between; font-size: 12px; color: #6d6258; margin-bottom: 3px; }
+.stock .progress { height: 16px; margin-bottom: 0; background: #efe6da; }
+.stock .progress-bar { font-size: 11px; line-height: 16px; min-width: 2.5em; }
+
+/* ---------- Star rating ---------- */
+.ratings .rating-container, .review .rating-container, .mini .rating-container { display: inline-block; }
+.avg-text { margin-left: 8px; vertical-align: middle; font-family: Arial, sans-serif; }
+
+/* ---------- Trang chi tiết ---------- */
+.breadcrumb { background: transparent; padding-left: 0; }
+.thumbnail.detail { padding: 18px; border-color: #e7ded2; }
+.zoom-wrap { position: relative; background: #f3ece2; }
+.zoom-wrap .xzoom { width: 100%; box-shadow: none; }
+.xzoom-thumbs { text-align: center; margin: 10px 0 0; }
+.xzoom-thumbs a { display: inline-block; margin: 0 3px; }
+.xzoom-gallery { border: 1px solid #ddd; box-shadow: none; }
+.xzoom-gallery.xactive { border: 2px solid #8a1c2b; box-shadow: none; }
+.p-name { margin-top: 4px; font-size: 32px; }
+#sizes .btn.active { background: #8a1c2b; border-color: #8a1c2b; color: #fff; }
+#buy-form { margin-top: 16px; }
+#buy-form label { margin-right: 8px; font-family: Arial, sans-serif; }
+.well { background: #fff; border-color: #e7ded2; box-shadow: none; }
+.review-head h4 { margin-top: 0; }
+.mini h5 { margin: 0 0 4px; font-family: Georgia, serif; font-size: 15px; }
+.mini .badge-sale { font-size: 11px; padding: 5px 6px; }
+.mini .badge-tag { font-size: 9px; padding: 5px 7px; }
+
+/* ---------- Trang đơn hàng ---------- */
+.order-head { padding: 8px 15px; margin-bottom: 8px; background: #f3ece2; font-weight: bold; font-size: 13px; }
+.order { padding: 10px 15px; display: block; }
+.order .row > div { line-height: 1.4; padding-top: 4px; padding-bottom: 4px; }
+.order .btn { cursor: default; }
+
+/* ---------- Footer ---------- */
+.shop-foot { margin-top: 30px; padding: 22px 0; background: #2b2622; color: #cfc4b8; font-size: 13px; }
+.shop-foot p { margin: 0 0 4px; }
+.shop-foot a { color: #fff; }

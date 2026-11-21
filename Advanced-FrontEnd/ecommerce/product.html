@@ -1,0 +1,211 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Chi tiết sản phẩm – L'Atelier Parfum</title>
+  <link rel="stylesheet" href="../vendor/bootstrap/css/bootstrap.min.css">
+  <link rel="stylesheet" href="../vendor/xzoom/xzoom.css">
+  <link rel="stylesheet" href="../vendor/star-rating/css/star-rating.min.css">
+  <link rel="stylesheet" href="../vendor/star-rating/themes/krajee-svg/theme.min.css">
+  <link rel="stylesheet" href="css/shop.css">
+</head>
+<body>
+
+<nav class="navbar navbar-default navbar-static-top shop-nav">
+  <div class="container">
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#shop-nav" aria-expanded="false">
+        <span class="sr-only">Mở menu</span><span class="icon-bar"></span><span class="icon-bar"></span><span class="icon-bar"></span>
+      </button>
+      <a class="navbar-brand" href="index.html"><img src="images/logo.svg" alt="L'Atelier Parfum" height="30"></a>
+      <form class="visible-xs-inline-block mobile-search" role="search"><input type="text" class="form-control input-sm" placeholder="Tìm nước hoa..."></form>
+    </div>
+    <div class="collapse navbar-collapse" id="shop-nav">
+      <ul class="nav navbar-nav">
+        <li><a href="index.html">Cửa hàng</a></li>
+        <li><a href="status.html">Đơn hàng</a></li>
+      </ul>
+      <form class="navbar-form navbar-left hidden-xs" role="search">
+        <div class="form-group"><input type="text" class="form-control" placeholder="Tìm nước hoa..."></div>
+        <button type="submit" class="btn btn-default"><span class="glyphicon glyphicon-search"></span></button>
+      </form>
+      <ul class="nav navbar-nav navbar-right">
+        <li><a href="status.html" title="Giỏ hàng"><span class="badge pull-right cart-count">0</span> <i class="glyphicon glyphicon-shopping-cart"></i></a></li>
+        <li><a href="#" title="Tài khoản"><i class="glyphicon glyphicon-user"></i></a></li>
+      </ul>
+    </div>
+  </div>
+</nav>
+
+<div class="container">
+  <ol class="breadcrumb">
+    <li><a href="index.html">Cửa hàng</a></li>
+    <li class="active" id="crumb-name">Sản phẩm</li>
+  </ol>
+
+  <div class="row">
+    <div class="col-sm-4 col-md-3 hidden-xs">
+      <h3>Danh mục</h3>
+      <div class="list-group" id="categories"></div>
+    </div>
+
+    <div class="col-sm-8 col-md-9">
+      <!-- 2.2.1 Layout: hình bên trái, mô tả bên phải -->
+      <div class="thumbnail detail">
+        <div class="row">
+          <!-- 2.2.2 Ảnh lớn + ảnh nhỏ: dùng thư viện xZoom để chọn và phóng to -->
+          <div class="col-sm-6">
+            <div class="zoom-wrap" id="zoom-wrap"></div>
+            <div class="xzoom-thumbs" id="thumbs"></div>
+            <p class="help-block small text-center">Rê chuột lên ảnh để phóng to, bấm ảnh nhỏ để đổi ảnh.</p>
+          </div>
+
+          <!-- 2.2.3 Mô tả + 2.2.4 Form -->
+          <div class="col-sm-6">
+            <p class="eyebrow" id="p-collection"></p>
+            <h2 class="p-name" id="p-name"></h2>
+            <p class="notes" id="p-notes"></p>
+            <p class="price big" id="p-price"></p>
+            <div class="ratings" id="p-rating"></div>
+            <p id="p-desc"></p>
+            <div id="p-stock"></div>
+
+            <form role="form" id="buy-form">
+              <div class="form-group form-inline">
+                <label for="number">Số lượng</label>
+                <input type="number" class="form-control input-sm" id="number" value="1" min="1" style="width:80px">
+              </div>
+              <div class="form-group form-inline">
+                <label for="bottle">Kiểu chai</label>
+                <select id="bottle" class="form-control input-sm">
+                  <option>Chai thủy tinh trong</option>
+                  <option>Chai mờ khắc tên</option>
+                  <option>Hộp quà tặng</option>
+                </select>
+              </div>
+              <div class="form-group">
+                <label>Dung tích</label>
+                <div class="btn-group" data-toggle="buttons" id="sizes">
+                  <label class="btn btn-default"><input type="radio" name="size" value="10">10 ml</label>
+                  <label class="btn btn-default"><input type="radio" name="size" value="30">30 ml</label>
+                  <label class="btn btn-default active"><input type="radio" name="size" value="50" checked>50 ml</label>
+                  <label class="btn btn-default"><input type="radio" name="size" value="100">100 ml</label>
+                </div>
+              </div>
+              <div class="form-group">
+                <button type="button" class="btn btn-default">Liên hệ tư vấn</button>
+                <button type="submit" class="btn btn-success"><span class="glyphicon glyphicon-shopping-cart"></span> Thêm vào giỏ</button>
+              </div>
+              <div class="alert alert-success hidden" id="added">Đã thêm vào giỏ hàng.</div>
+            </form>
+          </div>
+        </div>
+      </div>
+
+      <!-- 2.2.5 Đánh giá + 2.2.6 Bình luận -->
+      <div class="well" id="comments">
+        <div class="row review-head">
+          <div class="col-sm-8"><h4>Đánh giá của khách hàng</h4><div id="avg-rating"></div></div>
+          <div class="col-sm-4 text-right"><a class="btn btn-success" href="#review-form" data-toggle="collapse">Viết đánh giá</a></div>
+        </div>
+        <div class="collapse" id="review-form">
+          <hr>
+          <label>Chấm điểm của bạn</label>
+          <input id="my-rating" class="rating-loading" value="0" data-size="sm">
+          <textarea class="form-control" rows="2" placeholder="Cảm nhận của bạn về mùi hương..."></textarea>
+        </div>
+        <hr>
+        <div id="review-list"></div>
+      </div>
+
+      <!-- 2.2.7 Sản phẩm khác -->
+      <h3>Có thể bạn cũng thích</h3>
+      <div class="row" id="others"></div>
+    </div>
+  </div>
+</div>
+
+<footer class="shop-foot">
+  <div class="container">
+    <p>L'Atelier Parfum – cửa hàng mẫu cho bài thực hành Advance Front-end. Sản phẩm, giá và đánh giá là dữ liệu giả lập.</p>
+    <p>Nguyễn Trần Bảo Nhi · MSSV 31241021234 · <a href="../index.html">Về trang Nhóm 2</a></p>
+  </div>
+</footer>
+
+<script src="../vendor/jquery/jquery.min.js"></script>
+<script src="../vendor/bootstrap/js/bootstrap.min.js"></script>
+<script src="../vendor/xzoom/xzoom.min.js"></script>
+<script src="../vendor/star-rating/js/star-rating.min.js"></script>
+<script src="../vendor/star-rating/themes/krajee-svg/theme.min.js"></script>
+<script src="js/products.js"></script>
+<script src="js/shop.js"></script>
+<script>
+$(function () {
+  var id = new URLSearchParams(location.search).get("id") || "rose";
+  var p = findProduct(id) || PRODUCTS[0];
+  var img = "images/products/" + p.id;
+
+  document.title = p.name + " – L'Atelier Parfum";
+  $("#crumb-name").text(p.name);
+  $("#p-collection").text(p.collection + " · " + p.type + " · " + p.size);
+  $("#p-name").text(p.name);
+  $("#p-notes").text(p.notes + " — " + p.style);
+  $("#p-price").html(priceHtml(p) + (p.discount ? ' <span class="label label-danger">Tiết kiệm ' + formatVND(p.price - salePrice(p)) + '</span>' : ''));
+  $("#p-rating").html('<p class="pull-right">' + p.reviews + ' đánh giá</p>' + ratingInput(p.rating, "sm"));
+  $("#p-desc").text(p.desc);
+  $("#p-stock").html(stockBar(p));
+
+  /* ---------- xZoom: ảnh lớn có nhãn giảm giá / New / Best seller ---------- */
+  $("#zoom-wrap").html(badges(p) +
+    '<img class="xzoom img-responsive" id="xzoom-main" src="' + img + '-medium.jpg" xoriginal="' + img + '-large.jpg" alt="' + p.name + '">');
+  var views = [["", "Toàn chai"], ["-d1", "Nắp chai"], ["-d2", "Nhãn và thân chai"]];
+  $("#thumbs").html(views.map(function (v, i) {
+    return '<a href="' + img + v[0] + '-large.jpg" title="' + v[1] + '">' +
+             '<img class="xzoom-gallery' + (i === 0 ? ' xactive' : '') + '" width="80" src="' + img + v[0] + '-thumb.jpg" xpreview="' + img + v[0] + '-medium.jpg" alt="' + v[1] + '">' +
+           '</a>';
+  }).join(""));
+  var zoomPos = $(window).width() < 768 ? "inside" : "right";
+  $(".xzoom, .xzoom-gallery").xzoom({ position: zoomPos, tint: "#333", Xoffset: 15, mposition: "fullscreen", fadeIn: true });
+
+  /* ---------- Danh mục ---------- */
+  $("#categories").html(CATEGORIES.map(function (c) {
+    var count = c.id === "all" ? PRODUCTS.length : PRODUCTS.filter(function (x) { return x.category === c.id; }).length;
+    return '<a href="index.html" class="list-group-item' + (c.id === p.category ? ' active' : '') + '"><span class="badge">' + count + '</span>' + c.name + '</a>';
+  }).join(""));
+
+  /* ---------- Đánh giá ---------- */
+  $("#avg-rating").html(ratingInput(p.rating, "sm") + '<span class="avg-text">' + p.rating.toFixed(1) + ' / 5 sao · ' + p.reviews + ' đánh giá</span>');
+  var reviews = [
+    { name: "Minh Anh", from: "TP. Hồ Chí Minh", stars: 5, ago: "1 ngày trước", text: "Mùi thơm đúng như mô tả, lưu hương cả ngày. Đóng gói rất đẹp, sẽ mua thêm làm quà." },
+    { name: "Quốc Huy", from: "Hà Nội", stars: 4, ago: "4 ngày trước", text: "Hương đầu hơi gắt nhưng khoảng 30 phút sau thì dịu và rất dễ chịu." },
+    { name: "Thảo Vy", from: "Đà Nẵng", stars: 4.5, ago: "2 tuần trước", text: "Chai nhỏ gọn, xịt mịn. Giao hàng nhanh, có thêm mẫu thử." }
+  ];
+  $("#review-list").html(reviews.map(function (r) {
+    return '<div class="row review"><div class="col-md-12">' + ratingInput(r.stars) +
+           ' <strong>' + r.name + '</strong> <span class="pull-right text-muted">' + r.ago + '</span>' +
+           '<p class="text-muted small">Từ <em>' + r.from + '</em></p><p>' + r.text + '</p></div></div>';
+  }).join("<hr>"));
+
+  /* ---------- Sản phẩm khác ---------- */
+  $("#others").html(PRODUCTS.filter(function (x) { return x.id !== p.id; }).slice(0, 3).map(function (x) {
+    return '<div class="col-xs-6 col-sm-4"><div class="thumbnail product mini"><a class="product-img" href="product.html?id=' + x.id + '">' + badges(x) +
+           '<img src="images/products/' + x.id + '-medium.jpg" alt="' + x.name + '"></a><div class="caption"><h5><a href="product.html?id=' + x.id + '">' + x.name + '</a></h5>' +
+           '<p class="price">' + priceHtml(x) + '</p>' + ratingInput(x.rating) + '</div></div></div>';
+  }).join(""));
+
+  initRatings();
+  // Ô chấm điểm của khách: cho phép bấm chọn sao
+  $("#my-rating").rating({ theme: "krajee-svg", min: 0, max: 5, step: 1, showClear: false,
+    starCaptions: { 1: "Tệ", 2: "Tạm", 3: "Ổn", 4: "Tốt", 5: "Tuyệt vời" } });
+
+  $("#buy-form").on("submit", function (e) {
+    e.preventDefault();
+    addToCart(parseInt($("#number").val(), 10) || 1);
+    $("#added").removeClass("hidden").hide().fadeIn(200);
+  });
+});
+</script>
+</body>
+</html>

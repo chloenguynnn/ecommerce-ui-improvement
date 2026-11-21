@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>L'Atelier Parfum – Cửa hàng nước hoa</title>
+  <link rel="stylesheet" href="../vendor/bootstrap/css/bootstrap.min.css">
+  <link rel="stylesheet" href="../vendor/star-rating/css/star-rating.min.css">
+  <link rel="stylesheet" href="../vendor/star-rating/themes/krajee-svg/theme.min.css">
+  <link rel="stylesheet" href="css/shop.css">
+</head>
+<body>
+
+<!-- 2.1.1 – 2.1.2 Navigation: logo, menu, ô tìm kiếm, giỏ hàng có badge -->
+<nav class="navbar navbar-default navbar-static-top shop-nav">
+  <div class="container">
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#shop-nav" aria-expanded="false">
+        <span class="sr-only">Mở menu</span><span class="icon-bar"></span><span class="icon-bar"></span><span class="icon-bar"></span>
+      </button>
+      <a class="navbar-brand" href="index.html"><img src="images/logo.svg" alt="L'Atelier Parfum" height="30"></a>
+      <!-- Ô tìm kiếm chỉ hiện trên điện thoại -->
+      <form class="visible-xs-inline-block mobile-search" role="search">
+        <input type="text" class="form-control input-sm" placeholder="Tìm nước hoa...">
+      </form>
+    </div>
+    <div class="collapse navbar-collapse" id="shop-nav">
+      <ul class="nav navbar-nav">
+        <li class="active"><a href="index.html">Cửa hàng <span class="sr-only">(trang hiện tại)</span></a></li>
+        <li class="dropdown">
+          <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Bộ sưu tập <span class="caret"></span></a>
+          <ul class="dropdown-menu">
+            <li><a href="#san-pham">Signature</a></li>
+            <li><a href="#san-pham">Les Jardins</a></li>
+            <li role="separator" class="divider"></li>
+            <li><a href="#san-pham">Quà tặng</a></li>
+          </ul>
+        </li>
+        <li><a href="status.html">Đơn hàng</a></li>
+      </ul>
+      <!-- Ô tìm kiếm ẩn trên điện thoại -->
+      <form class="navbar-form navbar-left hidden-xs" role="search">
+        <div class="form-group"><input type="text" class="form-control" placeholder="Tìm nước hoa..."></div>
+        <button type="submit" class="btn btn-default"><span class="glyphicon glyphicon-search"></span></button>
+      </form>
+      <ul class="nav navbar-nav navbar-right">
+        <li><a href="status.html" title="Giỏ hàng"><span class="badge pull-right cart-count">0</span> <i class="glyphicon glyphicon-shopping-cart"></i></a></li>
+        <li><a href="#" title="Tài khoản"><i class="glyphicon glyphicon-user"></i></a></li>
+        <li><a href="#" data-toggle="modal" data-target="#signin">Đăng nhập</a></li>
+      </ul>
+    </div>
+  </div>
+</nav>
+
+<div class="container">
+
+  <!-- 2.1.3 Slider: Bootstrap carousel -->
+  <div id="banner" class="carousel slide" data-ride="carousel">
+    <ol class="carousel-indicators">
+      <li data-target="#banner" data-slide-to="0" class="active"></li>
+      <li data-target="#banner" data-slide-to="1"></li>
+      <li data-target="#banner" data-slide-to="2"></li>
+    </ol>
+    <div class="carousel-inner" role="listbox">
+      <div class="item active">
+        <img src="images/hero.jpg" alt="Bộ sưu tập nước hoa">
+        <div class="carousel-caption"><h2>Mùi hương kể chuyện của bạn</h2><p>Bộ sưu tập Signature mùa đông 2026</p></div>
+      </div>
+      <div class="item">
+        <div class="slide-split"><img src="images/products/fleur-medium.jpg" alt=""><div><p class="eyebrow">Best seller</p><h2>Fleur de Soie</h2><p>Giảm 20% đến hết tháng 11</p><a class="btn btn-primary" href="product.html?id=fleur">Xem sản phẩm</a></div></div>
+      </div>
+      <div class="item">
+        <div class="slide-split dark"><img src="images/products/ambre-medium.jpg" alt=""><div><p class="eyebrow">Mới ra mắt</p><h2>Ambre Impérial</h2><p>Hổ phách · Vanilla Madagascar</p><a class="btn btn-primary" href="product.html?id=ambre">Xem sản phẩm</a></div></div>
+      </div>
+    </div>
+    <a class="left carousel-control" href="#banner" role="button" data-slide="prev"><span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span><span class="sr-only">Trước</span></a>
+    <a class="right carousel-control" href="#banner" role="button" data-slide="next"><span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span><span class="sr-only">Sau</span></a>
+  </div>
+
+  <!-- 2.1.4 Categories + Products -->
+  <div class="row" id="san-pham">
+    <div class="col-sm-4 col-md-3">
+      <h3>Danh mục</h3>
+      <div class="list-group" id="categories"></div>
+      <div class="panel panel-default hidden-xs">
+        <div class="panel-heading">Chú thích trạng thái kho</div>
+        <div class="panel-body small">
+          <p><span class="label label-success">&gt; 50%</span> Còn hàng</p>
+          <p><span class="label label-warning">20–50%</span> Còn ít</p>
+          <p class="no-margin"><span class="label label-danger">&lt; 20%</span> Sắp hết hàng</p>
+        </div>
+      </div>
+    </div>
+    <div class="col-sm-8 col-md-9">
+      <h3 id="list-title">Tất cả sản phẩm</h3>
+      <div class="row" id="products"></div>
+    </div>
+  </div>
+</div>
+
+<footer class="shop-foot">
+  <div class="container">
+    <p>L'Atelier Parfum – cửa hàng mẫu cho bài thực hành Advance Front-end. Sản phẩm, giá và đánh giá là dữ liệu giả lập.</p>
+    <p>Nguyễn Trần Bảo Nhi · MSSV 31241021234 · <a href="../index.html">Về trang Nhóm 2</a></p>
+  </div>
+</footer>
+
+<!-- Modal đăng nhập -->
+<div class="modal fade" id="signin" tabindex="-1" role="dialog" aria-labelledby="signin-title">
+  <div class="modal-dialog modal-sm" role="document">
+    <div class="modal-content">
+      <div class="modal-header"><button type="button" class="close" data-dismiss="modal" aria-label="Đóng"><span aria-hidden="true">&times;</span></button><h4 class="modal-title" id="signin-title">Đăng nhập</h4></div>
+      <div class="modal-body"><p class="text-muted">Trang mẫu, chưa có chức năng đăng nhập.</p></div>
+    </div>
+  </div>
+</div>
+
+<script src="../vendor/jquery/jquery.min.js"></script>
+<script src="../vendor/bootstrap/js/bootstrap.min.js"></script>
+<script src="../vendor/star-rating/js/star-rating.min.js"></script>
+<script src="../vendor/star-rating/themes/krajee-svg/theme.min.js"></script>
+<script src="js/products.js"></script>
+<script src="js/shop.js"></script>
+<script>
+$(function () {
+  function card(p) {
+    return '' +
+      '<div class="col-sm-6 col-md-4">' +
+        '<div class="thumbnail product">' +
+          '<a class="product-img" href="product.html?id=' + p.id + '">' + badges(p) +
+            '<img src="images/products/' + p.id + '-medium.jpg" alt="' + p.name + '"></a>' +
+          '<div class="add-to-cart"><a href="#" class="glyphicon glyphicon-plus-sign" data-toggle="tooltip" data-placement="top" title="Thêm vào giỏ"></a></div>' +
+          '<div class="caption">' +
+            '<p class="eyebrow">' + p.collection + ' · ' + p.type + '</p>' +
+            '<h4><a href="product.html?id=' + p.id + '">' + p.name + '</a></h4>' +
+            '<p class="notes">' + p.notes + '</p>' +
+            '<p class="price">' + priceHtml(p) + '</p>' +
+            '<div class="ratings">' +
+              '<p class="pull-right"><a href="product.html?id=' + p.id + '#comments">' + p.reviews + ' đánh giá</a></p>' +
+              ratingInput(p.rating) +
+            '</div>' +
+            stockBar(p) +
+          '</div>' +
+        '</div>' +
+      '</div>';
+  }
+
+  function render(cat) {
+    var list = PRODUCTS.filter(function (p) { return cat === "all" || p.category === cat; });
+    $("#products").html(list.map(card).join(""));
+    initRatings("#products");
+    $("#products [data-toggle='tooltip']").tooltip();
+  }
+
+  // Danh mục dạng list-group, có badge đếm số sản phẩm
+  $("#categories").html(CATEGORIES.map(function (c, i) {
+    var count = c.id === "all" ? PRODUCTS.length : PRODUCTS.filter(function (p) { return p.category === c.id; }).length;
+    return '<a href="#" class="list-group-item' + (i === 0 ? ' active' : '') + '" data-cat="' + c.id + '"><span class="badge">' + count + '</span>' + c.name + '</a>';
+  }).join(""));
+
+  $("#categories").on("click", "a", function (e) {
+    e.preventDefault();
+    $(this).addClass("active").siblings().removeClass("active");
+    $("#list-title").text($(this).contents().last().text());
+    render($(this).data("cat"));
+  });
+
+  $("#products").on("click", ".add-to-cart a", function (e) {
+    e.preventDefault();
+    addToCart(1);
+    $(this).tooltip("hide").attr("data-original-title", "Đã thêm!").tooltip("show");
+  });
+
+  render("all");
+});
+</script>
+</body>
+</html>
