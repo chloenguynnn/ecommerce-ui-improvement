@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>jQuery cho trang LMS-UEH | Nguyễn Trần Bảo Nhi</title>
+  <link rel="stylesheet" href="../vendor/bootstrap/css/bootstrap.min.css">
+  <style>
+    body { background: #f4f5f7; }
+    .page-head { background: #0b3d6b; color: #fff; padding: 22px 0; margin-bottom: 22px; }
+    .page-head h1 { margin: 0 0 6px; font-size: 28px; }
+    .page-head a { color: #fff; text-decoration: underline; }
+    pre.code { max-height: 380px; overflow: auto; font-size: 12px; background: #1e1e1e; color: #dcdcdc; border: 0; }
+    /* Khung mô phỏng cấu trúc HTML của trang môn học Moodle */
+    .mock { background: #fff; border: 1px solid #dfe3e8; padding: 0; }
+    .mock .course-title { background: #f8f9fa; border-bottom: 1px solid #dfe3e8; padding: 10px 16px; margin: 0; font-size: 18px; }
+    .mock ul.topics { list-style: none; margin: 0; padding: 0; }
+    .mock li.section { border-bottom: 1px solid #eef0f3; padding: 10px 16px; }
+    .mock h3.sectionname { font-size: 16px; margin: 0 0 6px; color: #0b3d6b; }
+    .mock ul.section { list-style: none; padding-left: 10px; margin: 0; }
+    .mock li.activity { padding: 4px 0; font-size: 14px; }
+    .mock .accesshide { position: absolute; left: -10000px; }
+    .mock .activity-dates { font-size: 12px; color: #6a737d; margin-left: 22px; }
+    .mock .icon { width: 16px; margin-right: 6px; text-align: center; display: inline-block; }
+    .result h4 { margin-top: 0; }
+    .yes { color: #1d7a46; font-weight: bold; }
+    .no { color: #a0a0a0; }
+  </style>
+</head>
+<body>
+<div class="page-head">
+  <div class="container">
+    <h1>Bài 2 – jQuery cho trang LMS-UEH</h1>
+    <p>Đọc danh sách bài tập trên trang môn học: in ra bài nộp thứ 5, liệt kê các chủ đề, có bài tập hay không và deadline. <a href="../index.html">← Về trang Nhóm 2</a></p>
+  </div>
+</div>
+
+<div class="container">
+  <div class="row">
+    <div class="col-md-6">
+      <div class="panel panel-primary">
+        <div class="panel-heading"><b>Cách chạy trên LMS thật</b></div>
+        <div class="panel-body">
+          <ol>
+            <li>Đăng nhập LMS UEH và mở trang chính của một môn học.</li>
+            <li>Nhấn <kbd>F12</kbd>, chọn tab <b>Console</b>.</li>
+            <li>Bấm <b>Sao chép code</b> bên dưới, dán vào Console và nhấn <kbd>Enter</kbd>.</li>
+            <li>Console in ra bài nộp thứ 5 và bảng các chủ đề (<code>console.table</code>).</li>
+          </ol>
+          <p>
+            <button class="btn btn-success btn-sm" id="copy"><span class="glyphicon glyphicon-copy"></span> Sao chép code</button>
+            <a class="btn btn-default btn-sm" href="lms-assignments.js" download>Tải file lms-assignments.js</a>
+            <span id="copied" class="text-success small"></span>
+          </p>
+          <pre class="code" id="code">Đang tải code...</pre>
+        </div>
+      </div>
+    </div>
+
+    <div class="col-md-6">
+      <div class="panel panel-default result">
+        <div class="panel-heading"><b>Chạy thử trên trang mô phỏng</b> <span class="text-muted small">(cấu trúc HTML giống trang môn học Moodle)</span></div>
+        <div class="panel-body">
+          <h4>Yêu cầu 1 – Bài nộp thứ 5</h4>
+          <p class="lead" id="fifth">–</p>
+          <h4>Yêu cầu 2 – Các chủ đề của môn học</h4>
+          <table class="table table-condensed table-bordered">
+            <thead><tr><th>Chủ đề</th><th>Có bài tập?</th><th>Bài tập</th><th>Deadline</th></tr></thead>
+            <tbody id="rows"></tbody>
+          </table>
+          <p class="small text-muted">Kết quả cũng được in trong Console của trang này (F12).</p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ===== Trang môn học mô phỏng: dùng đúng class Moodle (.section, .sectionname, .modtype_assign, .instancename, .activity-dates) ===== -->
+  <div class="mock" id="mock-course">
+    <h2 class="course-title">Phát triển ứng dụng Web/TMĐT – 26C1INF50902701 (trang mô phỏng)</h2>
+    <ul class="topics">
+      <li class="section main" id="section-0">
+        <h3 class="sectionname">Thông tin chung</h3>
+        <ul class="section">
+          <li class="activity modtype_forum"><span class="icon">💬</span><span class="instancename">Thông báo<span class="accesshide"> Diễn đàn</span></span></li>
+          <li class="activity modtype_resource"><span class="icon">📄</span><span class="instancename">Đề cương học phần<span class="accesshide"> Tập tin</span></span></li>
+        </ul>
+      </li>
+      <li class="section main" id="section-1">
+        <h3 class="sectionname">Chương 1: Tổng quan về ứng dụng Web</h3>
+        <ul class="section">
+          <li class="activity modtype_resource"><span class="icon">📄</span><span class="instancename">Slide Chương 1<span class="accesshide"> Tập tin</span></span></li>
+          <li class="activity modtype_assign"><span class="icon">📝</span><span class="instancename">Nộp bài tập Buổi 1 – Khảo sát website TMĐT<span class="accesshide"> Bài tập</span></span>
+            <div class="activity-dates"><div><strong>Mở:</strong> Thứ Hai, 15 Tháng Chín 2026, 12:00 AM</div><div><strong>Đến hạn:</strong> Chủ Nhật, 21 Tháng Chín 2026, 11:59 PM</div></div></li>
+        </ul>
+      </li>
+      <li class="section main" id="section-2">
+        <h3 class="sectionname">Chương 2: HTML5 &amp; CSS3</h3>
+        <ul class="section">
+          <li class="activity modtype_assign"><span class="icon">📝</span><span class="instancename">Nộp bài tập Buổi 2 – HTML5/CSS3<span class="accesshide"> Bài tập</span></span>
+            <div class="activity-dates"><div><strong>Đến hạn:</strong> Chủ Nhật, 05 Tháng Mười 2026, 11:59 PM</div></div></li>
+          <li class="activity modtype_assign"><span class="icon">📝</span><span class="instancename">Nộp bài GitHub Pages<span class="accesshide"> Bài tập</span></span>
+            <div class="activity-dates"><div><strong>Đến hạn:</strong> Thứ Tư, 08 Tháng Mười 2026, 11:59 PM</div></div></li>
+        </ul>
+      </li>
+      <li class="section main" id="section-3">
+        <h3 class="sectionname">Chương 3: Responsive &amp; Bootstrap</h3>
+        <ul class="section">
+          <li class="activity modtype_url"><span class="icon">🔗</span><span class="instancename">Tài liệu Bootstrap 3<span class="accesshide"> URL</span></span></li>
+        </ul>
+      </li>
+      <li class="section main" id="section-4">
+        <h3 class="sectionname">Chương 4: JavaScript</h3>
+        <ul class="section">
+          <li class="activity modtype_assign"><span class="icon">📝</span><span class="instancename">Nộp bài JavaScript Labs 08–10<span class="accesshide"> Bài tập</span></span>
+            <div class="activity-dates"><div><strong>Đến hạn:</strong> Chủ Nhật, 02 Tháng Mười Một 2026, 11:59 PM</div></div></li>
+        </ul>
+      </li>
+      <li class="section main" id="section-5">
+        <h3 class="sectionname">Chương 5–6: Advanced CSS &amp; Advanced Front-end</h3>
+        <ul class="section">
+          <li class="activity modtype_assign"><span class="icon">📝</span><span class="instancename">Nộp bài CSS nâng cao – Lab 07<span class="accesshide"> Bài tập</span></span>
+            <div class="activity-dates"><div><strong>Đến hạn:</strong> Thứ Sáu, 28 Tháng Mười Một 2026, 11:59 PM</div></div></li>
+          <li class="activity modtype_assign"><span class="icon">📝</span><span class="instancename">Nộp bài Advance Front-end<span class="accesshide"> Bài tập</span></span>
+            <div class="activity-dates"><div><strong>Đến hạn:</strong> Chủ Nhật, 30 Tháng Mười Một 2026, 11:59 PM</div></div></li>
+        </ul>
+      </li>
+      <li class="section main" id="section-6">
+        <h3 class="sectionname">Tài liệu tham khảo</h3>
+        <ul class="section">
+          <li class="activity modtype_resource"><span class="icon">📄</span><span class="instancename">Fundamentals of Web Development<span class="accesshide"> Tập tin</span></span></li>
+          <li class="activity modtype_url"><span class="icon">🔗</span><span class="instancename">W3Schools jQuery<span class="accesshide"> URL</span></span></li>
+        </ul>
+      </li>
+    </ul>
+  </div>
+  <p class="small text-muted" style="margin:10px 0 40px">Trang mô phỏng chỉ dùng để chạy thử code; tên bài và ngày là dữ liệu mẫu. Kết quả thật lấy từ LMS khi chạy code trong Console.</p>
+</div>
+
+<script src="../vendor/jquery/jquery.min.js"></script>
+<script src="lms-assignments.js"></script>
+<script>
+$(function () {
+  var r = window.LMS_RESULT;
+  $("#fifth").text(r.fifth ? r.fifth + " (trong tổng số " + r.total + " bài nộp)" : "Chưa đủ 5 bài nộp");
+  $("#rows").html($.map(r.rows, function (row) {
+    var has = row["Có bài tập?"];
+    return "<tr><td>" + row["Chủ đề"] + "</td><td class='" + (has.indexOf("Có") === 0 ? "yes" : (has ? "no" : "")) + "'>" + has + "</td><td>" + row["Bài tập"] + "</td><td>" + row["Deadline"] + "</td></tr>";
+  }).join(""));
+
+  // Hiện nội dung file script để sao chép
+  $.get("lms-assignments.js", function (src) { $("#code").text(src); }, "text")
+    .fail(function () { $("#code").text("Mở file lms-assignments.js để xem code (trình duyệt chặn đọc file khi mở trực tiếp bằng file://)."); });
+
+  $("#copy").on("click", function () {
+    var text = $("#code").text();
+    (navigator.clipboard ? navigator.clipboard.writeText(text) : Promise.reject())
+      .then(function () { $("#copied").text("Đã sao chép!"); })
+      .catch(function () { $("#copied").text("Hãy bôi đen code và nhấn Ctrl+C."); });
+  });
+});
+</script>
+</body>
+</html>
