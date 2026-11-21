@@ -1,0 +1,31 @@
+/* Exercise 7.16 – More transitions: nhiều thuộc tính, thời gian và delay khác nhau */
+.cards { display: flex; flex-wrap: wrap; gap: 26px; padding: 26px; background: #fff; }
+.card {
+  position: relative;
+  width: 240px;
+  overflow: hidden;
+  background: #f6f6f6;
+  border-radius: 6px;
+  box-shadow: 0 1px 3px rgba(0,0,0,.2);
+  transition: transform 0.4s ease, box-shadow 0.4s ease;
+}
+.card img { width: 100%; height: 170px; object-fit: cover; display: block; transition: transform 0.8s ease; }
+.card .info {
+  position: absolute; left: 0; right: 0; bottom: -60px;
+  height: 60px; padding: 8px 12px; box-sizing: border-box;
+  background: rgba(227,0,27,.9); color: #fff;
+  transition: bottom 0.4s ease 0.15s;                  /* delay 0.15s */
+}
+.card h3 { margin: 10px 12px; font-size: 16px; transition: color 0.3s linear; }
+.card:hover { transform: translateY(-8px); box-shadow: 0 12px 24px rgba(0,0,0,.3); }
+.card:hover img { transform: scale(1.12); }
+.card:hover .info { bottom: 46px; }
+.card:hover h3 { color: #e3001b; }
+/* Thử các timing function */
+.timing { margin-top: 10px; background: #fff; padding: 16px 26px; }
+.timing div { width: 120px; margin: 6px 0; padding: 4px 8px; background: #1f2a44; color: #fff; font: 12px monospace; transition: margin-left 1.5s; }
+.timing:hover div { margin-left: 60%; }
+.t1 { transition-timing-function: linear !important; }
+.t2 { transition-timing-function: ease-in !important; }
+.t3 { transition-timing-function: ease-out !important; }
+.t4 { transition-timing-function: cubic-bezier(.68,-0.55,.27,1.55) !important; }

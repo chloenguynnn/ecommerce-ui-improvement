@@ -1,0 +1,55 @@
+/* Exercise 7.18 – Animations với @keyframes */
+.stage { background: #fff; padding: 24px; display: flex; flex-wrap: wrap; gap: 40px; align-items: flex-end; min-height: 260px; }
+.stage > div { text-align: center; font: 12px monospace; }
+
+@keyframes bounce {
+  0%, 100% { transform: translateY(0); }
+  50%      { transform: translateY(-120px); }
+}
+.ball {
+  width: 60px; height: 60px; border-radius: 50%; margin: 0 auto 8px;
+  background: radial-gradient(circle at 30% 30%, #ff7a88, #e3001b);
+  animation-name: bounce;
+  animation-duration: 1s;
+  animation-iteration-count: infinite;
+  animation-timing-function: ease-in-out;
+}
+
+@keyframes spin { from { transform: rotate(0deg); } to { transform: rotate(360deg); } }
+.spinner {
+  width: 60px; height: 60px; margin: 0 auto 8px;
+  border: 8px solid #ddd; border-top-color: #1f2a44; border-radius: 50%;
+  animation: spin 0.9s linear infinite;               /* shorthand */
+}
+
+@keyframes fadeSlide {
+  0%   { opacity: 0; transform: translateX(-60px); }
+  100% { opacity: 1; transform: translateX(0); }
+}
+.banner {
+  width: 260px; padding: 18px; background: #1f2a44; color: #fff; font: bold 16px Arial;
+  animation-name: fadeSlide;
+  animation-duration: 1.2s;
+  animation-delay: 1s;                                 /* chờ 1s rồi mới chạy */
+  animation-iteration-count: 3;                        /* chạy 3 lần */
+  animation-fill-mode: both;
+}
+
+@keyframes pulse {
+  0%   { transform: scale(1);    box-shadow: 0 0 0 0 rgba(227,0,27,.6); }
+  70%  { transform: scale(1.05); box-shadow: 0 0 0 18px rgba(227,0,27,0); }
+  100% { transform: scale(1);    box-shadow: 0 0 0 0 rgba(227,0,27,0); }
+}
+.pulse { display: inline-block; padding: 12px 24px; background: #e3001b; color: #fff; border-radius: 30px; font: bold 14px Arial;
+         animation: pulse 1.6s ease-out 0.5s infinite; }
+
+@keyframes slideshow {
+  0%, 30%   { transform: translateX(0); }
+  33%, 63%  { transform: translateX(-240px); }
+  66%, 96%  { transform: translateX(-480px); }
+  100%      { transform: translateX(0); }
+}
+.viewer { width: 240px; height: 160px; overflow: hidden; margin: 0 auto 8px; border: 4px solid #fff; box-shadow: 0 2px 6px rgba(0,0,0,.3); }
+.reel { display: flex; width: 720px; animation: slideshow 9s infinite; }
+.reel img { width: 240px; height: 160px; object-fit: cover; }
+.stage:hover * { animation-play-state: paused; }

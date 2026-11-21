@@ -1,0 +1,16 @@
+/* Exercise 7.17 – Filters */
+.filters { display: flex; flex-wrap: wrap; gap: 18px; padding: 20px; background: #fff; }
+.filters figure { margin: 0; width: 200px; text-align: center; }
+.filters img { width: 200px; height: 150px; object-fit: cover; display: block; transition: filter .4s; }
+.filters figcaption { font: 13px monospace; margin-top: 6px; }
+.saturate   img { filter: saturate(250%); }
+.grayscale  img { filter: grayscale(100%); }
+.contrast   img { filter: contrast(180%); }
+.brightness img { filter: brightness(150%); }
+.blur       img { filter: blur(3px); }
+.invert     img { filter: invert(100%); }
+.sepia      img { filter: sepia(100%); }
+.huerotate  img { filter: hue-rotate(120deg); }
+.opacity    img { filter: opacity(40%); }
+.combo      img { filter: grayscale(60%) contrast(130%) brightness(110%); }
+.filters figure:hover img { filter: none; }      /* hover để xem ảnh gốc */

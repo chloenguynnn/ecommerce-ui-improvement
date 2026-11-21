@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <link rel="icon" type="image/svg+xml" href="../images/favicon.svg">
+  <title>Exercise 7.14 - Transforms</title>
+  <link rel="stylesheet" href="css/lab07.css">
+  <link rel="stylesheet" href="css/lab07-exercise14.css">
+</head>
+<body>
+<header class="lab-title">
+  <p>Lab 07 &middot; Advanced CSS: Layout</p>
+  <h1>Exercise 7.14 &mdash; Transforms</h1>
+</header>
+<aside class="note" lang="vi">Khung nét đứt là vị trí gốc của ảnh. Mỗi ảnh áp dụng một hàm <code>transform</code>: <code>rotate</code>, <code>skew</code>, <code>translate</code>, <code>scale</code>, kết hợp nhiều hàm và đổi <code>transform-origin</code>.</aside>
+
+<div class="demo">
+  <div class="grid">
+    <figure class="rotate"><div class="frame"><img src="images/5855774224.jpg" alt=""></div><figcaption>rotate(-12deg)</figcaption></figure>
+    <figure class="skew"><div class="frame"><img src="images/5856697109.jpg" alt=""></div><figcaption>skew(15deg, 0)</figcaption></figure>
+    <figure class="translate"><div class="frame"><img src="images/8711645510.jpg" alt=""></div><figcaption>translate(30px, 20px)</figcaption></figure>
+    <figure class="scale"><div class="frame"><img src="images/9504449928.jpg" alt=""></div><figcaption>scale(0.7)</figcaption></figure>
+    <figure class="combo"><div class="frame"><img src="images/5855774224.jpg" alt=""></div><figcaption>rotate scale translateX</figcaption></figure>
+    <figure class="origin"><div class="frame"><img src="images/5856697109.jpg" alt=""></div><figcaption>origin: top left; rotate(10deg)</figcaption></figure>
+  </div>
+</div>
+
+<script src="../js/labnav.js" defer></script>
+</body>
+</html>
