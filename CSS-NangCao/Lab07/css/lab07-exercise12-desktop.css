@@ -1,0 +1,15 @@
+/* Exercise 7.12 – stylesheet cho màn hình rộng hơn 480px */
+.page { max-width: 1100px; margin: 0 auto; background: #fff; }
+.page > header { background: #1f2a44; color: #fff; padding: 12px 20px; overflow: auto; }
+.page > header h2 { float: left; margin: 0; }
+.page > footer { background: #1f2a44; color: #fff; padding: 12px 20px; clear: both; }
+/* 7.13: menu ngang hiện trên desktop, dropdown ẩn đi */
+.mainnav ul { float: right; list-style: none; margin: 4px 0 0; padding: 0; }
+.mainnav li { display: inline; margin-left: 18px; }
+.mainnav a { color: #fff; }
+.mainnav select { display: none; }
+.sidebar { float: left; width: 200px; padding: 16px; background: #e8e3d8; box-sizing: border-box; }
+.sidebar ul { list-style: none; padding: 0; }
+main { margin-left: 220px; padding: 16px 20px 16px 0; }
+.thumbs img { width: 31%; margin-right: 1.5%; }
+.device::after { content: "Desktop stylesheet (min-width: 481px)"; background: #3b6fd6; color: #fff; padding: 3px 8px; font-size: 12px; }

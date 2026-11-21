@@ -1,0 +1,12 @@
+/* Exercise 7.12 – stylesheet cho màn hình tối đa 480px */
+.page { background: #fff; }
+.page > header, .page > footer { background: #e3001b; color: #fff; padding: 10px 14px; text-align: center; }
+.page > header h2 { margin: 0 0 8px; font-size: 20px; }
+/* 7.13: ẩn menu ngang, hiện dropdown <select> dễ bấm trên điện thoại */
+.mainnav ul { display: none; }
+.mainnav select { display: block; width: 100%; font-size: 16px; padding: 8px; }
+.sidebar { display: none; }                 /* bỏ cột phụ trên điện thoại */
+main { padding: 12px 14px; }
+main img { width: 100%; }
+.thumbs img { width: 100%; margin-bottom: 8px; }
+.device::after { content: "Mobile stylesheet (max-width: 480px)"; background: #e3001b; color: #fff; padding: 3px 8px; font-size: 12px; }

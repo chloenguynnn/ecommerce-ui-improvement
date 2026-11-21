@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <!-- Exercise 7.13: khai báo viewport để điện thoại không thu nhỏ trang desktop -->
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="icon" type="image/svg+xml" href="../images/favicon.svg">
+  <title>Exercise 7.12 - Media Queries + 7.13 Setting the Viewport</title>
+  <link rel="stylesheet" href="css/lab07.css">
+  <link rel="stylesheet" href="css/lab07-exercise12-desktop.css" media="screen and (min-width: 481px)">
+  <link rel="stylesheet" href="css/lab07-exercise12-mobile.css" media="screen and (max-width: 480px)">
+</head>
+<body>
+<header class="lab-title">
+  <p>Lab 07 &middot; Advanced CSS: Layout</p>
+  <h1>Exercise 7.12 &mdash; Media Queries + 7.13 Setting the Viewport</h1>
+</header>
+<aside class="note" lang="vi"><b>7.12:</b> hai stylesheet được nạp theo media query: <code>desktop.css</code> khi rộng hơn 480px (header xanh, có cột trái), <code>mobile.css</code> khi từ 480px trở xuống (header đỏ, một cột). <b>7.13</b> làm tiếp trên chính file này: thêm <code>&lt;meta name="viewport"&gt;</code> và đổi menu ngang thành dropdown <code>&lt;select&gt;</code> trên điện thoại. Thu nhỏ cửa sổ dưới 480px để xem.</aside>
+
+<div class="demo">
+  <p class="device"></p>
+  <div class="page">
+    <header>
+      <h2>Share Your Travels</h2>
+      <nav class="mainnav">
+        <ul><li><a href="#">Home</a></li><li><a href="#">Browse</a></li><li><a href="#">Search</a></li><li><a href="#">Login</a></li></ul>
+        <select aria-label="Menu" onchange="if(this.value) location.hash=this.value">
+          <option value="">&#9776; Menu</option><option value="home">Home</option><option value="browse">Browse</option>
+          <option value="search">Search</option><option value="login">Login</option>
+        </select>
+      </nav>
+    </header>
+    <div class="sidebar"><h3>Continents</h3><ul><li>Africa</li><li>Asia</li><li>Europe</li><li>North America</li><li>Oceania</li></ul></div>
+    <main>
+      <h3>Featured photos</h3>
+      <div class="thumbs"><img src="images/5855774224.jpg" alt=""><img src="images/5856697109.jpg" alt=""><img src="images/9504449928.jpg" alt=""></div>
+      <p>Rome is a city of layers. Every street corner shows a different century, from ancient columns to baroque churches and busy modern cafés. Travellers usually come for the Colosseum and the Forum, but stay for the small piazzas, the food and the evening light on the Tiber.</p><p>Photographs shared by our members help other travellers plan their trips. Each photo has a caption, the city where it was taken and the name of the member who uploaded it. Browse the collection below and leave a comment.</p>
+    </main>
+    <footer>Copyright &copy; Share Your Travels</footer>
+  </div>
+</div>
+
+<script src="../js/labnav.js" defer></script>
+</body>
+</html>
