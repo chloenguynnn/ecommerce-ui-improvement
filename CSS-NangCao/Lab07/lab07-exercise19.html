@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="icon" type="image/svg+xml" href="../images/favicon.svg">
+  <title>Exercise 7.19 - Using Bootstrap</title>
+  <link rel="stylesheet" href="bootstrap/css/bootstrap.min.css">
+  <link rel="stylesheet" href="css/lab07-exercise19.css">
+</head>
+<body>
+<!-- Navbar -->
+<nav class="navbar navbar-inverse navbar-static-top">
+  <div class="container">
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#main-nav" aria-expanded="false">
+        <span class="sr-only">Toggle navigation</span><span class="icon-bar"></span><span class="icon-bar"></span><span class="icon-bar"></span>
+      </button>
+      <a class="navbar-brand" href="#">Share Your Travels</a>
+    </div>
+    <div class="collapse navbar-collapse" id="main-nav">
+      <ul class="nav navbar-nav">
+        <li class="active"><a href="#">Home</a></li><li><a href="#">Browse</a></li><li><a href="#">Search</a></li>
+      </ul>
+      <ul class="nav navbar-nav navbar-right"><li><a href="#"><span class="glyphicon glyphicon-user"></span> Login</a></li></ul>
+    </div>
+  </div>
+</nav>
+
+<div class="container">
+  <p class="alert alert-warning" lang="vi"><b>Exercise 7.19:</b> trang dùng Bootstrap 3: navbar thu gọn trên điện thoại, jumbotron,
+     grid <code>col-md-*</code>, nested columns, panel, list-group và button. Thu nhỏ cửa sổ để xem grid xếp lại.</p>
+
+  <!-- Jumbotron -->
+  <div class="jumbotron">
+    <h1>Explore the world</h1>
+    <p>Photographs shared by our members help other travellers plan their trips. Each photo has a caption, the city where it was taken and the name of the member who uploaded it. Browse the collection below and leave a comment.</p>
+    <p><a class="btn btn-primary btn-lg" href="#">Start browsing</a> <a class="btn btn-default btn-lg" href="#">Upload a photo</a></p>
+  </div>
+
+  <div class="row">
+    <!-- Cột trái: list-group -->
+    <div class="col-md-3">
+      <div class="panel panel-default">
+        <div class="panel-heading"><h3 class="panel-title">Continents</h3></div>
+        <div class="list-group">
+          <a href="#" class="list-group-item active">Europe <span class="badge">14</span></a>
+          <a href="#" class="list-group-item">Asia <span class="badge">9</span></a>
+          <a href="#" class="list-group-item">North America <span class="badge">7</span></a>
+          <a href="#" class="list-group-item">Oceania <span class="badge">3</span></a>
+          <a href="#" class="list-group-item">Africa <span class="badge">2</span></a>
+        </div>
+      </div>
+    </div>
+
+    <!-- Cột giữa: nested columns -->
+    <div class="col-md-6">
+      <div class="panel panel-primary">
+        <div class="panel-heading"><h3 class="panel-title">Featured photos</h3></div>
+        <div class="panel-body">
+          <div class="row">
+            <div class="col-sm-6"><div class="thumbnail"><img src="images/5855774224.jpg" alt=""><div class="caption"><h4>Rome</h4><p><a href="#" class="btn btn-success btn-sm" role="button">View</a></p></div></div></div>
+            <div class="col-sm-6"><div class="thumbnail"><img src="images/8711645510.jpg" alt=""><div class="caption"><h4>Prague</h4><p><a href="#" class="btn btn-success btn-sm" role="button">View</a></p></div></div></div>
+          </div>
+          <div class="row">
+            <div class="col-xs-4"><img class="img-responsive img-rounded" src="images/5856697109.jpg" alt=""></div>
+            <div class="col-xs-4"><img class="img-responsive img-rounded" src="images/9504449928.jpg" alt=""></div>
+            <div class="col-xs-4"><img class="img-responsive img-rounded" src="images/07020.jpg" alt=""></div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Cột phải -->
+    <div class="col-md-3">
+      <div class="panel panel-info">
+        <div class="panel-heading"><h3 class="panel-title">Top members</h3></div>
+        <ul class="list-group">
+          <li class="list-group-item">Randy Connolly</li><li class="list-group-item">Ricardo Hoar</li><li class="list-group-item">Bảo Nhi</li>
+        </ul>
+      </div>
+      <div class="btn-group btn-group-justified" role="group">
+        <a class="btn btn-danger" href="#">Like</a><a class="btn btn-warning" href="#">Share</a><a class="btn btn-info" href="#">Save</a>
+      </div>
+    </div>
+  </div>
+  <footer class="text-center text-muted">Copyright &copy; Share Your Travels</footer>
+</div>
+
+<script src="bootstrap/js/jquery.min.js"></script>
+<script src="bootstrap/js/bootstrap.min.js"></script>
+<script src="../js/labnav.js" defer></script>
+</body>
+</html>

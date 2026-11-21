@@ -1,0 +1,6 @@
+/* Exercise 7.19 – chỉnh thêm một chút cho trang Bootstrap */
+body { background: #f3f1ec; padding-bottom: 60px; }
+.jumbotron { background: linear-gradient(rgba(0,0,0,.55), rgba(0,0,0,.55)), url(../images/9504449928.jpg) center/cover; color: #fff; }
+.thumbnail img { height: 150px; width: 100%; object-fit: cover; }
+.panel-body .row + .row { margin-top: 6px; }
+footer { margin-top: 20px; }
