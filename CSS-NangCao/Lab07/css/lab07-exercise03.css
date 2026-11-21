@@ -1,0 +1,39 @@
+/* Exercise 7.3 – Absolute positioning */
+.wrapper {
+  position: relative;      /* ancestor gần nhất có position: mốc cho phần tử absolute */
+  background: #fff;
+  border: 2px solid #3b6fd6;
+  padding: 16px;
+  min-height: 330px;
+}
+.wrapper::before { content: "div.wrapper (position: relative)"; font-size: 12px; color: #3b6fd6; }
+figure {
+  position: absolute;
+  top: 40px;
+  right: 30px;
+  width: 260px;
+  margin: 0;
+  padding: 8px;
+  background: #fafafa;
+  border: 1px solid #999;
+}
+figure img { width: 100%; display: block; }
+figcaption {
+  position: absolute;      /* so với figure (cũng là phần tử có position) */
+  bottom: 18px;
+  left: 18px;
+  background: rgba(0,0,0,.7);
+  color: #fff;
+  padding: 3px 10px;
+  font-size: 13px;
+}
+.badge {
+  position: absolute;
+  top: 0;
+  left: 0;
+  background: #e3001b;
+  color: #fff;
+  font-size: 12px;
+  padding: 3px 8px;
+}
+.wrapper p { width: 50%; }

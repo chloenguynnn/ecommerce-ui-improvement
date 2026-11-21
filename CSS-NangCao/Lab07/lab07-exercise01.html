@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <link rel="icon" type="image/svg+xml" href="../images/favicon.svg">
+  <title>Exercise 7.1 - Document Flow</title>
+  <link rel="stylesheet" href="css/lab07.css">
+  <link rel="stylesheet" href="css/lab07-exercise01.css">
+</head>
+<body>
+<header class="lab-title">
+  <p>Lab 07 &middot; Advanced CSS: Layout</p>
+  <h1>Exercise 7.1 &mdash; Document Flow</h1>
+</header>
+<aside class="note" lang="vi">Phần tử <b>block</b> (viền xanh) chiếm hết một dòng; phần tử <b>inline</b> (viền đỏ) nằm trong dòng chữ. Cột phải đổi <code>span</code> thành <code>display:block</code>, <code>li</code> thành <code>inline</code>, <code>div</code> thành <code>inline-block</code> và ẩn đoạn cuối bằng <code>display:none</code>.</aside>
+
+<div class="demo columns">
+  <section class="flow">
+    <h2>Mặc định (normal flow)</h2>
+    <h3>Rome, Italy</h3>
+    <p>Photo by <a href="#">Randy</a>. The <span>Colosseum</span> was built in <em>70&ndash;80 AD</em>
+       <img src="images/thumb-5855774224.jpg" alt="Thumbnail" width="40" height="40"> and could hold
+       <span>50,000 spectators</span>.</p>
+    <ul><li>Home</li><li>Browse</li><li>Search</li><li>Login</li></ul>
+    <div class="box">div.box 1</div><div class="box">div.box 2</div><div class="box">div.box 3</div>
+    <p class="hidden">This paragraph has display:none.</p>
+
+  </section>
+  <section class="flow changed">
+    <h2>Sau khi đổi display</h2>
+    <h3>Rome, Italy</h3>
+    <p>Photo by <a href="#">Randy</a>. The <span>Colosseum</span> was built in <em>70&ndash;80 AD</em>
+       <img src="images/thumb-5855774224.jpg" alt="Thumbnail" width="40" height="40"> and could hold
+       <span>50,000 spectators</span>.</p>
+    <ul><li>Home</li><li>Browse</li><li>Search</li><li>Login</li></ul>
+    <div class="box">div.box 1</div><div class="box">div.box 2</div><div class="box">div.box 3</div>
+    <p class="hidden">This paragraph has display:none.</p>
+
+  </section>
+</div>
+
+<script src="../js/labnav.js" defer></script>
+</body>
+</html>

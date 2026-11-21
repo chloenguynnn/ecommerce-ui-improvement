@@ -1,0 +1,12 @@
+/* Exercise 7.1 – Document flow và thuộc tính display */
+.flow p, .flow h3, .flow ul, .flow div.box { outline: 1px dashed #3b6fd6; }   /* block: viền xanh */
+.flow span, .flow a, .flow em, .flow img { outline: 1px dashed #e3001b; }     /* inline: viền đỏ */
+.flow img { vertical-align: middle; }
+
+/* Thay đổi cách hiển thị */
+.changed span { display: block; background: #ffe7ea; }       /* inline  -> block */
+.changed li { display: inline; margin-right: 12px; }         /* block   -> inline */
+.changed .box { display: inline-block; width: 140px; height: 60px; background: #dfe8fb; margin: 4px; }
+.changed .hidden { display: none; }                          /* ẩn khỏi document flow */
+.columns { display: flex; gap: 24px; flex-wrap: wrap; }
+.columns > section { flex: 1 1 380px; background: #fff; padding: 4px 16px 16px; }

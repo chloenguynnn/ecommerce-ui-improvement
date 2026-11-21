@@ -1,0 +1,25 @@
+/* Exercise 7.4 – Stacking using z-index */
+.stage { position: relative; height: 340px; background: #fff; border: 1px solid #ccc; }
+figure {
+  position: absolute;
+  width: 220px;
+  margin: 0;
+  padding: 8px;
+  background: #fff;
+  border: 1px solid #888;
+  box-shadow: 3px 3px 8px rgba(0,0,0,.3);
+}
+figure img { width: 100%; display: block; }
+figcaption {
+  position: absolute;
+  left: 20px; bottom: -14px;
+  background: #e3001b; color: #fff; font-size: 13px; padding: 3px 10px;
+}
+.one   { top: 20px;  left: 20px;  z-index: 3; }
+.two   { top: 70px;  left: 170px; z-index: 2; }
+.three { top: 120px; left: 320px; z-index: 1; }
+
+/* Quan hệ cha/con: caption của .two có z-index 99 nhưng vẫn
+   không thể nằm trên .one vì nằm trong stacking context của cha (z-index: 2) */
+.two figcaption { z-index: 99; left: -150px; bottom: 60px; background: #3b6fd6; }
+.stage:hover .three { z-index: 10; }

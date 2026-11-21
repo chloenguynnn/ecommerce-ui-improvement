@@ -1,0 +1,29 @@
+/* lab07.css – định dạng chung cho tất cả các trang Exercise của Lab 07 */
+body {
+  margin: 0;
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 16px;
+  line-height: 1.5;
+  color: #222;
+  background: #f3f1ec;
+}
+.lab-title {
+  background: #111;
+  color: #fff;
+  padding: 14px 24px 16px;
+  border-bottom: 5px solid #e3001b;
+}
+.lab-title p { margin: 0; font-size: 13px; letter-spacing: .08em; text-transform: uppercase; color: #bbb; }
+.lab-title h1 { margin: 4px 0 0; font-size: 24px; }
+.note {
+  margin: 16px 24px;
+  padding: 10px 16px;
+  background: #fff;
+  border-left: 5px solid #e3001b;
+  font-size: 14px;
+  max-width: 900px;
+}
+.note code { background: #f3f1ec; padding: 1px 5px; }
+.demo { margin: 0 24px 40px; }
+.demo h2 { font-size: 18px; margin: 24px 0 8px; border-bottom: 1px solid #ccc; padding-bottom: 4px; }
+img { border: 0; }

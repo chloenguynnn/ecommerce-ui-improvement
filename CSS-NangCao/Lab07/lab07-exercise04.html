@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <link rel="icon" type="image/svg+xml" href="../images/favicon.svg">
+  <title>Exercise 7.4 - Stacking Using Z-Index</title>
+  <link rel="stylesheet" href="css/lab07.css">
+  <link rel="stylesheet" href="css/lab07-exercise04.css">
+</head>
+<body>
+<header class="lab-title">
+  <p>Lab 07 &middot; Advanced CSS: Layout</p>
+  <h1>Exercise 7.4 &mdash; Stacking Using Z-Index</h1>
+</header>
+<aside class="note" lang="vi">Ba figure chồng lên nhau theo <code>z-index</code> 3 &gt; 2 &gt; 1. Caption màu xanh của figure giữa có <code>z-index: 99</code> nhưng vẫn bị figure đầu che, vì phần tử con không vượt ra khỏi stacking context của cha. Rê chuột vào khung để đưa ảnh thứ ba lên trên cùng.</aside>
+
+<div class="demo">
+  <div class="stage">
+    <figure class="one"><img src="images/5855774224.jpg" alt=""><figcaption>z-index: 3</figcaption></figure>
+    <figure class="two"><img src="images/5856697109.jpg" alt=""><figcaption>child z-index: 99</figcaption></figure>
+    <figure class="three"><img src="images/8711645510.jpg" alt=""><figcaption>z-index: 1 (hover: 10)</figcaption></figure>
+  </div>
+</div>
+
+<script src="../js/labnav.js" defer></script>
+</body>
+</html>

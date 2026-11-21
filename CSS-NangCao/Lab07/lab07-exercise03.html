@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <link rel="icon" type="image/svg+xml" href="../images/favicon.svg">
+  <title>Exercise 7.3 - Absolute Positioning</title>
+  <link rel="stylesheet" href="css/lab07.css">
+  <link rel="stylesheet" href="css/lab07-exercise03.css">
+</head>
+<body>
+<header class="lab-title">
+  <p>Lab 07 &middot; Advanced CSS: Layout</p>
+  <h1>Exercise 7.3 &mdash; Absolute Positioning</h1>
+</header>
+<aside class="note" lang="vi">Phần tử <code>position:absolute</code> bị lấy ra khỏi document flow và được định vị theo <b>ancestor gần nhất có position</b>: figure bám theo div.wrapper (viền xanh), còn figcaption bám theo figure.</aside>
+
+<div class="demo">
+  <div class="wrapper">
+    <span class="badge">top:0; left:0</span>
+    <p>Rome is a city of layers. Every street corner shows a different century, from ancient columns to baroque churches and busy modern cafés. Travellers usually come for the Colosseum and the Forum, but stay for the small piazzas, the food and the evening light on the Tiber.</p>
+    <p>Photographs shared by our members help other travellers plan their trips. Each photo has a caption, the city where it was taken and the name of the member who uploaded it. Browse the collection below and leave a comment.</p>
+    <figure>
+      <img src="images/5856697109.jpg" alt="Travel photo">
+      <figcaption>Absolute caption</figcaption>
+    </figure>
+  </div>
+</div>
+
+<script src="../js/labnav.js" defer></script>
+</body>
+</html>
