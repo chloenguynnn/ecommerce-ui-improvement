@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <link rel="icon" type="image/svg+xml" href="../images/favicon.svg">
+  <title>Exercise 7.8 - Floating and Clearing</title>
+  <link rel="stylesheet" href="css/lab07.css">
+  <link rel="stylesheet" href="css/lab07-exercise08.css">
+</head>
+<body>
+<header class="lab-title">
+  <p>Lab 07 &middot; Advanced CSS: Layout</p>
+  <h1>Exercise 7.8 &mdash; Floating and Clearing</h1>
+</header>
+<aside class="note" lang="vi">Thuộc tính <code>clear</code> buộc phần tử bắt đầu bên dưới các phần tử float: <code>left</code>, <code>right</code> hoặc <code>both</code>. Ảnh bên phải cao hơn nên ba trường hợp cho kết quả khác nhau.</aside>
+
+<div class="demo">
+  <h2>Không clear</h2>
+  <div class="box"><figure><img src="images/5855774224.jpg" alt=""></figure><figure class="r"><img src="images/9504449928.jpg" alt="" style="height:160px;object-fit:cover"></figure><p>Text beside the floats.</p><p>This paragraph also wraps around the floats.</p></div>
+  <h2>clear: left</h2>
+  <div class="box"><figure><img src="images/5855774224.jpg" alt=""></figure><figure class="r"><img src="images/9504449928.jpg" alt="" style="height:160px;object-fit:cover"></figure><p>Text beside the floats.</p><p class="clear-left">clear: left &ndash; starts below the left float.</p></div>
+  <h2>clear: right</h2>
+  <div class="box"><figure><img src="images/5855774224.jpg" alt=""></figure><figure class="r"><img src="images/9504449928.jpg" alt="" style="height:160px;object-fit:cover"></figure><p>Text beside the floats.</p><p class="clear-right">clear: right &ndash; starts below the right float.</p></div>
+  <h2>clear: both</h2>
+  <div class="box"><figure><img src="images/5855774224.jpg" alt=""></figure><figure class="r"><img src="images/9504449928.jpg" alt="" style="height:160px;object-fit:cover"></figure><p>Text beside the floats.</p><p class="clear-both">clear: both &ndash; starts below every float.</p></div>
+</div>
+
+<script src="../js/labnav.js" defer></script>
+</body>
+</html>

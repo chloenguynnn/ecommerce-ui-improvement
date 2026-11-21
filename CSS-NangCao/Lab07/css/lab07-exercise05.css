@@ -1,0 +1,7 @@
+/* Exercise 7.5 – Floating elements */
+article { background: #fff; padding: 12px 20px; max-width: 900px; }
+figure { margin: 4px 16px 8px 0; padding: 6px; border: 1px solid #aaa; background: #fafafa; width: 200px; }
+figure img { width: 100%; display: block; }
+figcaption { font-size: 12px; text-align: center; }
+.left  { float: left; }
+.right { float: right; margin: 4px 0 8px 16px; }

@@ -1,0 +1,9 @@
+/* Exercise 7.6 – Floating in a container */
+.container { background: #fff; border: 2px solid #3b6fd6; padding: 10px; margin-bottom: 24px; max-width: 900px; }
+.container figure { float: left; width: 180px; margin: 0 14px 10px 0; padding: 6px; background: #fafafa; border: 1px solid #aaa; }
+.container img { width: 100%; display: block; }
+.container figcaption { font-size: 12px; text-align: center; }
+/* Không chứa được float: container co lại, viền chỉ bao quanh đoạn chữ ngắn */
+.broken { }
+/* Chứa được float: overflow tạo block formatting context mới */
+.fixed { overflow: auto; }

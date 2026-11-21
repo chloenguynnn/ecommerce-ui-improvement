@@ -1,0 +1,13 @@
+/* Exercise 7.7 – Floating multiple items */
+.gallery { background: #fff; padding: 12px; overflow: auto; }
+.gallery figure {
+  float: left;
+  width: 170px;
+  margin: 0 12px 12px 0;
+  padding: 6px;
+  border: 1px solid #aaa;
+  background: #fafafa;
+}
+.gallery img { width: 100%; display: block; }
+.gallery figcaption { font-size: 12px; text-align: center; }
+.gallery figure:nth-child(3) img { height: 170px; object-fit: cover; }  /* một ảnh cao hơn để thấy hiện tượng "kẹt" */

@@ -1,0 +1,18 @@
+/* Exercise 7.11 – Three-column layout bằng positioning */
+.page { max-width: 1100px; margin: 0 auto; background: #fff; }
+.page > header, .page > footer { background: #1f2a44; color: #fff; padding: 12px 20px; }
+.columns { position: relative; min-height: 420px; }
+nav, aside {
+  position: absolute;
+  top: 0;
+  width: 200px;
+  padding: 16px;
+  box-sizing: border-box;
+}
+nav   { left: 0;  background: #e8e3d8; }
+aside { right: 0; background: #dfe8fb; }
+nav ul { list-style: none; margin: 0; padding: 0; }
+nav li { padding: 6px 0; border-bottom: 1px solid #ccc; }
+main { margin: 0 220px; padding: 16px 0; }
+main img { width: 100%; }
+aside img { width: 100%; margin-bottom: 6px; display: block; }

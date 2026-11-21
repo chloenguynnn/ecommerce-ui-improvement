@@ -1,0 +1,9 @@
+/* Exercise 7.8 – Floating and clearing */
+.box { background: #fff; padding: 12px; margin-bottom: 20px; max-width: 900px; overflow: auto; }
+.box figure { float: left; width: 150px; margin: 0 12px 8px 0; padding: 5px; border: 1px solid #aaa; }
+.box figure.r { float: right; margin: 0 0 8px 12px; }
+.box img { width: 100%; display: block; }
+.box p { margin: 0 0 8px; }
+.clear-left  { clear: left;  background: #ffe7ea; }
+.clear-right { clear: right; background: #dfe8fb; }
+.clear-both  { clear: both;  background: #e2f4de; }

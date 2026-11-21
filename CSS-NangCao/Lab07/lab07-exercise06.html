@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <link rel="icon" type="image/svg+xml" href="../images/favicon.svg">
+  <title>Exercise 7.6 - Floating in a Container</title>
+  <link rel="stylesheet" href="css/lab07.css">
+  <link rel="stylesheet" href="css/lab07-exercise06.css">
+</head>
+<body>
+<header class="lab-title">
+  <p>Lab 07 &middot; Advanced CSS: Layout</p>
+  <h1>Exercise 7.6 &mdash; Floating in a Container</h1>
+</header>
+<aside class="note" lang="vi">Phần tử float không được tính vào chiều cao của container, nên viền xanh ở khung trên bị co lại. Thêm <code>overflow:auto</code> vào container (khung dưới) để container bao trọn phần tử float.</aside>
+
+<div class="demo">
+  <h2>Container chưa xử lý float</h2>
+  <div class="container broken">
+    <figure><img src="images/5856697109.jpg" alt=""><figcaption>Floated figure</figcaption></figure>
+    <p>Short text. The container's border ignores the floated figure.</p>
+  </div>
+  <p style="max-width:900px">This paragraph runs into the floated image above.</p>
+  <h2 style="clear:both">Container có overflow: auto</h2>
+  <div class="container fixed">
+    <figure><img src="images/5856697109.jpg" alt=""><figcaption>Floated figure</figcaption></figure>
+    <p>Short text. Now the container grows to wrap around the floated figure.</p>
+  </div>
+</div>
+
+<script src="../js/labnav.js" defer></script>
+</body>
+</html>
