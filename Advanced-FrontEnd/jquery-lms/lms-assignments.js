@@ -9,6 +9,11 @@
  */
 (function (run) {
   if (window.jQuery) { run(window.jQuery); return; }
+  // Moodle nạp jQuery qua RequireJS: lấy jQuery có sẵn của trang trước khi phải tải từ ngoài
+  if (typeof window.require === "function" && window.M) {
+    window.require(["jquery"], run);
+    return;
+  }
   var s = document.createElement("script");
   s.src = "https://code.jquery.com/jquery-3.7.1.min.js";
   s.onload = function () { run(window.jQuery.noConflict(true)); };
