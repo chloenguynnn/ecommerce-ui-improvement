@@ -1,0 +1,225 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+  <meta charset="utf-8">
+  <link rel="icon" type="image/svg+xml" href="images/favicon.svg">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Nguyễn Trần Bảo Nhi | CSS nâng cao – Lab 07</title>
+  <meta name="description" content="Trang tổng hợp bài thực hành CSS nâng cao (Lab 07: Advanced CSS – Layout) của Nguyễn Trần Bảo Nhi, học phần Phát triển ứng dụng TMĐT, UEH.">
+  <link rel="stylesheet" href="css/fonts.css">
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+<a class="skip" href="#gioi-thieu">Bỏ qua phần đầu trang</a>
+
+<!-- ================= Thanh điều hướng ================= -->
+<header class="topbar">
+  <div class="wrap">
+    <a class="mark" href="#top" aria-label="Về đầu trang">BN<span>.</span>CSS</a>
+    <button class="menu-toggle" type="button" aria-expanded="false" aria-controls="menu">Menu</button>
+    <ul class="menu" id="menu">
+      <li><a href="#gioi-thieu">Giới thiệu</a></li>
+      <li><a href="#exercises">19 Exercise</a></li>
+      <li><a href="#kien-thuc">Kiến thức đã học</a></li>
+      <li><a href="#tu-danh-gia">Tự đánh giá</a></li>
+    </ul>
+  </div>
+</header>
+
+<main id="top">
+
+  <!-- ================= 4.1 Thông tin cá nhân ================= -->
+  <section class="hero">
+    <div class="wrap">
+      <figure class="portrait">
+        <img src="images/avatar.jpg" alt="Ảnh đại diện của Nguyễn Trần Bảo Nhi" width="720" height="900">
+      </figure>
+
+      <div class="hero-text">
+        <p class="course">Phát triển ứng dụng TMĐT, Chương 5: Advanced CSS – Layout</p>
+        <h1 class="name"><span class="family">Nguyễn Trần</span> <span class="given">Bảo Nhi</span></h1>
+
+        <dl class="facts">
+          <div>
+            <dt>Mã số sinh viên</dt>
+            <dd>31241021234</dd>
+          </div>
+          <div>
+            <dt>Lớp học phần</dt>
+            <dd>26C1INF50902701</dd>
+          </div>
+          <div>
+            <dt>GitHub</dt>
+            <dd><a href="https://github.com/chloenguynnn" target="_blank" rel="noopener">chloenguynnn</a></dd>
+          </div>
+        </dl>
+
+        <div class="actions">
+          <a class="btn" href="Lab07/index.html">Mở Lab 07</a>
+          <a class="btn ghost" href="https://github.com/chloenguynnn/ecommerce-ui-improvement/tree/main/CSS-NangCao" target="_blank" rel="noopener">Mã nguồn trên GitHub</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <div class="strip" aria-hidden="true">
+    <div class="strip-track">Document Flow<b>/</b>Positioning<b>/</b>Z-Index<b>/</b>Float &amp; Clear<b>/</b>Multi-column<b>/</b>Media Queries<b>/</b>Transforms<b>/</b>Animations<b>/</b>Bootstrap<b>/</b></div>
+  </div>
+
+  <!-- ================= 4.2 Giới thiệu về bài thực hành ================= -->
+  <section class="block about" id="gioi-thieu">
+    <div class="wrap">
+      <h2>Về bài thực hành này</h2>
+      <div>
+        <p class="lead">Lab 07 gồm 19 Exercise về bố cục bằng CSS. Mục tiêu là hiểu trình duyệt sắp xếp các phần tử trên trang như thế nào, rồi chủ động thay đổi cách sắp xếp đó: dời phần tử bằng positioning, cho phần tử trôi sang hai bên bằng float, chia trang thành hai, ba cột và đổi bố cục theo kích thước màn hình.</p>
+        <p class="lead">HTML chỉ cho trang một thứ tự nội dung từ trên xuống dưới. CSS nâng cao quyết định nội dung đó được bày ra sao trên máy tính, trên điện thoại, và phản ứng thế nào khi người dùng rê chuột. Với một website thương mại điện tử, đây là phần làm nên lưới sản phẩm gọn gàng, menu dễ bấm trên điện thoại và những hiệu ứng nhỏ giúp khách hàng chú ý đến sản phẩm.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- ================= 4.3 Danh sách và liên kết đến các Exercise ================= -->
+  <section class="block labs" id="exercises">
+    <div class="wrap">
+      <h2>Năm nhóm Exercise</h2>
+      <ul class="lab-list">
+        <li>
+          <a class="lab-row" href="Lab07/index.html#flow">
+            <span class="lab-num">7.1</span>
+            <div>
+              <h3>Document flow, positioning, z-index</h3>
+              <p>Exercise 7.1 – 7.4: đổi kiểu hiển thị bằng display, định vị relative và absolute, xếp lớp phần tử bằng z-index.</p>
+            </div>
+            <span class="lab-go">Mở 7.1 – 7.4</span>
+          </a>
+        </li>
+        <li>
+          <a class="lab-row" href="Lab07/index.html#float">
+            <span class="lab-num">7.5</span>
+            <div>
+              <h3>Float, clear và positioning</h3>
+              <p>Exercise 7.5 – 7.9: cho ảnh trôi trong đoạn văn, chứa float trong container, xếp nhiều ảnh, dùng clear và đặt caption chồng lên ảnh.</p>
+            </div>
+            <span class="lab-go">Mở 7.5 – 7.9</span>
+          </a>
+        </li>
+        <li>
+          <a class="lab-row" href="Lab07/index.html#layout">
+            <span class="lab-num">7.10</span>
+            <div>
+              <h3>Bố cục nhiều cột, responsive, viewport</h3>
+              <p>Exercise 7.10 – 7.13: bố cục hai cột bằng float, ba cột bằng positioning, stylesheet desktop/mobile theo media query và khai báo viewport.</p>
+            </div>
+            <span class="lab-go">Mở 7.10 – 7.13</span>
+          </a>
+        </li>
+        <li>
+          <a class="lab-row" href="Lab07/index.html#effects">
+            <span class="lab-num">7.14</span>
+            <div>
+              <h3>Transforms, transitions, filters, animations</h3>
+              <p>Exercise 7.14 – 7.18: xoay, nghiêng, dịch, phóng ảnh; hiệu ứng chuyển đổi khi hover; bộ lọc ảnh và animation bằng @keyframes.</p>
+            </div>
+            <span class="lab-go">Mở 7.14 – 7.18</span>
+          </a>
+        </li>
+        <li>
+          <a class="lab-row" href="Lab07/lab07-exercise19.html">
+            <span class="lab-num">7.19</span>
+            <div>
+              <h3>Bootstrap grid system</h3>
+              <p>Exercise 7.19: dựng trang bằng Bootstrap 3 với navbar, jumbotron, grid, nested columns, panel, list-group và button.</p>
+            </div>
+            <span class="lab-go">Mở 7.19</span>
+          </a>
+        </li>
+      </ul>
+    </div>
+  </section>
+
+  <!-- ================= 4.4 Những kiến thức và kỹ năng đã học được ================= -->
+  <section class="block" id="kien-thuc">
+    <div class="wrap">
+      <h2>Kiến thức đã học</h2>
+
+      <div class="tabs" role="tablist" aria-label="Kiến thức theo từng nhóm">
+        <button class="tab" role="tab" id="tab-1" aria-controls="panel-1" aria-selected="true" type="button">Flow &amp; vị trí</button>
+        <button class="tab" role="tab" id="tab-2" aria-controls="panel-2" aria-selected="false" tabindex="-1" type="button">Float</button>
+        <button class="tab" role="tab" id="tab-3" aria-controls="panel-3" aria-selected="false" tabindex="-1" type="button">Bố cục &amp; responsive</button>
+        <button class="tab" role="tab" id="tab-4" aria-controls="panel-4" aria-selected="false" tabindex="-1" type="button">Hiệu ứng</button>
+        <button class="tab" role="tab" id="tab-5" aria-controls="panel-5" aria-selected="false" tabindex="-1" type="button">Bootstrap</button>
+      </div>
+
+      <div class="panel" role="tabpanel" id="panel-1" aria-labelledby="tab-1">
+        <h3>Document flow, định vị và xếp lớp <small>Exercise 7.1 – 7.4</small></h3>
+        <div>
+          <p>Em hiểu trình duyệt đặt phần tử theo document flow: phần tử block như <code>p</code>, <code>div</code> chiếm cả một dòng, phần tử inline như <code>span</code>, <code>a</code> nằm trong dòng chữ. Chỉ cần đổi <code>display</code> là một <code>li</code> có thể nằm ngang thành menu, hoặc một <code>div</code> thành ô <code>inline-block</code>.</p>
+          <p>Với <code>position: relative</code>, phần tử dời đi nhưng chỗ cũ vẫn bị giữ. Với <code>position: absolute</code>, phần tử ra khỏi flow và bám theo ancestor gần nhất có position, nên em luôn đặt <code>relative</code> cho khung cha trước.</p>
+          <p>Bài z-index cho em thấy z-index lớn chưa chắc nằm trên: phần tử con không thể vượt khỏi stacking context của cha.</p>
+        </div>
+      </div>
+
+      <div class="panel" role="tabpanel" id="panel-2" aria-labelledby="tab-2" hidden>
+        <h3>Float và clear <small>Exercise 7.5 – 7.9</small></h3>
+        <div>
+          <p><code>float</code> đẩy ảnh sang trái hoặc phải để chữ chảy bao quanh. Lỗi em gặp đầu tiên là container không bao được phần tử float và bị co lại; thêm <code>overflow: auto</code> thì container bao trọn.</p>
+          <p>Khi float nhiều ảnh, chúng tự xuống hàng theo độ rộng cửa sổ, nhưng một ảnh cao hơn có thể làm các ảnh sau bị kẹt. <code>clear: left</code>, <code>right</code> hoặc <code>both</code> giúp phần tử tiếp theo bắt đầu bên dưới các phần tử float.</p>
+          <p>Ở Exercise 7.9 em kết hợp relative và absolute để đặt caption, nhãn NEW chồng lên ảnh, giống nhãn giảm giá trên thẻ sản phẩm.</p>
+        </div>
+      </div>
+
+      <div class="panel" role="tabpanel" id="panel-3" aria-labelledby="tab-3" hidden>
+        <h3>Bố cục nhiều cột và responsive <small>Exercise 7.10 – 7.13</small></h3>
+        <div>
+          <p>Bố cục hai cột: cột trái <code>float: left</code> với độ rộng cố định, cột nội dung dùng <code>margin-left</code> để chừa chỗ. Bố cục ba cột: hai cột bên <code>position: absolute</code> trong khung <code>relative</code>, cột giữa có margin hai bên.</p>
+          <p>Với media query, em tách hai stylesheet và nạp bằng thuộc tính <code>media</code> của thẻ <code>link</code>: một file cho màn hình rộng hơn 480px, một file cho điện thoại. Trên điện thoại cột phụ được ẩn, ảnh xếp thành một cột.</p>
+          <p>Nếu thiếu <code>&lt;meta name="viewport"&gt;</code>, điện thoại vẫn thu nhỏ cả trang desktop nên media query không có tác dụng. Em cũng đổi menu ngang thành dropdown <code>select</code> cho dễ bấm.</p>
+        </div>
+      </div>
+
+      <div class="panel" role="tabpanel" id="panel-4" aria-labelledby="tab-4" hidden>
+        <h3>Transforms, transitions, filters, animations <small>Exercise 7.14 – 7.18</small></h3>
+        <div>
+          <p><code>transform</code> xoay, nghiêng, dịch, phóng phần tử mà không ảnh hưởng đến các phần tử xung quanh; <code>transform-origin</code> đổi điểm làm mốc.</p>
+          <p><code>transition</code> làm thay đổi diễn ra từ từ. Em có thể cho từng thuộc tính chạy với thời gian, timing function và delay khác nhau, như thẻ ảnh vừa nổi lên vừa hiện thanh thông tin.</p>
+          <p><code>filter</code> chỉnh ảnh ngay bằng CSS: grayscale, sepia, blur, hue-rotate... Còn <code>@keyframes</code> tạo animation tự chạy, điều khiển bằng <code>animation-duration</code>, <code>iteration-count</code>, <code>delay</code> hoặc viết gọn trong <code>animation</code>.</p>
+        </div>
+      </div>
+
+      <div class="panel" role="tabpanel" id="panel-5" aria-labelledby="tab-5" hidden>
+        <h3>Bootstrap <small>Exercise 7.19</small></h3>
+        <div>
+          <p>Bootstrap chia mỗi hàng thành 12 cột. Em dùng <code>col-md-3</code>, <code>col-md-6</code> cho bố cục ba cột trên máy tính; khi màn hình hẹp các cột tự xếp chồng lên nhau mà không cần viết media query.</p>
+          <p>Bên trong một cột có thể đặt thêm <code>row</code> để chia nhỏ (nested columns). Ngoài grid, em dùng sẵn các thành phần navbar thu gọn trên điện thoại, jumbotron, panel, list-group, badge, thumbnail và button.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ================= 4.5 Tự đánh giá ================= -->
+  <section class="block review" id="tu-danh-gia">
+    <div class="wrap">
+      <h2>Tự đánh giá</h2>
+      <p>Qua Lab 07, kỹ thuật em thấy quan trọng nhất là kết hợp position relative và absolute, vì nó dùng ở rất nhiều chỗ: caption trên ảnh, nhãn giảm giá, menu thả xuống. Exercise 7.4 về z-index khó nhất, em mất khá lâu mới hiểu vì sao caption có z-index 99 vẫn bị che. Exercise 7.12 và 7.13 hữu ích nhất: chỉ với media query và thẻ viewport, cùng một trang đã đổi bố cục cho điện thoại. Để làm website responsive, em sẽ dùng media query, ảnh co giãn theo phần trăm và grid của Bootstrap. Với website thương mại điện tử, em có thể dựng trang danh mục bằng lưới nhiều cột, đặt nhãn New hay giảm giá bằng absolute positioning, thêm hiệu ứng hover cho thẻ sản phẩm bằng transition, và làm banner chạy bằng animation.</p>
+    </div>
+  </section>
+
+</main>
+
+<!-- ================= Chân trang ================= -->
+<footer class="foot">
+  <div class="wrap">
+    <div>
+      <p class="foot-name">Nguyễn Trần Bảo Nhi</p>
+      <p>MSSV 31241021234, lớp 26C1INF50902701. Giảng viên: TS Nguyễn Mạnh Tuấn.</p>
+    </div>
+    <ul class="foot-links">
+      <li><a href="https://github.com/chloenguynnn" target="_blank" rel="noopener">GitHub</a></li>
+      <li><a href="https://github.com/chloenguynnn/ecommerce-ui-improvement" target="_blank" rel="noopener">Repository</a></li>
+      <li><a href="../JavaScript-Labs/index.html">JavaScript-Labs</a></li>
+    </ul>
+  </div>
+</footer>
+
+<script src="js/main.js"></script>
+</body>
+</html>

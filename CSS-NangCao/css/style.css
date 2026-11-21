@@ -1,0 +1,601 @@
+/* ==========================================================================
+   JavaScript-Labs – giao diện trang chủ và trang danh sách Exercise
+   Tông màu: đen + đỏ. Font: Big Shoulders Display (tiêu đề), Be Vietnam Pro (nội dung)
+   ========================================================================== */
+
+:root {
+  --black: #000000;
+  --coal: #161616;
+  --line: #2e2e2e;
+  --red: #e3001b;
+  --red-deep: #a80014;
+  --white: #ffffff;
+  --mist: #b9b9b9;
+  --display: "Big Shoulders Display", "Arial Narrow", Impact, sans-serif;
+  --body: "Be Vietnam Pro", "Segoe UI", Arial, sans-serif;
+  --wrap: 1180px;
+}
+
+*,
+*::before,
+*::after { box-sizing: border-box; }
+
+html { scroll-behavior: smooth; }
+
+body {
+  margin: 0;
+  background: var(--black);
+  color: var(--white);
+  font-family: var(--body);
+  font-size: 17px;
+  line-height: 1.65;
+  -webkit-font-smoothing: antialiased;
+}
+
+img { max-width: 100%; display: block; }
+
+a { color: inherit; }
+
+a:focus-visible,
+button:focus-visible {
+  outline: 3px solid var(--white);
+  outline-offset: 3px;
+}
+
+.wrap {
+  width: min(var(--wrap), 100% - 40px);
+  margin-inline: auto;
+}
+
+.skip {
+  position: absolute;
+  left: -9999px;
+}
+.skip:focus {
+  left: 12px;
+  top: 12px;
+  z-index: 100;
+  background: var(--white);
+  color: var(--black);
+  padding: 8px 12px;
+}
+
+/* ---------- Thanh điều hướng ---------- */
+
+.topbar {
+  position: sticky;
+  top: 0;
+  z-index: 50;
+  background: var(--black);
+  border-bottom: 1px solid var(--line);
+}
+
+.topbar .wrap {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  min-height: 62px;
+}
+
+.mark {
+  font-family: var(--display);
+  font-weight: 900;
+  font-size: 1.7rem;
+  letter-spacing: 0.02em;
+  text-decoration: none;
+  line-height: 1;
+}
+.mark span { color: var(--red); }
+
+.menu {
+  display: flex;
+  gap: 28px;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.menu a {
+  text-decoration: none;
+  font-weight: 500;
+  font-size: 0.95rem;
+  padding: 6px 0;
+  border-bottom: 3px solid transparent;
+}
+.menu a:hover,
+.menu a.is-current { border-bottom-color: var(--red); }
+
+.menu-toggle {
+  display: none;
+  background: none;
+  border: 1px solid var(--white);
+  color: var(--white);
+  font: 600 0.9rem var(--body);
+  padding: 8px 14px;
+  cursor: pointer;
+}
+
+/* ---------- Hero: thông tin cá nhân ---------- */
+
+.hero {
+  position: relative;
+  overflow: hidden;
+  padding: 56px 0 0;
+}
+
+.hero .wrap {
+  display: grid;
+  grid-template-columns: minmax(0, 3fr) minmax(0, 2fr);
+  align-items: end;
+  gap: 0;
+}
+
+/* Trong HTML ảnh đứng trước phần chữ để chữ được vẽ đè lên ảnh;
+   grid đặt lại vị trí: chữ bên trái, ảnh bên phải. */
+.hero-text {
+  grid-column: 1;
+  grid-row: 1;
+  position: relative;
+  padding-bottom: 64px;
+}
+
+.course {
+  margin: 0 0 26px;
+  color: var(--mist);
+  font-size: 0.98rem;
+}
+
+.name {
+  margin: 0;
+  font-family: var(--display);
+  font-weight: 900;
+  text-transform: uppercase;
+  font-size: clamp(3.2rem, 9.6vw, 8.3rem);
+  /* chữ in hoa tiếng Việt có dấu cao nên giãn dòng không được quá sát */
+  line-height: 1.06;
+  white-space: nowrap;
+}
+.name .family { display: block; }
+.name .given {
+  display: block;
+  color: var(--red);
+}
+
+.facts {
+  display: grid;
+  grid-template-columns: repeat(3, auto);
+  justify-content: start;
+  gap: 0;
+  margin: 36px 0 0;
+  border: 1px solid var(--white);
+  width: fit-content;
+  background: var(--black);
+}
+.facts div {
+  padding: 12px 22px;
+  border-right: 1px solid var(--white);
+}
+.facts div:last-child { border-right: 0; }
+.facts dt {
+  font-size: 0.8rem;
+  color: var(--mist);
+}
+.facts dd {
+  margin: 0;
+  /* dùng font nội dung để phân biệt rõ số 1 với chữ I trong mã lớp */
+  font-family: var(--body);
+  font-weight: 600;
+  font-size: 1.12rem;
+  line-height: 1.4;
+}
+.facts a { text-decoration-color: var(--red); text-underline-offset: 4px; }
+
+.actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+  margin-top: 28px;
+}
+
+.btn {
+  display: inline-block;
+  padding: 13px 24px;
+  font: 600 1rem var(--body);
+  text-decoration: none;
+  border: 2px solid var(--red);
+  background: var(--red);
+  color: var(--white);
+  cursor: pointer;
+  transition: background-color 0.15s, color 0.15s, border-color 0.15s;
+}
+.btn:hover { background: var(--white); border-color: var(--white); color: var(--black); }
+.btn.ghost { background: transparent; border-color: var(--white); }
+.btn.ghost:hover { background: var(--white); color: var(--black); }
+
+.portrait {
+  grid-column: 2;
+  grid-row: 1;
+  position: relative;
+  align-self: end;
+  margin: 0;
+  padding: 0;
+}
+/* khối đỏ lệch phía sau ảnh */
+.portrait::before {
+  content: "";
+  position: absolute;
+  inset: 34px -400px 0 70px;
+  background: var(--red);
+  z-index: -1;
+}
+.portrait img {
+  width: 100%;
+  aspect-ratio: 4 / 5;
+  max-height: calc(100vh - 150px);
+  min-height: 420px;
+  object-fit: cover;
+  object-position: center top;
+  filter: contrast(1.04);
+}
+
+/* dải chữ chạy dưới hero */
+.strip {
+  background: var(--white);
+  color: var(--black);
+  overflow: hidden;
+  white-space: nowrap;
+  border-block: 4px solid var(--black);
+}
+.strip-track {
+  display: inline-block;
+  padding: 10px 0;
+  font-family: var(--display);
+  font-weight: 800;
+  font-size: 1.5rem;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+  animation: slide 38s linear infinite;
+}
+.strip-track b { color: var(--red); padding: 0 18px; font-weight: 800; }
+@keyframes slide {
+  from { transform: translateX(0); }
+  to { transform: translateX(-50%); }
+}
+
+/* ---------- Khối nội dung chung ---------- */
+
+.block { padding: 96px 0; }
+
+.block h2 {
+  margin: 0 0 28px;
+  font-family: var(--display);
+  font-weight: 900;
+  text-transform: uppercase;
+  font-size: clamp(2.4rem, 6vw, 4.6rem);
+  line-height: 1.08;
+}
+
+.lead {
+  max-width: 62ch;
+  font-size: 1.12rem;
+  margin: 0 0 1.1em;
+}
+.lead:last-child { margin-bottom: 0; }
+
+/* Giới thiệu: hai cột, cột trái là tiêu đề */
+.about .wrap {
+  display: grid;
+  grid-template-columns: minmax(0, 4fr) minmax(0, 7fr);
+  gap: 48px;
+}
+.about h2 { margin: 0; }
+
+/* ---------- Danh sách 3 bài Lab ---------- */
+
+.labs { background: var(--coal); }
+
+.lab-list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  border-top: 2px solid var(--white);
+}
+
+.lab-row {
+  display: grid;
+  grid-template-columns: 210px minmax(0, 1fr) auto;
+  align-items: center;
+  gap: 32px;
+  padding: 30px 24px;
+  border-bottom: 2px solid var(--white);
+  text-decoration: none;
+  transition: background-color 0.18s;
+}
+.lab-row:hover,
+.lab-row:focus-visible { background: var(--red); }
+
+.lab-num {
+  font-family: var(--display);
+  font-weight: 900;
+  font-size: clamp(5rem, 11vw, 9rem);
+  line-height: 0.8;
+  color: transparent;
+  -webkit-text-stroke: 2px var(--red);
+  transition: color 0.18s, -webkit-text-stroke-color 0.18s;
+}
+.lab-row:hover .lab-num,
+.lab-row:focus-visible .lab-num {
+  color: var(--black);
+  -webkit-text-stroke-color: var(--black);
+}
+
+.lab-row h3 {
+  margin: 0 0 6px;
+  font-family: var(--display);
+  font-weight: 800;
+  font-size: clamp(1.6rem, 3vw, 2.3rem);
+  line-height: 1.05;
+  text-transform: uppercase;
+}
+.lab-row p { margin: 0; max-width: 56ch; color: var(--mist); }
+.lab-row:hover p,
+.lab-row:focus-visible p { color: var(--white); }
+
+.lab-go {
+  font-weight: 600;
+  white-space: nowrap;
+  border: 2px solid var(--white);
+  padding: 11px 20px;
+}
+.lab-row:hover .lab-go,
+.lab-row:focus-visible .lab-go { background: var(--black); border-color: var(--black); }
+
+/* ---------- Kiến thức đã học: tab ---------- */
+
+.tabs {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0;
+  border-bottom: 2px solid var(--white);
+}
+.tab {
+  background: transparent;
+  color: var(--white);
+  border: 2px solid var(--white);
+  border-bottom: 0;
+  margin-right: -2px;
+  padding: 12px 26px;
+  font-family: var(--display);
+  font-weight: 800;
+  font-size: 1.35rem;
+  text-transform: uppercase;
+  letter-spacing: 0.03em;
+  cursor: pointer;
+}
+.tab:hover { background: var(--coal); }
+.tab[aria-selected="true"] { background: var(--red); border-color: var(--red); }
+
+.panel {
+  display: grid;
+  grid-template-columns: minmax(0, 4fr) minmax(0, 7fr);
+  gap: 48px;
+  padding: 40px 0 0;
+}
+.panel[hidden] { display: none; }
+.panel h3 {
+  margin: 0;
+  font-family: var(--display);
+  font-weight: 800;
+  font-size: clamp(1.8rem, 3.4vw, 2.8rem);
+  line-height: 1.12;
+  text-transform: uppercase;
+}
+.panel h3 small {
+  display: block;
+  margin-top: 12px;
+  font: 400 1rem/1.5 var(--body);
+  text-transform: none;
+  color: var(--mist);
+}
+.panel p { margin: 0 0 1em; max-width: 64ch; }
+.panel code,
+.ex-list code {
+  font-family: Consolas, "Courier New", monospace;
+  font-size: 0.92em;
+  background: var(--coal);
+  border: 1px solid var(--line);
+  padding: 1px 6px;
+}
+
+/* ---------- Tự đánh giá ---------- */
+
+.review {
+  background: var(--red);
+  color: var(--white);
+}
+.review .wrap {
+  display: grid;
+  grid-template-columns: minmax(0, 4fr) minmax(0, 7fr);
+  gap: 48px;
+}
+.review h2 { margin: 0; color: var(--black); }
+.review p {
+  margin: 0;
+  font-size: 1.22rem;
+  line-height: 1.7;
+  max-width: 60ch;
+}
+
+/* ---------- Chân trang ---------- */
+
+.foot {
+  padding: 48px 0;
+  border-top: 1px solid var(--line);
+}
+.foot .wrap {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  gap: 24px;
+  align-items: end;
+}
+.foot-name {
+  font-family: var(--display);
+  font-weight: 900;
+  font-size: 2rem;
+  text-transform: uppercase;
+  line-height: 1;
+  margin: 0 0 8px;
+}
+.foot p { margin: 0; color: var(--mist); font-size: 0.95rem; }
+.foot-links {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 22px;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+.foot-links a { text-decoration-color: var(--red); text-underline-offset: 5px; font-weight: 500; }
+.foot-links a:hover { color: var(--red); }
+
+/* ---------- Trang danh sách Exercise của từng Lab ---------- */
+
+.lab-head { padding: 64px 0 48px; }
+.lab-head .crumb { margin: 0 0 20px; color: var(--mist); font-size: 0.95rem; }
+.lab-head .crumb a { text-underline-offset: 4px; text-decoration-color: var(--red); }
+.lab-head h1 {
+  margin: 0;
+  font-family: var(--display);
+  font-weight: 900;
+  text-transform: uppercase;
+  font-size: clamp(3rem, 9vw, 7.5rem);
+  line-height: 0.95;
+}
+.lab-head h1 span { display: block; color: var(--red); }
+.lab-head .lead { margin-top: 26px; }
+
+.ex-list {
+  list-style: none;
+  margin: 0;
+  padding: 0 0 96px;
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 0;
+  border-top: 2px solid var(--white);
+  border-left: 2px solid var(--white);
+}
+.ex-list li {
+  border-right: 2px solid var(--white);
+  border-bottom: 2px solid var(--white);
+}
+.ex-list a {
+  display: block;
+  height: 100%;
+  padding: 26px 26px 30px;
+  text-decoration: none;
+  transition: background-color 0.15s;
+}
+.ex-list a:hover,
+.ex-list a:focus-visible { background: var(--red); }
+.ex-id {
+  font-family: var(--display);
+  font-weight: 900;
+  font-size: 2.6rem;
+  line-height: 1;
+  color: var(--red);
+}
+.ex-list a:hover .ex-id,
+.ex-list a:focus-visible .ex-id { color: var(--black); }
+.ex-list h2 {
+  margin: 8px 0 8px;
+  font-family: var(--display);
+  font-weight: 800;
+  font-size: 1.55rem;
+  line-height: 1.1;
+  text-transform: uppercase;
+}
+.ex-list p { margin: 0; color: var(--mist); font-size: 0.97rem; }
+.ex-list a:hover p,
+.ex-list a:focus-visible p { color: var(--white); }
+.ex-list .files { margin-top: 12px; font-size: 0.88rem; }
+
+.pager {
+  display: flex;
+  justify-content: space-between;
+  gap: 12px;
+  flex-wrap: wrap;
+  padding: 0 0 80px;
+}
+
+/* ---------- Màn hình nhỏ ---------- */
+
+@media (max-width: 900px) {
+  .block { padding: 64px 0; }
+
+  .menu-toggle { display: block; }
+  .menu {
+    display: none;
+    position: absolute;
+    left: 0;
+    right: 0;
+    top: 62px;
+    flex-direction: column;
+    gap: 0;
+    background: var(--black);
+    border-bottom: 1px solid var(--line);
+    padding: 8px 20px 16px;
+  }
+  .menu.is-open { display: flex; }
+  .menu a { display: block; padding: 12px 0; }
+
+  .hero { padding-top: 36px; }
+  .hero .wrap { grid-template-columns: 1fr; }
+  .hero-text { grid-column: 1; grid-row: 1; }
+  .portrait { grid-column: 1; grid-row: 2; }
+  .name { white-space: normal; font-size: clamp(3.2rem, 17vw, 6.5rem); }
+  .hero-text { padding-bottom: 36px; }
+  .name { width: auto; }
+  .portrait { max-width: 420px; }
+  .portrait::before { inset: 24px -40px 0 60px; }
+
+  .facts { grid-template-columns: 1fr; width: 100%; }
+  .facts div { border-right: 0; border-bottom: 1px solid var(--white); }
+  .facts div:last-child { border-bottom: 0; }
+
+  .about .wrap,
+  .review .wrap,
+  .panel { grid-template-columns: 1fr; gap: 24px; }
+
+  .lab-row {
+    grid-template-columns: 1fr;
+    gap: 14px;
+    padding: 26px 8px;
+  }
+  .lab-go { justify-self: start; }
+
+  .tab { padding: 10px 16px; font-size: 1.15rem; }
+
+  .ex-list { grid-template-columns: 1fr; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html { scroll-behavior: auto; }
+  .strip-track { animation: none; }
+  .btn, .lab-row, .lab-num, .ex-list a { transition: none; }
+}
+
+/* ---------- Bổ sung cho CSS-NangCao ---------- */
+.lab-num { font-size: clamp(3.6rem, 7.5vw, 6.2rem); }
+.ex-group {
+  margin: 56px 0 18px;
+  font-family: var(--display);
+  font-weight: 800;
+  font-size: clamp(1.8rem, 3.4vw, 2.6rem);
+  text-transform: uppercase;
+  line-height: 1;
+  scroll-margin-top: 80px;
+}
+.ex-group span { color: var(--red); margin-right: 10px; }
+.ex-group + .ex-list { padding-bottom: 0; }
+.ex-list.last { padding-bottom: 96px; }

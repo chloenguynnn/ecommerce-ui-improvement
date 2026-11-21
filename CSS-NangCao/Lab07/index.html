@@ -1,0 +1,209 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+  <meta charset="utf-8">
+  <link rel="icon" type="image/svg+xml" href="../images/favicon.svg">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Lab 07 - Advanced CSS: Layout | Nguyễn Trần Bảo Nhi</title>
+  <link rel="stylesheet" href="../css/fonts.css">
+  <link rel="stylesheet" href="../css/style.css">
+</head>
+<body>
+<header class="topbar">
+  <div class="wrap">
+    <a class="mark" href="../index.html" aria-label="Về trang chủ CSS-NangCao">BN<span>.</span>CSS</a>
+    <button class="menu-toggle" type="button" aria-expanded="false" aria-controls="menu">Menu</button>
+    <ul class="menu" id="menu">
+      <li><a href="../index.html">Trang chủ</a></li>
+      <li><a href="#flow">7.1–7.4</a></li>
+      <li><a href="#float">7.5–7.9</a></li>
+      <li><a href="#layout">7.10–7.13</a></li>
+      <li><a href="#effects">7.14–7.18</a></li>
+      <li><a href="#bootstrap">7.19</a></li>
+    </ul>
+  </div>
+</header>
+
+<main>
+  <section class="lab-head">
+    <div class="wrap">
+      <p class="crumb"><a href="../index.html">CSS-NangCao</a> / Lab 07</p>
+      <h1>Lab 07 <span>Advanced CSS: Layout</span></h1>
+      <p class="lead">19 Exercise về document flow, positioning, float, bố cục nhiều cột, responsive, hiệu ứng và Bootstrap. Bấm vào từng ô để mở bài chạy thực tế. Exercise 7.13 được làm tiếp trên file của 7.12 theo hướng dẫn của đề.</p>
+    </div>
+  </section>
+
+  <div class="wrap">
+    <h2 class="ex-group" id="flow"><span>7.1 – 7.4</span>Document flow, positioning, z-index</h2>
+    <ul class="ex-list">
+      <li>
+        <a href="lab07-exercise01.html">
+          <div class="ex-id">7.1</div>
+          <h2>Document Flow</h2>
+          <p>So sánh phần tử block và inline trong normal flow, rồi đổi cách hiển thị bằng display: block, inline, inline-block và none.</p>
+          <p class="files">Mã nguồn: <code>lab07-exercise01.html</code>, <code>css/lab07-exercise01.css</code></p>
+        </a>
+      </li>
+      <li>
+        <a href="lab07-exercise02.html">
+          <div class="ex-id">7.2</div>
+          <h2>Relative Positioning</h2>
+          <p>Dời figure bằng position: relative; top; left và quan sát chỗ trống cũ vẫn được giữ trong document flow.</p>
+          <p class="files">Mã nguồn: <code>lab07-exercise02.html</code>, <code>css/lab07-exercise02.css</code></p>
+        </a>
+      </li>
+      <li>
+        <a href="lab07-exercise03.html">
+          <div class="ex-id">7.3</div>
+          <h2>Absolute Positioning</h2>
+          <p>Định vị figure và caption bằng position: absolute so với ancestor gần nhất có position.</p>
+          <p class="files">Mã nguồn: <code>lab07-exercise03.html</code>, <code>css/lab07-exercise03.css</code></p>
+        </a>
+      </li>
+      <li>
+        <a href="lab07-exercise04.html">
+          <div class="ex-id">7.4</div>
+          <h2>Stacking Using Z-Index</h2>
+          <p>Xếp lớp ba figure chồng nhau bằng z-index và thấy phần tử con không vượt được stacking context của cha.</p>
+          <p class="files">Mã nguồn: <code>lab07-exercise04.html</code>, <code>css/lab07-exercise04.css</code></p>
+        </a>
+      </li>
+    </ul>
+    <h2 class="ex-group" id="float"><span>7.5 – 7.9</span>Float, clear và positioning</h2>
+    <ul class="ex-list">
+      <li>
+        <a href="lab07-exercise05.html">
+          <div class="ex-id">7.5</div>
+          <h2>Floating Elements</h2>
+          <p>Cho ảnh float: left và float: right để chữ chảy bao quanh.</p>
+          <p class="files">Mã nguồn: <code>lab07-exercise05.html</code>, <code>css/lab07-exercise05.css</code></p>
+        </a>
+      </li>
+      <li>
+        <a href="lab07-exercise06.html">
+          <div class="ex-id">7.6</div>
+          <h2>Floating in a Container</h2>
+          <p>So sánh container không bao được phần tử float và container dùng overflow: auto.</p>
+          <p class="files">Mã nguồn: <code>lab07-exercise06.html</code>, <code>css/lab07-exercise06.css</code></p>
+        </a>
+      </li>
+      <li>
+        <a href="lab07-exercise07.html">
+          <div class="ex-id">7.7</div>
+          <h2>Floating Multiple Items</h2>
+          <p>Chín ảnh float: left tự xuống hàng khi thay đổi kích thước cửa sổ.</p>
+          <p class="files">Mã nguồn: <code>lab07-exercise07.html</code>, <code>css/lab07-exercise07.css</code></p>
+        </a>
+      </li>
+      <li>
+        <a href="lab07-exercise08.html">
+          <div class="ex-id">7.8</div>
+          <h2>Floating and Clearing</h2>
+          <p>Dùng clear: left, right, both để đoạn văn bắt đầu bên dưới các ảnh float.</p>
+          <p class="files">Mã nguồn: <code>lab07-exercise08.html</code>, <code>css/lab07-exercise08.css</code></p>
+        </a>
+      </li>
+      <li>
+        <a href="lab07-exercise09.html">
+          <div class="ex-id">7.9</div>
+          <h2>Using Positioning</h2>
+          <p>Kết hợp relative và absolute để đặt caption, nhãn NEW và ảnh nhỏ chồng lên ảnh chính.</p>
+          <p class="files">Mã nguồn: <code>lab07-exercise09.html</code>, <code>css/lab07-exercise09.css</code></p>
+        </a>
+      </li>
+    </ul>
+    <h2 class="ex-group" id="layout"><span>7.10 – 7.13</span>Bố cục nhiều cột, responsive, viewport</h2>
+    <ul class="ex-list">
+      <li>
+        <a href="lab07-exercise10.html">
+          <div class="ex-id">7.10</div>
+          <h2>Two-Column Layout</h2>
+          <p>Bố cục hai cột: nav float: left, nội dung chính dùng margin-left, footer clear: both.</p>
+          <p class="files">Mã nguồn: <code>lab07-exercise10.html</code>, <code>css/lab07-exercise10.css</code></p>
+        </a>
+      </li>
+      <li>
+        <a href="lab07-exercise11.html">
+          <div class="ex-id">7.11</div>
+          <h2>Three-Column Layout</h2>
+          <p>Bố cục ba cột: hai cột bên position: absolute, cột giữa có margin hai bên.</p>
+          <p class="files">Mã nguồn: <code>lab07-exercise11.html</code>, <code>css/lab07-exercise11.css</code></p>
+        </a>
+      </li>
+      <li>
+        <a href="lab07-exercise12.html">
+          <div class="ex-id">7.12</div>
+          <h2>Media Queries</h2>
+          <p>Hai stylesheet desktop/mobile nạp theo media query; dưới 480px trang chuyển thành một cột.</p>
+          <p class="files">Mã nguồn: <code>lab07-exercise12.html</code>, <code>css/lab07-exercise12-desktop.css</code>, <code>css/lab07-exercise12-mobile.css</code></p>
+        </a>
+      </li>
+      <li>
+        <a href="lab07-exercise12.html">
+          <div class="ex-id">7.13</div>
+          <h2>Setting the Viewport</h2>
+          <p>Làm tiếp trên file của 7.12: thêm meta viewport và đổi menu ngang thành dropdown select trên điện thoại.</p>
+          <p class="files">Mã nguồn: <code>lab07-exercise12.html (dùng chung file với 7.12)</code></p>
+        </a>
+      </li>
+    </ul>
+    <h2 class="ex-group" id="effects"><span>7.14 – 7.18</span>Transforms, transitions, filters, animations</h2>
+    <ul class="ex-list">
+      <li>
+        <a href="lab07-exercise14.html">
+          <div class="ex-id">7.14</div>
+          <h2>Transforms</h2>
+          <p>Thử rotate, skew, translate, scale, kết hợp nhiều hàm và transform-origin.</p>
+          <p class="files">Mã nguồn: <code>lab07-exercise14.html</code>, <code>css/lab07-exercise14.css</code></p>
+        </a>
+      </li>
+      <li>
+        <a href="lab07-exercise15.html">
+          <div class="ex-id">7.15</div>
+          <h2>Transitions</h2>
+          <p>Đổi màu nút, độ mờ và độ rộng ảnh từ từ khi hover.</p>
+          <p class="files">Mã nguồn: <code>lab07-exercise15.html</code>, <code>css/lab07-exercise15.css</code></p>
+        </a>
+      </li>
+      <li>
+        <a href="lab07-exercise16.html">
+          <div class="ex-id">7.16</div>
+          <h2>More Transitions</h2>
+          <p>Thẻ ảnh kết hợp nhiều transition với thời gian và delay khác nhau; so sánh timing function.</p>
+          <p class="files">Mã nguồn: <code>lab07-exercise16.html</code>, <code>css/lab07-exercise16.css</code></p>
+        </a>
+      </li>
+      <li>
+        <a href="lab07-exercise17.html">
+          <div class="ex-id">7.17</div>
+          <h2>Filters</h2>
+          <p>Một ảnh với saturate, grayscale, contrast, brightness, blur, invert, sepia, hue-rotate, opacity.</p>
+          <p class="files">Mã nguồn: <code>lab07-exercise17.html</code>, <code>css/lab07-exercise17.css</code></p>
+        </a>
+      </li>
+      <li>
+        <a href="lab07-exercise18.html">
+          <div class="ex-id">7.18</div>
+          <h2>Animations</h2>
+          <p>@keyframes với animation-duration, iteration-count, delay và cách viết shorthand.</p>
+          <p class="files">Mã nguồn: <code>lab07-exercise18.html</code>, <code>css/lab07-exercise18.css</code></p>
+        </a>
+      </li>
+    </ul>
+    <h2 class="ex-group" id="bootstrap"><span>7.19</span>Bootstrap grid system</h2>
+    <ul class="ex-list last">
+      <li>
+        <a href="lab07-exercise19.html">
+          <div class="ex-id">7.19</div>
+          <h2>Using Bootstrap</h2>
+          <p>Trang Bootstrap 3 với navbar, jumbotron, grid, nested columns, panel, list-group và button.</p>
+          <p class="files">Mã nguồn: <code>lab07-exercise19.html</code>, <code>css/lab07-exercise19.css</code>, <code>bootstrap/</code></p>
+        </a>
+      </li>
+    </ul>
+  </div>
+</main>
+
+<script src="../js/main.js"></script>
+</body>
+</html>
