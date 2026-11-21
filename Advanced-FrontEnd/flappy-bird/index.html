@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Flappy Bird – Nguyễn Trần Bảo Nhi</title>
+  <style>
+    * { box-sizing: border-box; }
+    body { margin: 0; min-height: 100vh; background: #2b2622; color: #f3e6da; font-family: Arial, Helvetica, sans-serif; }
+    .layout { display: flex; flex-wrap: wrap; gap: 32px; justify-content: center; align-items: flex-start; padding: 28px 16px; }
+    canvas {
+      width: min(400px, 92vw); aspect-ratio: 2 / 3; height: auto;
+      border-radius: 10px; box-shadow: 0 12px 40px rgba(0,0,0,.45); outline: none; touch-action: none; background: #fdebd3;
+    }
+    canvas:focus-visible { outline: 3px solid #e0a800; }
+    aside { max-width: 380px; font-size: 15px; line-height: 1.55; }
+    h1 { margin: 0 0 4px; font-size: 30px; color: #fff; }
+    h2 { font-size: 17px; color: #e0a800; margin: 22px 0 6px; text-transform: uppercase; letter-spacing: .05em; }
+    table { border-collapse: collapse; width: 100%; font-size: 14px; }
+    td, th { border: 1px solid #5b5049; padding: 5px 8px; text-align: left; }
+    th { background: #3a332e; }
+    kbd { background: #f3e6da; color: #2b2622; border-radius: 3px; padding: 1px 6px; font-weight: bold; }
+    ul { padding-left: 20px; margin: 0; }
+    a { color: #ffd54a; }
+    .controls { display: flex; gap: 12px; align-items: center; margin-top: 14px; flex-wrap: wrap; }
+    button { background: #8a1c2b; color: #fff; border: 0; padding: 9px 16px; border-radius: 4px; font-weight: bold; cursor: pointer; }
+    button:hover { background: #a82336; }
+    label { cursor: pointer; }
+  </style>
+</head>
+<body>
+<div class="layout">
+  <canvas id="game" width="400" height="600" tabindex="0" aria-label="Màn chơi Flappy Bird. Nhấn mũi tên xuống để bay."></canvas>
+
+  <aside>
+    <h1>Flappy Bird</h1>
+    <p>Bài 3 – Nhóm 2, Advance Front-end. <a href="../index.html">← Về trang Nhóm 2</a></p>
+
+    <h2>Điều khiển</h2>
+    <ul>
+      <li><kbd>↓</kbd> mũi tên xuống: bay lên (thay cho nhấn chuột)</li>
+      <li><kbd>P</kbd>: tạm dừng / chơi tiếp</li>
+      <li><kbd>Enter</kbd>: chơi lại sau khi thua hoặc thắng</li>
+      <li>Điện thoại: chạm vào màn chơi</li>
+    </ul>
+    <div class="controls">
+      <button type="button" id="restart">Chơi lại</button>
+      <label><input type="checkbox" id="smooth" checked> Chế độ mượt (requestAnimationFrame)</label>
+    </div>
+
+    <h2>Level</h2>
+    <table>
+      <tr><th>Level</th><th>Điểm</th><th>Interval</th></tr>
+      <tr><td>1</td><td>0 – 4</td><td>40 ms</td></tr>
+      <tr><td>2</td><td>5 – 19</td><td>30 ms</td></tr>
+      <tr><td>3</td><td>20 – 39</td><td>25 ms</td></tr>
+      <tr><td>4</td><td>40 – 49</td><td>20 ms</td></tr>
+      <tr><td colspan="3">50 điểm: dừng game và hiện chiến thắng</td></tr>
+    </table>
+
+    <h2>Cải tiến cho game mượt hơn</h2>
+    <ul>
+      <li>Logic vẫn chạy bằng <code>setInterval</code> theo interval của level, nhưng hình được vẽ bằng <code>requestAnimationFrame</code> và nội suy vị trí nên chạy mượt ~60 khung/giây. Bỏ chọn ô "Chế độ mượt" để so sánh với cách vẽ cũ.</li>
+      <li>Mỗi lần bấm đặt lại vận tốc bay lên thay vì cộng dồn; giới hạn tốc độ rơi.</li>
+      <li>Vùng va chạm hình tròn nhỏ hơn hình con chim; khoảng trống giữa hai ống đủ rộng và không lệch quá nhiều giữa hai ống liền nhau.</li>
+      <li>Giữ phím không bị tính nhiều lần; có màn chờ, tạm dừng, điểm cao nhất lưu lại, chim nghiêng theo hướng bay, thông báo lên level.</li>
+    </ul>
+  </aside>
+</div>
+<script src="game.js"></script>
+</body>
+</html>

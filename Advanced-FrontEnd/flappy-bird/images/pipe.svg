@@ -1,0 +1,19 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="80" height="480" viewBox="0 0 80 480" preserveAspectRatio="none">
+  <!-- Ống khói gạch đỏ có viền vàng – miệng ống ở phía trên, game tự lật ngược cho ống phía trên -->
+  <defs>
+    <pattern id="brick" width="40" height="24" patternUnits="userSpaceOnUse">
+      <rect width="40" height="24" fill="#9e3b2e"/>
+      <path d="M0 12H40M0 24H40M20 0V12M0 12V24M40 12V24" stroke="#6e2318" stroke-width="2"/>
+    </pattern>
+    <linearGradient id="shade" x1="0" x2="1">
+      <stop offset="0" stop-color="#000" stop-opacity=".25"/>
+      <stop offset=".35" stop-color="#fff" stop-opacity=".12"/>
+      <stop offset="1" stop-color="#000" stop-opacity=".35"/>
+    </linearGradient>
+  </defs>
+  <rect x="6" y="22" width="68" height="458" fill="url(#brick)"/>
+  <rect x="6" y="22" width="68" height="458" fill="url(#shade)"/>
+  <rect x="0" y="0" width="80" height="26" rx="3" fill="#e0a800" stroke="#8a6400" stroke-width="2"/>
+  <rect x="0" y="0" width="80" height="26" rx="3" fill="url(#shade)"/>
+  <rect x="10" y="5" width="60" height="5" fill="#fff3b0" opacity=".6"/>
+</svg>
