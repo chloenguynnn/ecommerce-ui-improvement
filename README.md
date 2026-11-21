@@ -188,3 +188,10 @@ Nhật ký sử dụng AI và các prompt được quản lý trong tệp `AI_US
 
 - **GitHub repository:** https://github.com/chloenguynnn/ecommerce-ui-improvement
 - **GitHub Pages:** https://chloenguynnn.github.io/ecommerce-ui-improvement/
+## 9. Các bài thực hành khác trong repository
+
+| Thư mục | Nội dung | GitHub Pages |
+| --- | --- | --- |
+| `JavaScript-Labs/` | Chương 4 – JavaScript Lab 08, 09, 10 | https://chloenguynnn.github.io/ecommerce-ui-improvement/JavaScript-Labs/ |
+| `CSS-NangCao/` | Chương 5 – CSS nâng cao, Lab 07 (Nhóm 1 của bài tập Chương 6) | https://chloenguynnn.github.io/ecommerce-ui-improvement/CSS-NangCao/ |
+| `Advanced-FrontEnd/` | Chương 6 – Advance Front-end Nhóm 2: e-commerce, jQuery LMS, Flappy Bird | https://chloenguynnn.github.io/ecommerce-ui-improvement/Advanced-FrontEnd/ |

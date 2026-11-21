@@ -256,3 +256,22 @@ từng khu vực trong VS Code.
 Kiểm tra giao diện trên trình duyệt và DevTools.
 Điều chỉnh cỡ chữ thông tin loại sản phẩm và dung tích
 từ 8px lên 12px trên màn hình nhỏ, lưu tệp và tải lại để xác nhận.
+---
+
+## Chương 5–6: CSS nâng cao (Lab 07) và Advance Front-end Nhóm 2
+
+### Công cụ AI
+- **Claude (Anthropic):** đọc đề bài từ Google Drive, viết mã nguồn 19 Exercise Lab 07, trang chủ `CSS-NangCao/index.html`, ba bài Nhóm 2 (e-commerce, jQuery LMS, Flappy Bird), README và khung file Word báo cáo.
+
+### Prompt đã sử dụng
+> làm btvn này thì t nên làm bài nào, làm nhóm 1 nhóm 2 nha
+>
+> ok nhóm 1 nhóm 2, giờ m làm vào github này đi https://github.com/chloenguynnn/ecommerce-ui-improvement
+>
+> nè thầy chỉ cho z thôi đâu có file zip gì đâu. m làm đi, rồi làm word cho t luôn
+
+### Lưu ý về kết quả
+- Không có file ZIP mã nguồn gốc của Lab 07, nên các Exercise được viết lại theo nội dung từng Exercise trong đề (`BaiTap_CaNhan_CSS_NangCao.pdf`); 7.13 làm tiếp trên file 7.12 theo đúng hướng dẫn.
+- Không có file hướng dẫn gốc của Flappy Bird, nên game được viết mới theo các yêu cầu trong `BaiThucHanh_Responsive_JQuery.pdf`.
+- Bài jQuery LMS cần chạy trên trang LMS thật (đã đăng nhập) để có kết quả thật; trang `jquery-lms/index.html` chỉ là bản mô phỏng.
+- Ảnh minh chứng trong file Word do sinh viên tự chụp khi kiểm tra bài.
